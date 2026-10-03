@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vehicle Delivery | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .delivery-page {
+      min-height: 100vh;
+      padding: 120px 6% 80px;
+      background: #f7f7f7;
+    }
+
+    .delivery-container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .delivery-hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .delivery-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(40px, 6vw, 70px);
+      letter-spacing: -2px;
+    }
+
+    .delivery-hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #666;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .delivery-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .07);
+    }
+
+    .delivery-card h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .delivery-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .delivery-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .delivery-field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .delivery-field input,
+    .delivery-field select,
+    .delivery-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 9px;
+      background: #fff;
+      color: #111;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .delivery-field input:focus,
+    .delivery-field select:focus,
+    .delivery-field textarea:focus {
+      border-color: #111;
+    }
+
+    .delivery-field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .delivery-check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .delivery-check input {
+      margin-top: 4px;
+    }
+
+    .delivery-submit {
+      width: fit-content;
+      border: 0;
+      border-radius: 9px;
+      padding: 15px 26px;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .delivery-submit:hover {
+      opacity: .88;
+    }
+
+    .delivery-error {
+      display: none;
+      color: #b00020;
+      font-size: 14px;
+    }
+
+    .delivery-success {
+      display: none;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 12px;
+      background: #e9f7ed;
+      color: #175c27;
+      line-height: 1.7;
+    }
+
+    .delivery-success strong:first-child {
+      font-size: 20px;
+    }
+
+    .delivery-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .delivery-step {
+      padding: 22px;
+      background: #f5f5f5;
+      border-radius: 12px;
+    }
+
+    .delivery-step-number {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .delivery-step h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .delivery-step p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .delivery-notice {
+      padding: 25px;
+      background: #fff;
+      border-radius: 16px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.7;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .05);
+    }
+
+    .delivery-notice strong {
+      color: #111;
+      font-size: 20px;
+    }
+
+    .delivery-notice p {
+      margin: 10px 0;
+    }
+
+    .delivery-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .delivery-links a {
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .delivery-links a.secondary {
+      background: #e9e9e9;
+      color: #111;
+    }
+
+    body.dark-mode .delivery-page {
+      background: #111;
+    }
+
+    body.dark-mode .delivery-card,
+    body.dark-mode .delivery-notice {
+      background: #1b1b1b;
+      color: #ddd;
+    }
+
+    body.dark-mode .delivery-field input,
+    body.dark-mode .delivery-field select,
+    body.dark-mode .delivery-field textarea {
+      background: #222;
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode .delivery-step {
+      background: #252525;
+    }
+
+    body.dark-mode .delivery-step p,
+    body.dark-mode .delivery-hero p {
+      color: #aaa;
+    }
+
+    body.dark-mode .delivery-notice strong {
+      color: #fff;
+    }
+
+    body.dark-mode .delivery-links a.secondary {
+      background: #333;
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .delivery-row,
+      .delivery-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .delivery-page {
+        padding: 105px 20px 60px;
+      }
+
+      .delivery-card {
+        padding: 24px;
+      }
+
+      .delivery-submit {
+        width: 100%;
+      }
+
+      .delivery-links a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a
+      href="index.html"
+      class="site-logo"
+      aria-label="Tesla Home"
+    >
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle theme"
+      >
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+      >
+        ◯
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      type="button"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+
+        <button
+          class="navigation-group-button"
+          type="button"
+        >
+          Car Models
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+
+        </div>
+
+      </div>
+
+      <a href="test-drive.html">
+        Request Test Drive
+      </a>
+
+      <div class="navigation-group">
+
+        <button
+          class="navigation-group-button"
+          type="button"
+        >
+          Batteries
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+
+          <a href="batteries.html">
+            Car Battery
+          </a>
+
+          <a href="batteries.html">
+            Powerwall 2
+          </a>
+
+          <a href="batteries.html">
+            Powerwall 3
+          </a>
+
+          <a href="batteries.html">
+            Powerwall 3 Expansion
+          </a>
+
+          <a href="batteries.html">
+            Megapack 2
+          </a>
+
+          <a href="batteries.html">
+            Megapack 3
+          </a>
+
+        </div>
+
+      </div>
+
+      <a href="solar.html">
+        Solar Panels
+      </a>
+
+      <a href="charging.html">
+        How to Charge
+      </a>
+
+      <a href="future-cars.html">
+        Future Cars
+      </a>
+
+      <a href="awards.html">
+        Awards
+      </a>
+
+      <a href="purchase-tesla.html">
+        Purchased a Tesla
+      </a>
+
+      <a href="lease-tesla.html">
+        Lease a Tesla
+      </a>
+
+      <a href="service.html">
+        Vehicle Service
+      </a>
+
+      <a href="support.html">
+        Support
+      </a>
+
+      <a href="account.html">
+        Account
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- ACCOUNT MENU -->
+  <div class="account-menu" id="accountMenu">
+
+    <a href="login.html">
+      Sign In
+    </a>
+
+    <a href="create-account.html">
+      Create Account
+    </a>
+
+    <a href="dashboard.html">
+      Dashboard
+    </a>
+
+  </div>
+
+  <main>
+
+    <section class="delivery-page">
+
+      <div class="delivery-container">
+
+        <div class="delivery-hero">
+
+          <h1>
+            Vehicle Delivery
+          </h1>
+
+          <p>
+            Enter your delivery information and prepare for your
+            Tesla to arrive at your doorstep.
+          </p>
+
+        </div>
+
+        <!-- DELIVERY INFORMATION -->
+        <section class="delivery-card">
+
+          <h2>
+            Enter Your Delivery Information
+          </h2>
+
+          <form
+            class="delivery-form"
+            id="deliveryForm"
+          >
+
+            <div class="delivery-row">
+
+              <div class="delivery-field">
+
+                <label for="deliveryName">
+                  Full Name
+                </label>
+
+                <input
+                  id="deliveryName"
+                  name="deliveryName"
+                  type="text"
+                  placeholder="Full name"
+                  required
+                >
+
+              </div>
+
+              <div class="delivery-field">
+
+                <label for="deliveryEmail">
+                  Email
+                </label>
+
+                <input
+                  id="deliveryEmail"
+                  name="deliveryEmail"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+            <div class="delivery-row">
+
+              <div class="delivery-field">
+
+                <label for="deliveryReference">
+                  Order Reference
+                </label>
+
+                <input
+                  id="deliveryReference"
+                  name="deliveryReference"
+                  type="text"
+                  placeholder="TESLA-123456"
+                  required
+                >
+
+              </div>
+
+              <div class="delivery-field">
+
+                <label for="deliveryModel">
+                  Vehicle
+                </label>
+
+                <select
+                  id="deliveryModel"
+                  name="deliveryModel"
+                  required
+                >
+
+                  <option value="">
+                    Select vehicle
+                  </option>
+
+                  <option value="Model 3">
+                    Model 3
+                  </option>
+
+                  <option value="Model Y">
+                    Model Y
+                  </option>
+
+                  <option value="Model S">
+                    Model S
+                  </option>
+
+                  <option value="Model X">
+                    Model X
+                  </option>
+
+                  <option value="Cybertruck">
+                    Cybertruck
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <div class="delivery-row">
+
+              <div class="delivery-field">
+
+                <label for="deliveryDate">
+                  Preferred Delivery Date
+                </label>
+
+                <input
+                  id="deliveryDate"
+                  name="deliveryDate"
+                  type="date"
+                  required
+                >
+
+              </div>
+
+              <div class="delivery-field">
+
+                <label for="deliveryTime">
+                  Preferred Time
+                </label>
+
+                <select
+                  id="deliveryTime"
+                  name="deliveryTime"
+                  required
+                >
+
+                  <option value="">
+                    Select time
+                  </option>
+
+                  <option value="Morning">
+                    Morning
+                  </option>
+
+                  <option value="Afternoon">
+                    Afternoon
+                  </option>
+
+                  <option value="Evening">
+                    Evening
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <div class="delivery-row">
+
+              <div class="delivery-field">
+
+                <label for="deliveryLocation">
+                  Delivery Location
+                </label>
+
+                <select
+                  id="deliveryLocation"
+                  name="deliveryLocation"
+                  required
+                >
+
+                  <option value="">
+                    Select location
+                  </option>
+
+                  <option value="Home Delivery">
+                    Home Delivery
+                  </option>
+
+                  <option value="Tesla Store">
+                    Tesla Store
+                  </option>
+
+                  <option value="Tesla Delivery Center">
+                    Tesla Delivery Center
+                  </option>
+
+                </select>
+
+              </div>
+
+              <div class="delivery-field">
+
+                <label for="deliveryPhone">
+                  Phone
+                </label>
+
+                <input
+                  id="deliveryPhone"
+                  name="deliveryPhone"
+                  type="tel"
+                  placeholder="+1 000 000 0000"
+                >
+
+              </div>
+
+            </div>
+
+            <div class="delivery-field">
+
+              <label for="deliveryAddress">
+                Delivery Address
+              </label>
+
+              <textarea
+                id="deliveryAddress"
+                name="deliveryAddress"
+                placeholder="Enter your complete delivery address."
+                required
+              ></textarea>
+
+            </div>
+
+            <label class="delivery-check">
+
+              <input
+                type="checkbox"
+                id="deliveryConfirmation"
+                required
+              >
+
+              <span>
+                I confirm that the delivery information I provided
+                is accurate.
+              </span>
+
+            </label>
+
+            <div
+              class="delivery-error"
+              id="deliveryError"
+            >
+              Please complete all required fields.
+            </div>
+
+            <button
+              class="delivery-submit"
+              type="submit"
+            >
+              Confirm Delivery Information
+            </button>
+
+          </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div
+            class="delivery-success"
+            id="deliverySuccess"
+          ></div>
+
+        </section>
+
+        <!-- DELIVERY PROCESS -->
+        <section class="delivery-card">
+
+          <h2>
+            Your Delivery
+          </h2>
+
+          <div class="delivery-steps">
+
+            <div class="delivery-step">
+
+              <div class="delivery-step-number">
+                01
+              </div>
+
+              <h3>
+                Information Received
+              </h3>
+
+              <p>
+                Your delivery information has been received.
+              </p>
+
+            </div>
+
+            <div class="delivery-step">
+
+              <div class="delivery-step-number">
+                02
+              </div>
+
+              <h3>
+                Delivery Preparation
+              </h3>
+
+              <p>
+                Your vehicle is being prepared for delivery.
+              </p>
+
+            </div>
+
+            <div class="delivery-step">
+
+              <div class="delivery-step-number">
+                03
+              </div>
+
+              <h3>
+                On the Way
+              </h3>
+
+              <p>
+                Your Tesla will be on its way to your doorstep.
+              </p>
+
+            </div>
+
+            <div class="delivery-step">
+
+              <div class="delivery-step-number">
+                04
+              </div>
+
+              <h3>
+                Final Confirmation
+              </h3>
+
+              <p>
+                Our delivery agent will meet you to confirm
+                your delivery.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- DELIVERY MESSAGE -->
+        <div
+          class="delivery-notice"
+          id="deliveryConfirmationMessage"
+        >
+
+          <strong>
+            Your Tesla, Delivered to Your Doorstep
+          </strong>
+
+          <p>
+            After you provide your delivery information, your Tesla
+            will be on its way to your doorstep.
+          </p>
+
+          <p>
+            Our delivery agent will be with you shortly to confirm
+            your delivery and assist you with the final handover.
+          </p>
+
+          <div class="delivery-links">
+
+            <a href="order-tracking.html">
+              Track Order
+            </a>
+
+            <a
+              href="purchase-tesla.html"
+              class="secondary"
+            >
+              Vehicle Ownership
+            </a>
+
+            <a
+              href="support-request.html"
+              class="secondary"
+            >
+              Contact Support
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>
+          Company
+        </h3>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="careers.html">
+          Careers
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Support
+        </h3>
+
+        <a href="support.html">
+          Support Center
+        </a>
+
+        <a href="support-request.html">
+          Contact Support
+        </a>
+
+        <a href="service.html">
+          Vehicle Service
+        </a>
+
+        <a href="warranty.html">
+          Warranty
+        </a>
+
+        <a href="insurance.html">
+          Insurance
+        </a>
+
+        <a href="stores.html">
+          Stores
+        </a>
+
+        <a href="store-vehicles.html">
+          Store Vehicles
+        </a>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Legal
+        </h3>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms-of-use.html">
+          Terms of Use
+        </a>
+
+        <a href="cookie-settings.html">
+          Cookie Settings
+        </a>
+
+        <a href="vehicle-agreement.html">
+          Vehicle Agreement
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        ©️ 2026 TESLA, Inc. All rights reserved.
+      </span>
+
+      <span>
+        United States
+      </span>
+
+    </div>
+
+  </footer>
+
+  <!-- COOKIE OVERLAY -->
+  <div
+    class="cookie-overlay"
+    id="cookieOverlay"
+  >
+
+    <div class="cookie-box">
+
+      <h2>
+        Cookies
+      </h2>
+
+      <p>
+        We use cookies and similar technologies to improve your
+        experience, remember preferences, and support website
+        functionality.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          id="acceptCookies"
+          type="button"
+        >
+          Accept
+        </button>
+
+        <a href="cookie-settings.html">
+          Cookie Settings
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const form =
+        document.getElementById("deliveryForm");
+
+      const error =
+        document.getElementById("deliveryError");
+
+      const success =
+        document.getElementById("deliverySuccess");
+
+      const dateInput =
+        document.getElementById("deliveryDate");
+
+      const today =
+        new Date().toISOString().split("T")[0];
+
+      dateInput.min = today;
+
+      /*
+       * Load existing order information.
+       */
+      const savedOrder =
+        sessionStorage.getItem("teslaOrderData");
+
+      if (savedOrder) {
+
+        try {
+
+          const order =
+            JSON.parse(savedOrder);
+
+          if (order.reference) {
+
+            document.getElementById(
+              "deliveryReference"
+            ).value = order.reference;
+
+          }
+
+          if (order.model) {
+
+            document.getElementById(
+              "deliveryModel"
+            ).value = order.model;
+
+          }
+
+        } catch (e) {
+
+          console.warn(
+            "Unable to load saved order information."
+          );
+
+        }
+
+      }
+
+      form.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const name =
+          document.getElementById("deliveryName")
+            .value.trim();
+
+        const email =
+          document.getElementById("deliveryEmail")
+            .value.trim();
+
+        const reference =
+          document.getElementById("deliveryReference")
+            .value.trim();
+
+        const model =
+          document.getElementById("deliveryModel")
+            .value;
+
+        const date =
+          document.getElementById("deliveryDate")
+            .value;
+
+        const time =
+          document.getElementById("deliveryTime")
+            .value;
+
+        const location =
+          document.getElementById("deliveryLocation")
+            .value;
+
+        const phone =
+          document.getElementById("deliveryPhone")
+            .value.trim();
+
+        const address =
+          document.getElementById("deliveryAddress")
+            .value.trim();
+
+        const confirmed =
+          document.getElementById(
+            "deliveryConfirmation"
+          ).checked;
+
+        if (
+          !name ||
+          !email ||
+          !reference ||
+          !model ||
+          !date ||
+          !time ||
+          !location ||
+          !address ||
+          !confirmed
+        ) {
+
+          error.textContent =
+            "Please complete all required fields and confirm your information.";
+
+          error.style.display = "block";
+          success.style.display = "none";
+
+          return;
+        }
+
+        const emailPattern =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+          error.textContent =
+            "Please enter a valid email address.";
+
+          error.style.display = "block";
+          success.style.display = "none";
+
+          return;
+        }
+
+        /*
+         * Create delivery reference.
+         */
+        const deliveryReference =
+          "TESLA-DELIVERY-" +
+          Date.now().toString().slice(-8);
+
+        const deliveryData = {
+          deliveryReference,
+          name,
+          email,
+          reference,
+          model,
+          date,
+          time,
+          location,
+          phone,
+          address,
+          status: "Delivery Confirmed",
+          message:
+            "Your Tesla will be at your doorstep and our delivery agent will be with you shortly to confirm your delivery.",
+          createdAt:
+            new Date().toISOString()
+        };
+
+        sessionStorage.setItem(
+          "teslaDeliveryRequest",
+          JSON.stringify(deliveryData)
+        );
+
+        /*
+         * Show delivery confirmation.
+         */
+        error.style.display = "none";
+
+        success.innerHTML = `
+          <strong>
+            Your Tesla will be at your doorstep.
+          </strong>
+
+          <br><br>
+
+          Your delivery information has been
+          successfully received.
+
+          <br><br>
+
+          Our delivery agent will be with you shortly
+          to confirm your delivery and assist you with
+          the final handover.
+
+          <br><br>
+
+          <strong>
+            Delivery Reference:
+          </strong>
+
+          ${deliveryReference}
+
+          <br><br>
+
+          <strong>
+            Delivery Date:
+          </strong>
+
+          ${date}
+
+          <br>
+
+          <strong>
+            Preferred Time:
+          </strong>
+
+          ${time}
+        `;
+
+        success.style.display = "block";
+
+        /*
+         * Disable the form after successful submission.
+         */
+        Array.from(form.elements).forEach((element) => {
+          element.disabled = true;
+        });
+
+        success.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>

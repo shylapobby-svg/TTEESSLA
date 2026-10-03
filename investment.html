@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tesla Investment | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="investment.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SITE HEADER
+    ========================== -->
+    <header class="site-header" id="siteHeader">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="sideMenu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="Tesla home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+                aria-pressed="false"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <div class="account-menu-wrapper">
+
+                <button
+                    class="account-button"
+                    id="accountButton"
+                    type="button"
+                    aria-label="Open account menu"
+                    aria-expanded="false"
+                    aria-controls="accountMenu"
+                >
+                    ◯
+                </button>
+
+                <div class="account-menu" id="accountMenu">
+
+                    <div class="account-menu-content">
+
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+
+                        <a href="profile.html">
+                            Profile
+                        </a>
+
+                        <a href="account.html">
+                            Account
+                        </a>
+
+                        <button
+                            type="button"
+                            id="investmentSignOut"
+                        >
+                            Sign Out
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         SIDE NAVIGATION
+    ========================== -->
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <span class="side-menu-title">
+                MENU
+            </span>
+
+            <button
+                class="menu-close"
+                id="menuClose"
+                type="button"
+                aria-label="Close navigation menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="side-navigation" aria-label="Main navigation">
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-group-button"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-group-button"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+
+                    <a href="batteries.html#car-battery">
+                        Car Battery
+                    </a>
+
+                    <a href="batteries.html#powerwall-2">
+                        Powerwall 2
+                    </a>
+
+                    <a href="batteries.html#powerwall-3">
+                        Powerwall 3
+                    </a>
+
+                    <a href="batteries.html#powerwall-3-expansion">
+                        Powerwall 3 Expansion
+                    </a>
+
+                    <a href="batteries.html#megapack-2">
+                        Megapack 2
+                    </a>
+
+                    <a href="batteries.html#megapack-3">
+                        Megapack 3
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a href="test-drive.html">
+                Request Test Drive
+            </a>
+
+            <a href="solar.html">
+                Solar Panels
+            </a>
+
+            <a href="charging.html">
+                How to Charge
+            </a>
+
+            <a href="future-cars.html">
+                Future Cars
+            </a>
+
+            <a href="awards.html">
+                Awards
+            </a>
+
+            <a href="investment.html">
+                Tesla Investment
+            </a>
+
+            <a href="account.html">
+                Account
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="investment-page">
+
+        <!-- HERO -->
+        <section class="investment-hero">
+
+            <div class="investment-hero-content">
+
+                <p class="investment-eyebrow">
+                    INVESTOR INFORMATION
+                </p>
+
+                <h1>
+                    Tesla Investment
+                </h1>
+
+                <p>
+                    Explore Tesla's investment information and submit an
+                    interest request through this frontend demonstration.
+                </p>
+
+                <div class="investment-hero-actions">
+
+                    <a
+                        href="#investment-form"
+                        class="investment-primary-button"
+                    >
+                        Request Information
+                    </a>
+
+                    <a
+                        href="#stock-information"
+                        class="investment-secondary-button"
+                    >
+                        View TSLA Information
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             IMPORTANT NOTICE
+        ========================== -->
+        <section class="investment-notice-section">
+
+            <div class="investment-container">
+
+                <div class="investment-notice">
+
+                    <strong>
+                        Investment information
+                    </strong>
+
+                    <p>
+                        This page is an educational and frontend
+                        demonstration. It is not an offer to sell securities,
+                        an offer to buy securities, or investment advice.
+                        Always verify current information through official
+                        company and regulatory sources before making any
+                        investment decision.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INVESTMENT OVERVIEW
+        ========================== -->
+        <section class="investment-overview">
+
+            <div class="investment-container">
+
+                <div class="investment-section-heading">
+
+                    <p class="investment-eyebrow">
+                        OVERVIEW
+                    </p>
+
+                    <h2>
+                        Explore Investment Information
+                    </h2>
+
+                    <p>
+                        Review general areas of interest and request
+                        information based on the type of investment topic
+                        you want to explore.
+                    </p>
+
+                </div>
+
+
+                <div class="investment-grid">
+
+                    <article class="investment-card">
+
+                        <div class="investment-card-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Tesla Stock
+                        </h3>
+
+                        <p>
+                            Learn about TSLA as a publicly traded company
+                            and review information from appropriate
+                            official sources.
+                        </p>
+
+                        <a href="#stock-information">
+                            Explore TSLA →
+                        </a>
+
+                    </article>
+
+
+                    <article class="investment-card">
+
+                        <div class="investment-card-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Investor Information
+                        </h3>
+
+                        <p>
+                            Use this section to organize investor-related
+                            information requests and account preferences.
+                        </p>
+
+                        <a href="#investment-form">
+                            Request Information →
+                        </a>
+
+                    </article>
+
+
+                    <article class="investment-card">
+
+                        <div class="investment-card-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Investment Interests
+                        </h3>
+
+                        <p>
+                            Tell us which investment topics you would like
+                            to receive information about.
+                        </p>
+
+                        <a href="#investment-form">
+                            Submit Interests →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TSLA INFORMATION
+        ========================== -->
+        <section
+            class="stock-information-section"
+            id="stock-information"
+        >
+
+            <div class="investment-container">
+
+                <div class="investment-section-heading">
+
+                    <p class="investment-eyebrow">
+                        PUBLIC COMPANY
+                    </p>
+
+                    <h2>
+                        TSLA Information
+                    </h2>
+
+                    <p>
+                        Tesla, Inc. is publicly traded under the ticker
+                        symbol TSLA. Current market information should
+                        always be verified using a live financial source.
+                    </p>
+
+                </div>
+
+
+                <div class="stock-information-grid">
+
+                    <div class="stock-information-card">
+
+                        <span>
+                            Company
+                        </span>
+
+                        <strong>
+                            Tesla, Inc.
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stock-information-card">
+
+                        <span>
+                            Ticker
+                        </span>
+
+                        <strong>
+                            TSLA
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stock-information-card">
+
+                        <span>
+                            Security Type
+                        </span>
+
+                        <strong>
+                            Common Stock
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stock-information-card">
+
+                        <span>
+                            Market Data
+                        </span>
+
+                        <strong>
+                            Live information required
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stock-data-placeholder">
+
+                    <div class="stock-placeholder-icon">
+                        $
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Live Market Data Area
+                        </h3>
+
+                        <p>
+                            A live stock-price, chart and market-data
+                            integration can be connected here later.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INVESTMENT FORM
+        ========================== -->
+        <section
+            class="investment-form-section"
+            id="investment-form"
+        >
+
+            <div class="investment-container">
+
+                <div class="investment-form-layout">
+
+                    <div class="investment-form-intro">
+
+                        <p class="investment-eyebrow">
+                            REQUEST INFORMATION
+                        </p>
+
+                        <h2>
+                            Tell Us What You Want to Explore
+                        </h2>
+
+                        <p>
+                            Complete the form below to record your
+                            investment interests in this frontend
+                            demonstration.
+                        </p>
+
+                        <div class="investment-form-bullets">
+
+                            <div>
+                                <span>✓</span>
+                                <p>Investment information requests</p>
+                            </div>
+
+                            <div>
+                                <span>✓</span>
+                                <p>TSLA information interests</p>
+                            </div>
+
+                            <div>
+                                <span>✓</span>
+                                <p>Preferred contact method</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="investment-form-card">
+
+                        <form
+                            id="investmentForm"
+                            novalidate
+                        >
+
+                            <div class="investment-form-grid">
+
+                                <div class="investment-field">
+
+                                    <label for="investmentFirstName">
+                                        First Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="investmentFirstName"
+                                        name="firstName"
+                                        autocomplete="given-name"
+                                        required
+                                    >
+
+                                    <small
+                                        class="investment-error"
+                                        id="investmentFirstNameError"
+                                    ></small>
+
+                                </div>
+
+
+                                <div class="investment-field">
+
+                                    <label for="investmentLastName">
+                                        Last Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="investmentLastName"
+                                        name="lastName"
+                                        autocomplete="family-name"
+                                        required
+                                    >
+
+                                    <small
+                                        class="investment-error"
+                                        id="investmentLastNameError"
+                                    ></small>
+
+                                </div>
+
+
+                                <div class="investment-field full-width">
+
+                                    <label for="investmentEmail">
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="investmentEmail"
+                                        name="email"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                    <small
+                                        class="investment-error"
+                                        id="investmentEmailError"
+                                    ></small>
+
+                                </div>
+
+
+                                <div class="investment-field full-width">
+
+                                    <label for="investmentInterest">
+                                        Investment Interest
+                                    </label>
+
+                                    <select
+                                        id="investmentInterest"
+                                        name="interest"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select an interest
+                                        </option>
+
+                                        <option value="tsla-stock">
+                                            TSLA Stock Information
+                                        </option>
+
+                                        <option value="investor-information">
+                                            Investor Information
+                                        </option>
+
+                                        <option value="company-information">
+                                            Company Information
+                                        </option>
+
+                                        <option value="general">
+                                            General Investment Information
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="investment-error"
+                                        id="investmentInterestError"
+                                    ></small>
+
+                                </div>
+
+
+                                <div class="investment-field full-width">
+
+                                    <label for="investmentContact">
+                                        Preferred Contact Method
+                                    </label>
+
+                                    <select
+                                        id="investmentContact"
+                                        name="contactMethod"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select a contact method
+                                        </option>
+
+                                        <option value="email">
+                                            Email
+                                        </option>
+
+                                        <option value="phone">
+                                            Phone
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="investment-error"
+                                        id="investmentContactError"
+                                    ></small>
+
+                                </div>
+
+
+                                <div class="investment-field full-width">
+
+                                    <label for="investmentMessage">
+                                        Message
+                                    </label>
+
+                                    <textarea
+                                        id="investmentMessage"
+                                        name="message"
+                                        rows="5"
+                                        placeholder="Tell us what information you are looking for."
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="investment-checkbox">
+
+                                <input
+                                    type="checkbox"
+                                    id="investmentTerms"
+                                    required
+                                >
+
+                                <span>
+                                    I understand that this form is a
+                                    frontend demonstration and does not
+                                    create an investment account or
+                                    securities transaction.
+                                </span>
+
+                            </label>
+
+                            <small
+                                class="investment-error"
+                                id="investmentTermsError"
+                            ></small>
+
+
+                            <button
+                                type="submit"
+                                class="investment-submit-button"
+                                id="investmentSubmitButton"
+                            >
+                                Submit Request
+                            </button>
+
+
+                            <div
+                                class="investment-form-status"
+                                id="investmentFormStatus"
+                                role="status"
+                                aria-live="polite"
+                            ></div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INFORMATION SOURCES
+        ========================== -->
+        <section class="investment-resources">
+
+            <div class="investment-container">
+
+                <div class="investment-section-heading">
+
+                    <p class="investment-eyebrow">
+                        RESOURCES
+                    </p>
+
+                    <h2>
+                        Verify Before You Invest
+                    </h2>
+
+                </div>
+
+
+                <div class="resource-grid">
+
+                    <div class="resource-card">
+
+                        <h3>
+                            Company Information
+                        </h3>
+
+                        <p>
+                            Official company information can be connected
+                            here when the production version is built.
+                        </p>
+
+                        <a href="#">
+                            Official Resources →
+                        </a>
+
+                    </div>
+
+
+                    <div class="resource-card">
+
+                        <h3>
+                            Market Information
+                        </h3>
+
+                        <p>
+                            Use a trusted live financial-data provider
+                            for current price and market information.
+                        </p>
+
+                        <a href="#">
+                            Market Resources →
+                        </a>
+
+                    </div>
+
+
+                    <div class="resource-card">
+
+                        <h3>
+                            Regulatory Information
+                        </h3>
+
+                        <p>
+                            Regulatory filings and official disclosures
+                            should be verified through appropriate
+                            government or regulatory sources.
+                        </p>
+
+                        <a href="#">
+                            Regulatory Resources →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DEMO NOTICE
+        ========================== -->
+        <section class="investment-demo-section">
+
+            <div class="investment-container">
+
+                <div class="investment-demo-notice">
+
+                    <strong>
+                        Frontend demonstration
+                    </strong>
+
+                    <p>
+                        This investment page currently stores submitted
+                        information in the browser only. It does not
+                        process payments, open brokerage accounts,
+                        execute securities transactions, or provide
+                        investment advice.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <h3>Company</h3>
+
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Support</h3>
+
+                <a href="charging.html">
+                    How to Charge
+                </a>
+
+                <a href="tel:+18005550199">
+                    Call Support
+                </a>
+
+                <a href="mailto:support@example.com">
+                    Email Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Legal</h3>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+                <a href="#">
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                ©️ 2026 TESLA, Inc. All rights reserved.
+            </span>
+
+            <span>
+                United States
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         COOKIE NOTICE
+    ========================== -->
+    <div
+        class="cookie-overlay"
+        id="cookieOverlay"
+        aria-hidden="true"
+    >
+
+        <div class="cookie-content">
+
+            <h2>
+                Cookies & Privacy
+            </h2>
+
+            <p>
+                We use cookies and similar technologies to improve your
+                experience on this website.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button
+                    type="button"
+                    id="cookieSettings"
+                >
+                    Cookie Settings
+                </button>
+
+                <button
+                    type="button"
+                    id="acceptCookies"
+                >
+                    Accept
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         UTILITIES
+    ========================== -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+    <script src="script.js"></script>
+    <script src="investment.js"></script>
+
+</body>
+</html>

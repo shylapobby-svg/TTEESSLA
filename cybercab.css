@@ -1,0 +1,500 @@
+/* =========================================================
+   CYBERCAB DETAIL PAGE
+   ========================================================= */
+
+.future-detail-page {
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------
+   Hero
+   --------------------------------------------------------- */
+
+.future-detail-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.future-detail-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.future-detail-hero-image .image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d4d4d4;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.future-detail-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 92%);
+  padding: 130px 20px 90px;
+  text-align: center;
+}
+
+.future-detail-hero-content h1 {
+  margin: 0 0 20px;
+  font-size: clamp(48px, 8vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.future-detail-hero-content p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: clamp(16px, 2vw, 21px);
+  line-height: 1.65;
+}
+
+.future-detail-actions,
+.future-detail-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.future-detail-actions a,
+.future-detail-cta-actions a {
+  min-width: 160px;
+}
+
+/* ---------------------------------------------------------
+   General Sections
+   --------------------------------------------------------- */
+
+.future-detail-section {
+  padding: 100px 24px;
+}
+
+.future-detail-container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.future-detail-heading {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.future-detail-heading h2 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.future-detail-heading p {
+  margin: 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ---------------------------------------------------------
+   Specifications
+   --------------------------------------------------------- */
+
+.future-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.future-spec-card {
+  padding: 32px 25px;
+  min-height: 170px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.future-spec-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.future-spec-card strong {
+  display: block;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* ---------------------------------------------------------
+   Feature Cards
+   --------------------------------------------------------- */
+
+.future-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.future-feature-card {
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.future-feature-image {
+  min-height: 300px;
+}
+
+.future-feature-image .image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dcdcdc;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.future-feature-content {
+  padding: 30px;
+}
+
+.future-feature-content h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.future-feature-content p {
+  margin: 0;
+  color: #666;
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   Information Section
+   --------------------------------------------------------- */
+
+.future-info-section {
+  background: #f3f3f3;
+}
+
+.future-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.future-info-image {
+  min-height: 480px;
+}
+
+.future-info-image .image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d5d5d5;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.future-info-content h2 {
+  margin: 0 0 20px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.future-info-content p {
+  margin: 0 0 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.future-info-list {
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.future-info-list li {
+  position: relative;
+  padding: 15px 0 15px 25px;
+  border-bottom: 1px solid #d0d0d0;
+  line-height: 1.6;
+}
+
+.future-info-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   CTA
+   --------------------------------------------------------- */
+
+.future-detail-cta {
+  padding: 100px 24px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.future-detail-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.future-detail-cta h2 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 5vw, 58px);
+  letter-spacing: -0.04em;
+}
+
+.future-detail-cta p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   Development Notice
+   --------------------------------------------------------- */
+
+.future-detail-notice {
+  width: min(1100px, calc(100% - 48px));
+  margin: 70px auto;
+  padding: 24px 28px;
+  border: 1px solid #d2d2d2;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.future-detail-notice strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.future-detail-notice p {
+  margin: 0;
+  color: #666;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------------
+   Cybercab-Specific Styling
+   --------------------------------------------------------- */
+
+.future-detail-hero-image .image-placeholder {
+  background: linear-gradient(
+    135deg,
+    #dcdcdc 0%,
+    #f1f1f1 50%,
+    #c9c9c9 100%
+  );
+}
+
+.future-detail-hero-content h1 {
+  font-weight: 700;
+}
+
+.future-spec-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.future-spec-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.future-feature-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.future-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* ---------------------------------------------------------
+   Dark Mode
+   --------------------------------------------------------- */
+
+body.dark-mode .future-detail-hero-image .image-placeholder {
+  background: linear-gradient(
+    135deg,
+    #202020 0%,
+    #303030 50%,
+    #191919 100%
+  );
+  color: #aaa;
+}
+
+body.dark-mode .future-detail-heading p,
+body.dark-mode .future-feature-content p,
+body.dark-mode .future-info-content p {
+  color: #aaa;
+}
+
+body.dark-mode .future-spec-card,
+body.dark-mode .future-feature-card {
+  background: #202020;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .future-spec-card span {
+  color: #999;
+}
+
+body.dark-mode .future-spec-card:hover,
+body.dark-mode .future-feature-card:hover {
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .future-feature-image .image-placeholder,
+body.dark-mode .future-info-image .image-placeholder {
+  background: #292929;
+  color: #aaa;
+}
+
+body.dark-mode .future-info-section {
+  background: #161616;
+}
+
+body.dark-mode .future-info-list li {
+  border-color: #383838;
+}
+
+body.dark-mode .future-detail-notice {
+  background: #202020;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .future-detail-notice p {
+  color: #aaa;
+}
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .future-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .future-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .future-info-image,
+  .future-info-image .image-placeholder {
+    min-height: 380px;
+  }
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .future-detail-hero {
+    min-height: 65vh;
+  }
+
+  .future-detail-hero-image .image-placeholder {
+    min-height: 65vh;
+  }
+
+  .future-detail-hero-content {
+    padding: 110px 15px 70px;
+  }
+
+  .future-detail-hero-content h1 {
+    font-size: 52px;
+  }
+
+  .future-detail-section {
+    padding: 70px 18px;
+  }
+
+  .future-spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-spec-card {
+    min-height: auto;
+  }
+
+  .future-feature-image,
+  .future-feature-image .image-placeholder {
+    min-height: 240px;
+  }
+
+  .future-feature-content {
+    padding: 24px;
+  }
+
+  .future-info-image,
+  .future-info-image .image-placeholder {
+    min-height: 280px;
+  }
+
+  .future-detail-cta {
+    padding: 70px 20px;
+  }
+
+  .future-detail-cta-actions {
+    flex-direction: column;
+  }
+
+  .future-detail-cta-actions a {
+    width: 100%;
+  }
+
+  .future-detail-notice {
+    width: calc(100% - 36px);
+    margin: 50px auto;
+    padding: 20px;
+  }
+}

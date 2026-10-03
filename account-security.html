@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Account Security | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .security-page {
+      min-height: 100vh;
+      padding: 120px 6% 80px;
+      background: #f7f7f7;
+    }
+
+    body.dark-mode .security-page {
+      background: #111;
+    }
+
+    .security-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .security-header {
+      margin-bottom: 35px;
+    }
+
+    .security-header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(35px, 5vw, 58px);
+      font-weight: 600;
+      letter-spacing: -2px;
+    }
+
+    .security-header p {
+      margin: 0;
+      color: #666;
+    }
+
+    body.dark-mode .security-header p {
+      color: #aaa;
+    }
+
+    .security-card {
+      background: #fff;
+      border: 1px solid #e3e3e3;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    body.dark-mode .security-card {
+      background: #1c1c1c;
+      border-color: #333;
+    }
+
+    .security-card h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .security-card > p {
+      color: #777;
+      line-height: 1.6;
+      margin: 0 0 24px;
+      font-size: 14px;
+    }
+
+    .security-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    body.dark-mode .security-row {
+      border-color: #333;
+    }
+
+    .security-row:first-of-type {
+      border-top: 0;
+    }
+
+    .security-row h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .security-row p {
+      margin: 0;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .security-btn {
+      min-height: 42px;
+      padding: 0 17px;
+      border-radius: 9px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    body.dark-mode .security-btn {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    .security-btn.secondary {
+      background: #fff;
+      color: #111;
+    }
+
+    body.dark-mode .security-btn.secondary {
+      background: #1c1c1c;
+      color: #fff;
+      border-color: #ddd;
+    }
+
+    .security-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #e8f5e9;
+      color: #217a2b;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    body.dark-mode .security-status {
+      background: #17351b;
+      color: #91e99a;
+    }
+
+    .security-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #ededed;
+      color: #444;
+      font-size: 14px;
+    }
+
+    body.dark-mode .security-message {
+      background: #292929;
+      color: #ddd;
+    }
+
+    .security-message.show {
+      display: block;
+    }
+
+    .security-warning {
+      background: #fff7df;
+      border: 1px solid #ead99a;
+      color: #66551a;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    body.dark-mode .security-warning {
+      background: #302a17;
+      border-color: #554a28;
+      color: #e5d58c;
+    }
+
+    .security-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .security-links a {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid currentColor;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .security-page {
+        padding: 105px 20px 60px;
+      }
+
+      .security-card {
+        padding: 22px;
+      }
+
+      .security-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .security-btn {
+        width: 100%;
+      }
+
+      .security-status {
+        margin: 0 0 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button class="account-button" id="accountButton" aria-label="Account">
+        ◯
+      </button>
+
+      <div class="account-menu" id="accountMenu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="my-orders.html">My Orders</a>
+        <a href="payment-history.html">Payment History</a>
+        <a href="service-history.html">Service History</a>
+        <a href="notifications.html">Notifications</a>
+        <a href="account-security.html">Account Security</a>
+        <a href="support.html">Support</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+      ×
+    </button>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-title">
+          Car Models
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+      <a href="batteries.html">Batteries</a>
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+
+      <hr>
+
+      <a href="dashboard.html">Dashboard</a>
+      <a href="purchase-tesla.html">Purchased a Tesla</a>
+      <a href="lease-tesla.html">Lease a Tesla</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="service.html">Request Service</a>
+      <a href="service-history.html">Service History</a>
+      <a href="payment-history.html">Payment History</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="support.html">Support</a>
+      <a href="profile.html">Account</a>
+
+    </nav>
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="security-page">
+
+    <div class="security-container">
+
+      <section class="security-header">
+
+        <h1>Account Security</h1>
+
+        <p>
+          Manage your account protection and security preferences.
+        </p>
+
+      </section>
+
+
+      <!-- PASSWORD -->
+      <section class="security-card">
+
+        <h2>Password</h2>
+
+        <p>
+          Keep your password private and use a strong, unique password for
+          your account.
+        </p>
+
+        <div class="security-row">
+
+          <div>
+            <h3>Password</h3>
+            <p>Last updated information will appear here.</p>
+          </div>
+
+          <button
+            class="security-btn"
+            id="changePasswordBtn"
+          >
+            Change Password
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- TWO FACTOR -->
+      <section class="security-card">
+
+        <h2>Two-Factor Authentication</h2>
+
+        <p>
+          Add another verification step when signing in to help protect
+          your account.
+        </p>
+
+        <div class="security-row">
+
+          <div>
+
+            <h3>Two-factor authentication</h3>
+
+            <p id="twoFactorText">
+              Additional verification is currently not enabled.
+            </p>
+
+          </div>
+
+          <div>
+
+            <span
+              class="security-status"
+              id="twoFactorStatus"
+            >
+              Not enabled
+            </span>
+
+            <button
+              class="security-btn"
+              id="twoFactorBtn"
+            >
+              Enable
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- LOGIN ACTIVITY -->
+      <section class="security-card">
+
+        <h2>Login Activity</h2>
+
+        <p>
+          Review the current browser session associated with this website.
+        </p>
+
+        <div class="security-row">
+
+          <div>
+
+            <h3>This device</h3>
+
+            <p>
+              Current browser session
+            </p>
+
+          </div>
+
+          <span class="security-status">
+            Active
+          </span>
+
+        </div>
+
+        <div class="security-row">
+
+          <div>
+
+            <h3>Other sessions</h3>
+
+            <p>
+              Additional signed-in sessions can be managed when connected
+              to a secure account backend.
+            </p>
+
+          </div>
+
+          <button
+            class="security-btn secondary"
+            id="signOutOtherBtn"
+          >
+            Sign Out Other Sessions
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACCOUNT PROTECTION -->
+      <section class="security-card">
+
+        <h2>Account Protection</h2>
+
+        <div class="security-row">
+
+          <div>
+
+            <h3>Security notifications</h3>
+
+            <p>
+              Receive notifications about important account activity.
+            </p>
+
+          </div>
+
+          <button
+            class="security-btn"
+            id="securityNotificationsBtn"
+          >
+            Enabled
+          </button>
+
+        </div>
+
+        <div class="security-row">
+
+          <div>
+
+            <h3>Account recovery</h3>
+
+            <p>
+              Keep your email and phone information current for account
+              recovery.
+            </p>
+
+          </div>
+
+          <a
+            href="profile.html"
+            class="security-btn"
+            style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;"
+          >
+            Review Profile
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <div class="security-warning">
+        Security controls shown on this page are interface features for the
+        current website build. Real password changes, two-factor
+        authentication, session management and account recovery should be
+        handled by a secure authentication backend.
+      </div>
+
+
+      <div
+        class="security-message"
+        id="securityMessage"
+      ></div>
+
+
+      <div class="security-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="support.html">Contact Support</a>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support Center</a>
+        <a href="support-request.html">Contact Support</a>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+      </div>
+
+      <div>
+        <h3>Vehicles</h3>
+        <a href="car-models.html">Car Models</a>
+        <a href="test-drive.html">Test Drive</a>
+        <a href="stores.html">Stores</a>
+        <a href="store-vehicles.html">Store Vehicles</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+
+  <!-- COOKIE -->
+  <div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies to improve your website experience and remember
+        selected preferences.
+      </p>
+
+      <div class="cookie-actions">
+        <button id="acceptCookies">Accept</button>
+        <a href="cookie-settings.html">Cookie Settings</a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- UTILITIES -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
+
+  <button class="refresh-button" id="refreshButton" aria-label="Refresh page">
+    ↻
+  </button>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const twoFactorBtn =
+        document.getElementById("twoFactorBtn");
+
+      const twoFactorStatus =
+        document.getElementById("twoFactorStatus");
+
+      const twoFactorText =
+        document.getElementById("twoFactorText");
+
+      const changePasswordBtn =
+        document.getElementById("changePasswordBtn");
+
+      const signOutOtherBtn =
+        document.getElementById("signOutOtherBtn");
+
+      const securityNotificationsBtn =
+        document.getElementById(
+          "securityNotificationsBtn"
+        );
+
+      const securityMessage =
+        document.getElementById(
+          "securityMessage"
+        );
+
+
+      function showMessage(message) {
+
+        securityMessage.textContent = message;
+
+        securityMessage.classList.add("show");
+
+        setTimeout(function () {
+          securityMessage.classList.remove("show");
+        }, 4000);
+
+      }
+
+
+      let twoFactorEnabled =
+        localStorage.getItem(
+          "teslaTwoFactorEnabled"
+        ) === "true";
+
+
+      function updateTwoFactorUI() {
+
+        if (twoFactorEnabled) {
+
+          twoFactorStatus.textContent =
+            "Enabled";
+
+          twoFactorText.textContent =
+            "Additional verification is enabled for this website.";
+
+          twoFactorBtn.textContent =
+            "Disable";
+
+        } else {
+
+          twoFactorStatus.textContent =
+            "Not enabled";
+
+          twoFactorText.textContent =
+            "Additional verification is currently not enabled.";
+
+          twoFactorBtn.textContent =
+            "Enable";
+
+        }
+
+      }
+
+
+      twoFactorBtn.addEventListener(
+        "click",
+        function () {
+
+          twoFactorEnabled =
+            !twoFactorEnabled;
+
+          localStorage.setItem(
+            "teslaTwoFactorEnabled",
+            twoFactorEnabled
+          );
+
+          updateTwoFactorUI();
+
+          showMessage(
+            twoFactorEnabled
+              ? "Two-factor authentication has been enabled for this website."
+              : "Two-factor authentication has been disabled for this website."
+          );
+
+        }
+      );
+
+
+      changePasswordBtn.addEventListener(
+        "click",
+        function () {
+
+          showMessage(
+            "Password changes will be available after secure account authentication is connected."
+          );
+
+        }
+      );
+
+
+      signOutOtherBtn.addEventListener(
+        "click",
+        function () {
+
+          showMessage(
+            "Other-session management will be available after secure authentication is connected."
+          );
+
+        }
+      );
+
+
+      let notificationsEnabled =
+        localStorage.getItem(
+          "teslaSecurityNotifications"
+        ) !== "false";
+
+
+      function updateNotificationButton() {
+
+        securityNotificationsBtn.textContent =
+          notificationsEnabled
+            ? "Enabled"
+            : "Disabled";
+
+      }
+
+
+      securityNotificationsBtn.addEventListener(
+        "click",
+        function () {
+
+          notificationsEnabled =
+            !notificationsEnabled;
+
+          localStorage.setItem(
+            "teslaSecurityNotifications",
+            notificationsEnabled
+          );
+
+          updateNotificationButton();
+
+          showMessage(
+            notificationsEnabled
+              ? "Security notifications enabled."
+              : "Security notifications disabled."
+          );
+
+        }
+      );
+
+
+      updateTwoFactorUI();
+      updateNotificationButton();
+
+    });
+  </script>
+
+</body>
+</html>

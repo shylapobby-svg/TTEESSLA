@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Vehicle warranty information and support."
+    >
+
+    <title>Warranty</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="warranty.css">
+</head>
+
+<body class="service-page warranty-page">
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="sideMenu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle theme"
+                aria-pressed="false"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button
+                class="account-button"
+                id="accountButton"
+                type="button"
+                aria-label="Open account menu"
+                aria-expanded="false"
+            >
+                <span class="account-icon">◯</span>
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="account.html">Account</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <span>Menu</span>
+
+            <button
+                class="menu-close"
+                id="menuClose"
+                type="button"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <nav class="main-navigation" aria-label="Main navigation">
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-group-button"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+
+            </div>
+
+            <a href="test-drive.html">
+                Request Test Drive
+            </a>
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-group-button"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="batteries.html#car-battery">
+                        Car Battery
+                    </a>
+                    <a href="batteries.html#powerwall-2">
+                        Powerwall 2
+                    </a>
+                    <a href="batteries.html#powerwall-3">
+                        Powerwall 3
+                    </a>
+                    <a href="batteries.html#powerwall-3-expansion">
+                        Powerwall 3 Expansion
+                    </a>
+                    <a href="batteries.html#megapack-2">
+                        Megapack 2
+                    </a>
+                    <a href="batteries.html#megapack-3">
+                        Megapack 3
+                    </a>
+                </div>
+
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+            <a href="investment.html">Investment</a>
+            <a href="ride-hailing.html">Ride-Hailing</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Hero -->
+        <section class="service-hero warranty-hero">
+
+            <div class="service-hero-content">
+
+                <p class="service-eyebrow">
+                    Vehicle Ownership
+                </p>
+
+                <h1>Warranty</h1>
+
+                <p>
+                    Understand warranty coverage, service support, and
+                    important information for your vehicle.
+                </p>
+
+                <div class="service-hero-actions">
+
+                    <a
+                        href="#warranty-coverage"
+                        class="service-button primary"
+                    >
+                        View Coverage
+                    </a>
+
+                    <a
+                        href="#warranty-support"
+                        class="service-button secondary"
+                    >
+                        Get Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Important Notice -->
+        <section class="service-notice-section">
+
+            <div class="service-notice">
+
+                <strong>Important Notice</strong>
+
+                <p>
+                    This page is a frontend demonstration. Actual warranty
+                    coverage, exclusions, duration, mileage limits, service
+                    procedures, and regional requirements should be confirmed
+                    using the final warranty documentation applicable to the
+                    vehicle and market.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Warranty Coverage -->
+        <section
+            class="service-section"
+            id="warranty-coverage"
+        >
+
+            <div class="service-section-heading">
+
+                <p class="service-eyebrow">
+                    Coverage
+                </p>
+
+                <h2>Warranty Coverage</h2>
+
+                <p>
+                    Warranty protection may vary depending on the vehicle,
+                    component, model year, market, and applicable warranty
+                    terms.
+                </p>
+
+            </div>
+
+            <div class="service-card-grid">
+
+                <article class="service-card">
+
+                    <div class="service-card-icon">
+                        🚗
+                    </div>
+
+                    <h3>Basic Vehicle Coverage</h3>
+
+                    <p>
+                        Coverage for qualifying vehicle components subject
+                        to the applicable warranty terms, exclusions, and
+                        limitations.
+                    </p>
+
+                </article>
+
+                <article class="service-card">
+
+                    <div class="service-card-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Battery & Drive Unit</h3>
+
+                    <p>
+                        Certain battery and drive unit components may have
+                        separate coverage terms and conditions.
+                    </p>
+
+                </article>
+
+                <article class="service-card">
+
+                    <div class="service-card-icon">
+                        🛠
+                    </div>
+
+                    <h3>Service & Repairs</h3>
+
+                    <p>
+                        Eligible warranty repairs may be handled through
+                        authorized service channels according to applicable
+                        procedures.
+                    </p>
+
+                </article>
+
+                <article class="service-card">
+
+                    <div class="service-card-icon">
+                        📋
+                    </div>
+
+                    <h3>Warranty Documentation</h3>
+
+                    <p>
+                        Your final warranty documentation provides the
+                        controlling terms for your specific vehicle.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- What May Be Covered -->
+        <section class="service-section service-section-alt">
+
+            <div class="service-section-heading">
+
+                <p class="service-eyebrow">
+                    Information
+                </p>
+
+                <h2>What May Be Covered</h2>
+
+            </div>
+
+            <div class="coverage-list">
+
+                <div class="coverage-item">
+                    <span class="coverage-number">01</span>
+                    <div>
+                        <h3>Vehicle Components</h3>
+                        <p>
+                            Certain qualifying components may be covered
+                            against defects under applicable warranty terms.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="coverage-item">
+                    <span class="coverage-number">02</span>
+                    <div>
+                        <h3>Battery System</h3>
+                        <p>
+                            Battery coverage may include specific conditions,
+                            limits, and separate warranty requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="coverage-item">
+                    <span class="coverage-number">03</span>
+                    <div>
+                        <h3>Drive Unit</h3>
+                        <p>
+                            Applicable drive unit components may receive
+                            coverage under the vehicle's warranty documents.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="coverage-item">
+                    <span class="coverage-number">04</span>
+                    <div>
+                        <h3>Service Support</h3>
+                        <p>
+                            Warranty-related service requests may be
+                            submitted through available support channels.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Exclusions -->
+        <section class="service-section">
+
+            <div class="service-section-heading">
+
+                <p class="service-eyebrow">
+                    Important
+                </p>
+
+                <h2>Common Warranty Exclusions</h2>
+
+                <p>
+                    Depending on the applicable warranty, certain conditions
+                    may not be covered.
+                </p>
+
+            </div>
+
+            <div class="exclusion-grid">
+
+                <div class="exclusion-item">
+                    <h3>Normal Wear</h3>
+                    <p>
+                        Items subject to ordinary wear and maintenance may
+                        have separate service requirements.
+                    </p>
+                </div>
+
+                <div class="exclusion-item">
+                    <h3>Accident Damage</h3>
+                    <p>
+                        Damage caused by collisions, misuse, or external
+                        events may be handled separately from warranty claims.
+                    </p>
+                </div>
+
+                <div class="exclusion-item">
+                    <h3>Unauthorized Modifications</h3>
+                    <p>
+                        Certain modifications or repairs may affect warranty
+                        eligibility for related components.
+                    </p>
+                </div>
+
+                <div class="exclusion-item">
+                    <h3>Improper Maintenance</h3>
+                    <p>
+                        Failure to follow applicable maintenance and operating
+                        requirements may affect coverage.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Support -->
+        <section
+            class="service-section service-section-dark"
+            id="warranty-support"
+        >
+
+            <div class="support-content">
+
+                <div>
+
+                    <p class="service-eyebrow">
+                        Service Support
+                    </p>
+
+                    <h2>Need Warranty Support?</h2>
+
+                    <p>
+                        Contact the support team with your vehicle information
+                        and a description of the issue. Keep your vehicle
+                        identification and relevant service records available.
+                    </p>
+
+                </div>
+
+                <div class="support-actions">
+
+                    <a
+                        href="mailto:support@example.com"
+                        class="service-button primary"
+                    >
+                        Email Support
+                    </a>
+
+                    <a
+                        href="tel:+18005550199"
+                        class="service-button secondary"
+                    >
+                        Call Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Related Links -->
+        <section class="service-related">
+
+            <h2>Related Information</h2>
+
+            <div class="related-links">
+
+                <a href="vehicle-agreement.html">
+                    <span>Vehicle Agreement</span>
+                    <span>→</span>
+                </a>
+
+                <a href="privacy-policy.html">
+                    <span>Privacy Policy</span>
+                    <span>→</span>
+                </a>
+
+                <a href="terms-of-use.html">
+                    <span>Terms of Use</span>
+                    <span>→</span>
+                </a>
+
+                <a href="account.html">
+                    <span>Account & Support</span>
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="tel:+18005550199">Call</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Telegram</a>
+                <a href="#">X</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="warranty.html">Warranty</a>
+                <a href="#">Insurance</a>
+                <a href="#">Stores</a>
+                <a href="#">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                ©️ 2026 TESLA, Inc. All rights reserved.
+            </span>
+
+            <span>
+                United States
+            </span>
+        </div>
+
+    </footer>
+
+    <!-- Utilities -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+    <!-- Cookie Notice -->
+    <div
+        class="cookie-overlay"
+        id="cookieOverlay"
+        aria-hidden="true"
+    >
+
+        <div class="cookie-banner">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies and similar technologies to improve your
+                experience. You can manage optional cookies in Cookie Settings.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button
+                    id="acceptCookies"
+                    type="button"
+                >
+                    Accept
+                </button>
+
+                <a
+                    href="cookie-settings.html"
+                    id="cookieSettings"
+                >
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Existing shared JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

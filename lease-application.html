@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lease Application | TESLA</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .application-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 6% 80px;
+        }
+
+        .application-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .application-header h1 {
+            font-size: clamp(42px, 7vw, 70px);
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .application-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .application-form {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .form-section {
+            margin-bottom: 38px;
+        }
+
+        .form-section h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-weight: 600;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font: inherit;
+            background: #fff;
+        }
+
+        .field input:focus,
+        .field select:focus {
+            outline: 2px solid #888;
+            outline-offset: 1px;
+        }
+
+        .terms {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin: 25px 0;
+            color: #555;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .terms input {
+            margin-top: 4px;
+        }
+
+        .submit-button {
+            width: 100%;
+            border: 0;
+            border-radius: 8px;
+            padding: 16px;
+            background: #111;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .error {
+            display: none;
+            color: #c00;
+            font-size: 13px;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .status {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        .status.show {
+            display: block;
+        }
+
+        .confirmation {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .confirmation.show {
+            display: block;
+        }
+
+        .confirmation h2 {
+            margin-bottom: 12px;
+        }
+
+        .confirmation p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .reference {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .notice {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 12px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .application-form {
+                padding: 25px;
+            }
+        }
+
+        body.dark-mode .application-form {
+            background: #151515;
+            border-color: #333;
+        }
+
+        body.dark-mode .field input,
+        body.dark-mode .field select {
+            background: #202020;
+            color: #fff;
+            border-color: #444;
+        }
+
+        body.dark-mode .application-header p,
+        body.dark-mode .terms,
+        body.dark-mode .confirmation p {
+            color: #aaa;
+        }
+
+        body.dark-mode .status,
+        body.dark-mode .confirmation,
+        body.dark-mode .notice {
+            background: #1d1d1d;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header" id="siteHeader">
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="TESLA Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" aria-label="Account">
+                ◯
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <aside class="side-menu" id="sideMenu">
+
+        <button class="menu-close" id="menuClose" aria-label="Close menu">
+            ×
+        </button>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Car Models
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Batteries
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="batteries.html">Car Battery</a>
+                    <a href="batteries.html">Powerwall 2</a>
+                    <a href="batteries.html">Powerwall 3</a>
+                    <a href="batteries.html">Powerwall 3 Expansion</a>
+                    <a href="batteries.html">Megapack 2</a>
+                    <a href="batteries.html">Megapack 3</a>
+                </div>
+
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="investment.html">Tesla Investment</a>
+            <a href="support.html">Support</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <section class="application-page">
+
+            <div class="application-header">
+
+                <h1>Lease Application</h1>
+
+                <p>
+                    Provide your information to begin a lease application.
+                    Final eligibility, pricing and agreement terms would be
+                    handled through the applicable production systems.
+                </p>
+
+            </div>
+
+
+            <form class="application-form" id="leaseApplicationForm">
+
+                <section class="form-section">
+
+                    <h2>Personal Information</h2>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                autocomplete="given-name"
+                                required
+                            >
+
+                            <span class="error" id="firstNameError">
+                                Enter your first name.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                autocomplete="family-name"
+                                required
+                            >
+
+                            <span class="error" id="lastNameError">
+                                Enter your last name.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <span class="error" id="emailError">
+                                Enter a valid email address.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="form-section">
+
+                    <h2>Lease Preferences</h2>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+
+                            <label for="vehicleModel">
+                                Vehicle Model
+                            </label>
+
+                            <select id="vehicleModel" required>
+
+                                <option value="">
+                                    Select a model
+                                </option>
+
+                                <option value="Model 3">
+                                    Model 3
+                                </option>
+
+                                <option value="Model Y">
+                                    Model Y
+                                </option>
+
+                                <option value="Model S">
+                                    Model S
+                                </option>
+
+                                <option value="Model X">
+                                    Model X
+                                </option>
+
+                            </select>
+
+                            <span class="error" id="modelError">
+                                Select a vehicle model.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="vehiclePrice">
+                                Estimated Vehicle Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="vehiclePrice"
+                                min="1"
+                                step="100"
+                                placeholder="Example: 45000"
+                                required
+                            >
+
+                            <span class="error" id="priceError">
+                                Enter a valid vehicle price.
+                            </span>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="leaseTerm">
+                                Lease Term
+                            </label>
+
+                            <select id="leaseTerm" required>
+
+                                <option value="6">
+                                    6 months
+                                </option>
+
+                                <option value="12">
+                                    12 months
+                                </option>
+
+                                <option value="18">
+                                    18 months
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="annualMileage">
+                                Annual Mileage
+                            </label>
+
+                            <select id="annualMileage">
+
+                                <option value="10000">
+                                    10,000 miles
+                                </option>
+
+                                <option value="12000">
+                                    12,000 miles
+                                </option>
+
+                                <option value="15000">
+                                    15,000 miles
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="form-section">
+
+                    <h2>Address</h2>
+
+                    <div class="form-grid">
+
+                        <div class="field full">
+
+                            <label for="address">
+                                Street Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                autocomplete="street-address"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="state">
+                                State
+                            </label>
+
+                            <input
+                                type="text"
+                                id="state"
+                                autocomplete="address-level1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="postalCode">
+                                ZIP Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="postalCode"
+                                autocomplete="postal-code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="agreement"
+                        required
+                    >
+
+                    <span>
+                        I understand that submitting this form is a request
+                        to begin a lease application and does not constitute
+                        approval, financing, or a binding lease agreement.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit Lease Application
+                </button>
+
+
+                <div class="status" id="applicationStatus"></div>
+
+            </form>
+
+
+            <section class="confirmation" id="applicationConfirmation">
+
+                <h2>Application Submitted</h2>
+
+                <p>
+                    Your lease application request has been recorded in this
+                    frontend demonstration.
+                </p>
+
+                <p>Application reference:</p>
+
+                <div class="reference" id="applicationReference"></div>
+
+                <p>
+                    A production implementation would securely transmit the
+                    application to the appropriate backend service.
+                </p>
+
+            </section>
+
+
+            <div class="notice">
+
+                <strong>Demo website notice:</strong>
+                This application does not perform credit checks, identity
+                verification, financial underwriting, payment processing or
+                live lease approval. Do not enter sensitive financial
+                information into this frontend demonstration.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="news.html">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="support.html">Support Center</a>
+                <a href="support-request.html">Submit Request</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="tel:+18005550199">Call</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            ©️ 2026 TESLA, Inc. All rights reserved.
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+
+    <div class="cookie-overlay" id="cookieOverlay">
+
+        <div class="cookie-box">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies to improve website functionality, remember
+                preferences and understand how visitors use this demo website.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button id="acceptCookies" class="primary-button">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" class="secondary-button">
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        const leaseApplicationForm =
+            document.getElementById("leaseApplicationForm");
+
+        const applicationStatus =
+            document.getElementById("applicationStatus");
+
+        const applicationConfirmation =
+            document.getElementById("applicationConfirmation");
+
+        leaseApplicationForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const firstName =
+                document.getElementById("firstName").value.trim();
+
+            const lastName =
+                document.getElementById("lastName").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const model =
+                document.getElementById("vehicleModel").value;
+
+            const price =
+                Number(document.getElementById("vehiclePrice").value);
+
+            let valid = true;
+
+            document.querySelectorAll(".error").forEach(function (item) {
+                item.classList.remove("show");
+            });
+
+            if (!firstName) {
+                document.getElementById("firstNameError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!lastName) {
+                document.getElementById("lastNameError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!email || !email.includes("@")) {
+                document.getElementById("emailError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!model) {
+                document.getElementById("modelError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!price || price <= 0) {
+                document.getElementById("priceError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!valid) {
+                applicationStatus.textContent =
+                    "Please correct the highlighted fields.";
+
+                applicationStatus.classList.add("show");
+
+                return;
+            }
+
+            const applicationId =
+                "TESLA-LEASE-" +
+                Date.now().toString().slice(-8);
+
+            const applicationData = {
+                applicationId,
+                firstName,
+                lastName,
+                email,
+                phone: document.getElementById("phone").value.trim(),
+                vehicleModel: model,
+                vehiclePrice: price,
+                leaseTerm:
+                    document.getElementById("leaseTerm").value,
+                annualMileage:
+                    document.getElementById("annualMileage").value,
+                address:
+                    document.getElementById("address").value.trim(),
+                city:
+                    document.getElementById("city").value.trim(),
+                state:
+                    document.getElementById("state").value.trim(),
+                postalCode:
+                    document.getElementById("postalCode").value.trim(),
+                submittedAt: new Date().toISOString()
+            };
+
+            sessionStorage.setItem(
+                "teslaLeaseApplication",
+                JSON.stringify(applicationData)
+            );
+
+            document.getElementById("applicationReference")
+                .textContent = applicationId;
+
+            applicationStatus.textContent =
+                "Your lease application request has been submitted.";
+
+            applicationStatus.classList.add("show");
+
+            applicationConfirmation.classList.add("show");
+
+            applicationConfirmation.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        });
+    </script>
+
+</body>
+</html>

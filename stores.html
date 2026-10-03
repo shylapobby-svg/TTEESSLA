@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores | Tesla</title>
+    <meta name="description" content="Find stores, galleries, service locations, and other customer locations.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stores.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="Tesla Home">TESLA</a>
+
+        <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" type="button" aria-label="Account">
+                <span>◯</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+        <div class="side-menu-header">
+            <span>Menu</span>
+
+            <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+                ×
+            </button>
+        </div>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button">
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button">
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="batteries.html#car-battery">Car Battery</a>
+                    <a href="batteries.html#powerwall-2">Powerwall 2</a>
+                    <a href="batteries.html#powerwall-3">Powerwall 3</a>
+                    <a href="batteries.html#powerwall-3-expansion">Powerwall 3 Expansion</a>
+                    <a href="batteries.html#megapack-2">Megapack 2</a>
+                    <a href="batteries.html#megapack-3">Megapack 3</a>
+                </div>
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+            <a href="stores.html" class="active">Stores</a>
+            <a href="store-vehicles.html">Store Vehicles</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+        </nav>
+    </aside>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="accountMenu" aria-hidden="true">
+        <a href="account.html">Account</a>
+        <a href="login.html">Sign In</a>
+        <a href="create-account.html">Create Account</a>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="stores-hero">
+            <div class="stores-hero-content">
+
+                <p class="eyebrow">Find a location</p>
+
+                <h1>Stores</h1>
+
+                <p>
+                    Explore store locations, galleries, delivery locations,
+                    and customer services near you.
+                </p>
+
+                <div class="stores-search">
+                    <label for="storeSearch">Search locations</label>
+
+                    <div class="store-search-row">
+                        <input
+                            type="search"
+                            id="storeSearch"
+                            name="storeSearch"
+                            placeholder="City, state, ZIP code, or country"
+                            autocomplete="off"
+                        >
+
+                        <button type="button" id="storeSearchButton">
+                            Search
+                        </button>
+                    </div>
+
+                    <p class="search-status" id="storeSearchStatus" aria-live="polite"></p>
+                </div>
+
+            </div>
+
+            <div class="stores-hero-media">
+                <div class="image-placeholder">
+                    <span>Store Image</span>
+                    <small>Add your store image here</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Notice -->
+        <section class="stores-notice">
+            <div class="stores-container">
+
+                <div class="notice-card">
+                    <strong>Location information:</strong>
+                    Store availability, opening hours, services, and inventory can vary
+                    by location. Replace the demonstration locations below with your
+                    verified store data before publishing.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Store Types -->
+        <section class="store-types">
+            <div class="stores-container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Locations</p>
+                    <h2>Visit us in person.</h2>
+                    <p>
+                        Use the location directory to help customers find the right
+                        place for sales, demonstrations, deliveries, or support.
+                    </p>
+                </div>
+
+                <div class="store-type-grid">
+
+                    <article class="store-type-card">
+                        <div class="store-type-icon">◉</div>
+                        <h3>Stores</h3>
+                        <p>
+                            Explore available vehicles, learn about products,
+                            and speak with a member of the team.
+                        </p>
+                        <a href="#locations">Find Stores →</a>
+                    </article>
+
+                    <article class="store-type-card">
+                        <div class="store-type-icon">◇</div>
+                        <h3>Galleries</h3>
+                        <p>
+                            Discover product information and demonstrations in
+                            selected locations.
+                        </p>
+                        <a href="#locations">Find Galleries →</a>
+                    </article>
+
+                    <article class="store-type-card">
+                        <div class="store-type-icon">✓</div>
+                        <h3>Delivery Locations</h3>
+                        <p>
+                            Provide customers with information about vehicle
+                            delivery and collection locations.
+                        </p>
+                        <a href="#locations">View Locations →</a>
+                    </article>
+
+                    <article class="store-type-card">
+                        <div class="store-type-icon">⚙</div>
+                        <h3>Service</h3>
+                        <p>
+                            Help customers find service locations and understand
+                            available appointment options.
+                        </p>
+                        <a href="#locations">Find Service →</a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Locations -->
+        <section class="stores-locations" id="locations">
+            <div class="stores-container">
+
+                <div class="section-heading location-heading">
+                    <div>
+                        <p class="eyebrow">Location directory</p>
+                        <h2>Featured locations</h2>
+                    </div>
+
+                    <span class="location-count" id="locationCount">
+                        6 locations
+                    </span>
+                </div>
+
+                <div class="location-grid" id="locationGrid">
+
+                    <article
+                        class="location-card"
+                        data-location="houston texas united states"
+                        data-type="store service"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store & Service</span>
+                            <h3>Houston, Texas</h3>
+
+                            <p>
+                                1234 Example Avenue<br>
+                                Houston, TX 77001<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="austin texas united states"
+                        data-type="store"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store</span>
+                            <h3>Austin, Texas</h3>
+
+                            <p>
+                                2500 Example Boulevard<br>
+                                Austin, TX 78701<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="dallas texas united states"
+                        data-type="store service"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store & Service</span>
+                            <h3>Dallas, Texas</h3>
+
+                            <p>
+                                1800 Example Street<br>
+                                Dallas, TX 75201<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="los angeles california united states"
+                        data-type="store gallery"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store & Gallery</span>
+                            <h3>Los Angeles, California</h3>
+
+                            <p>
+                                500 Example Drive<br>
+                                Los Angeles, CA 90001<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="new york new york united states"
+                        data-type="store gallery"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store & Gallery</span>
+                            <h3>New York, New York</h3>
+
+                            <p>
+                                100 Example Avenue<br>
+                                New York, NY 10001<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="miami florida united states"
+                        data-type="store service"
+                    >
+                        <div class="location-image">
+                            <div class="image-placeholder">
+                                <span>Location Image</span>
+                            </div>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="location-type">Store & Service</span>
+                            <h3>Miami, Florida</h3>
+
+                            <p>
+                                800 Example Road<br>
+                                Miami, FL 33101<br>
+                                United States
+                            </p>
+
+                            <div class="location-details">
+                                <span>Mon–Sat: 9:00 AM–7:00 PM</span>
+                                <span>Sun: 10:00 AM–6:00 PM</span>
+                            </div>
+
+                            <div class="location-actions">
+                                <a href="#support">Contact</a>
+                                <a href="#" class="directions-link">Directions</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="no-results" id="noStoreResults" hidden>
+                    <h3>No locations found</h3>
+                    <p>
+                        Try searching for another city, state, ZIP code, or country.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Store Services -->
+        <section class="store-services">
+            <div class="stores-container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">At our locations</p>
+                    <h2>More than a showroom.</h2>
+                </div>
+
+                <div class="services-grid">
+
+                    <div class="service-item">
+                        <span>01</span>
+                        <h3>Vehicle Demonstrations</h3>
+                        <p>
+                            Learn about available vehicle features and configurations.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <span>02</span>
+                        <h3>Test Drives</h3>
+                        <p>
+                            Request a test drive and check availability for your area.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <span>03</span>
+                        <h3>Product Information</h3>
+                        <p>
+                            Explore vehicles, energy products, charging, and accessories.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <span>04</span>
+                        <h3>Customer Support</h3>
+                        <p>
+                            Get assistance with orders, delivery, accounts, and services.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section class="stores-support" id="support">
+            <div class="stores-container">
+
+                <div class="support-card">
+                    <div>
+                        <p class="eyebrow">Need assistance?</p>
+                        <h2>We're here to help.</h2>
+                        <p>
+                            Contact the support team for questions about locations,
+                            services, appointments, or other customer needs.
+                        </p>
+                    </div>
+
+                    <div class="support-actions">
+                        <a href="mailto:support@example.com" class="stores-button primary">
+                            Email Support
+                        </a>
+
+                        <a href="tel:+18005550199" class="stores-button secondary">
+                            Call Support
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="https://wa.me/18005550199">WhatsApp</a>
+                <a href="https://t.me/">Telegram</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="#">X</a>
+                <a href="tel:+18005550199">Call</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-overlay" id="cookieOverlay" aria-hidden="true">
+        <div class="cookie-card">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies and similar technologies to help operate this website,
+                remember preferences, and improve your experience.
+            </p>
+
+            <div class="cookie-actions">
+                <button type="button" id="acceptCookies" class="cookie-primary">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" id="cookieSettings" class="cookie-secondary">
+                    Cookie Settings
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Utilities -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        ↑
+    </button>
+
+    <button class="refresh-button" id="refreshButton" type="button" aria-label="Refresh page">
+        ↻
+    </button>
+
+    <script src="script.js"></script>
+    <script src="stores.js"></script>
+
+</body>
+</html>

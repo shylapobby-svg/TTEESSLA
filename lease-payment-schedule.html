@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lease Payment Schedule | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .lease-schedule-page {
+      min-height: 100vh;
+      padding: 120px 20px 80px;
+      background: var(--page-bg, #fff);
+    }
+
+    .lease-schedule-container {
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .schedule-hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .schedule-hero h1 {
+      margin: 0 0 12px;
+      font-size: 40px;
+      line-height: 1.1;
+    }
+
+    .schedule-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .schedule-card {
+      background: var(--card-bg, #f5f5f5);
+      border-radius: 18px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.06);
+    }
+
+    .schedule-card h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+    }
+
+    .schedule-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .schedule-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .schedule-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .schedule-field label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .schedule-field input,
+    .schedule-field select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      color: #111;
+      font: inherit;
+      outline: none;
+    }
+
+    .schedule-field input:focus,
+    .schedule-field select:focus {
+      border-color: #555;
+      box-shadow: 0 0 0 3px rgba(0,0,0,.07);
+    }
+
+    .schedule-button {
+      grid-column: 1 / -1;
+      border: 0;
+      border-radius: 10px;
+      padding: 15px 20px;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .schedule-button:hover {
+      opacity: .88;
+    }
+
+    .schedule-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .schedule-summary {
+      display: none;
+      margin-top: 24px;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .schedule-summary.visible {
+      display: block;
+    }
+
+    .summary-header {
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+
+    .summary-header h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .summary-header p {
+      margin: 0;
+      opacity: .8;
+      font-size: 14px;
+    }
+
+    .summary-details {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .summary-item {
+      padding: 14px;
+      border-radius: 10px;
+      background: #f5f5f5;
+    }
+
+    .summary-item span {
+      display: block;
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .summary-item strong {
+      font-size: 17px;
+    }
+
+    .schedule-table-wrap {
+      overflow-x: auto;
+      margin-top: 24px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .schedule-table th {
+      background: #eee;
+      font-size: 13px;
+    }
+
+    .schedule-table td {
+      font-size: 14px;
+    }
+
+    .schedule-note {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 10px;
+      background: rgba(0,0,0,.04);
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .schedule-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .schedule-links a {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 9px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .schedule-links a.secondary {
+      background: #ddd;
+      color: #111;
+    }
+
+    @media (max-width: 700px) {
+      .lease-schedule-page {
+        padding: 100px 15px 60px;
+      }
+
+      .schedule-card {
+        padding: 24px 20px;
+      }
+
+      .schedule-hero h1 {
+        font-size: 32px;
+      }
+
+      .schedule-form,
+      .summary-details {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-field.full,
+      .schedule-button {
+        grid-column: auto;
+      }
+    }
+
+    body.dark-mode .lease-schedule-page {
+      background: #111;
+    }
+
+    body.dark-mode .schedule-card {
+      background: #1d1d1d;
+      color: #fff;
+    }
+
+    body.dark-mode .schedule-hero p,
+    body.dark-mode .schedule-note {
+      color: #aaa;
+    }
+
+    body.dark-mode .schedule-field input,
+    body.dark-mode .schedule-field select {
+      background: #111;
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode .schedule-button {
+      background: #fff;
+      color: #111;
+    }
+
+    body.dark-mode .schedule-summary {
+      background: #111;
+      border-color: #444;
+    }
+
+    body.dark-mode .summary-details,
+    body.dark-mode .schedule-table {
+      background: #111;
+    }
+
+    body.dark-mode .summary-item {
+      background: #222;
+    }
+
+    body.dark-mode .summary-item span {
+      color: #aaa;
+    }
+
+    body.dark-mode .schedule-table th {
+      background: #222;
+    }
+
+    body.dark-mode .schedule-table th,
+    body.dark-mode .schedule-table td {
+      border-color: #444;
+    }
+
+    body.dark-mode .schedule-note {
+      background: rgba(255,255,255,.05);
+    }
+
+    body.dark-mode .schedule-links a.secondary {
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="sideMenu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="Tesla Home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+        aria-expanded="false">
+        ◯
+      </button>
+
+      <div class="account-menu" id="accountMenu">
+        <a href="login.html">Sign In</a>
+        <a href="create-account.html">Create Account</a>
+        <a href="account.html">Account</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      type="button"
+      aria-label="Close menu">
+      ×
+    </button>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+        <button class="navigation-group-button" type="button">
+          Car Models
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+        <button class="navigation-group-button" type="button">
+          Batteries
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html#car-battery">Car Battery</a>
+          <a href="batteries.html#powerwall-2">Powerwall 2</a>
+          <a href="batteries.html#powerwall-3">Powerwall 3</a>
+          <a href="batteries.html#powerwall-expansion">Powerwall 3 Expansion</a>
+          <a href="batteries.html#megapack-2">Megapack 2</a>
+          <a href="batteries.html#megapack-3">Megapack 3</a>
+        </div>
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+
+      <div class="navigation-divider"></div>
+
+      <a href="purchase-tesla.html">Purchased a Tesla</a>
+      <a href="lease-tesla.html">Lease a Tesla</a>
+      <a href="support.html">Support</a>
+      <a href="account.html">Account</a>
+
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="lease-schedule-page">
+
+    <div class="lease-schedule-container">
+
+      <section class="schedule-hero">
+        <h1>Lease Payment Schedule</h1>
+
+        <p>
+          Review an estimated lease schedule based on your vehicle
+          price, upfront amount, and selected lease term.
+        </p>
+      </section>
+
+      <section class="schedule-card">
+
+        <h2>Lease Details</h2>
+
+        <form
+          class="schedule-form"
+          id="scheduleForm"
+          novalidate>
+
+          <div class="schedule-field">
+
+            <label for="vehiclePrice">
+              Vehicle price ($)
+            </label>
+
+            <input
+              type="number"
+              id="vehiclePrice"
+              min="1"
+              step="0.01"
+              placeholder="50000"
+              required>
+
+          </div>
+
+          <div class="schedule-field">
+
+            <label for="upfrontPercent">
+              Upfront payment (%)
+            </label>
+
+            <input
+              type="number"
+              id="upfrontPercent"
+              min="0"
+              max="100"
+              step="1"
+              value="50"
+              required>
+
+          </div>
+
+          <div class="schedule-field">
+
+            <label for="leaseTerm">
+              Lease term
+            </label>
+
+            <select id="leaseTerm" required>
+              <option value="6">6 months</option>
+              <option value="12">12 months</option>
+              <option value="18">18 months</option>
+            </select>
+
+          </div>
+
+          <div class="schedule-field">
+
+            <label for="startMonth">
+              First payment month
+            </label>
+
+            <input
+              type="month"
+              id="startMonth"
+              required>
+
+          </div>
+
+          <button
+            class="schedule-button"
+            id="calculateButton"
+            type="submit">
+            Calculate Schedule
+          </button>
+
+        </form>
+
+        <div
+          class="schedule-summary"
+          id="scheduleSummary">
+
+          <div class="summary-header">
+
+            <h3>Estimated Lease Summary</h3>
+
+            <p>
+              Based on the information entered above.
+            </p>
+
+          </div>
+
+          <div class="summary-details">
+
+            <div class="summary-item">
+              <span>Vehicle Price</span>
+              <strong id="summaryPrice">$0.00</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Upfront Payment</span>
+              <strong id="summaryUpfront">$0.00</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Remaining Balance</span>
+              <strong id="summaryBalance">$0.00</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Lease Term</span>
+              <strong id="summaryTerm">0 months</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Estimated Monthly Amount</span>
+              <strong id="summaryMonthly">$0.00</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Total Scheduled Payments</span>
+              <strong id="summaryTotal">$0.00</strong>
+            </div>
+
+          </div>
+
+          <div class="schedule-table-wrap">
+
+            <table class="schedule-table">
+
+              <thead>
+                <tr>
+                  <th>Payment</th>
+                  <th>Due</th>
+                  <th>Amount</th>
+                  <th>Remaining Balance</th>
+                </tr>
+              </thead>
+
+              <tbody id="scheduleBody"></tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="schedule-card">
+
+        <h2>Important Information</h2>
+
+        <div class="schedule-note">
+          This calculator uses the project's requested demonstration
+          structure: the upfront lease amount is calculated from the
+          vehicle price and the remaining amount is divided across
+          the selected 6, 12, or 18-month term. It does not calculate
+          taxes, fees, interest, insurance, mileage charges, or other
+          contract-specific amounts.
+        </div>
+
+        <div class="schedule-links">
+
+          <a href="lease-tesla.html">
+            Lease a Tesla
+          </a>
+
+          <a
+            href="lease-application.html"
+            class="secondary">
+            Lease Application
+          </a>
+
+          <a
+            href="payment-history.html"
+            class="secondary">
+            Payment History
+          </a>
+
+          <a
+            href="support.html"
+            class="secondary">
+            Support
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- COOKIE -->
+  <div
+    class="cookie-overlay"
+    id="cookieOverlay">
+
+    <div class="cookie-banner">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to provide essential
+        website functionality and remember your preferences.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          id="acceptCookies">
+          Accept
+        </button>
+
+        <a href="cookie-settings.html">
+          Cookie Settings
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support Center</a>
+        <a href="contact.html">Contact</a>
+        <a href="service.html">Service</a>
+        <a href="charging-locations.html">Charging Locations</a>
+      </div>
+
+      <div>
+        <h3>Ownership</h3>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="stores.html">Stores</a>
+        <a href="store-vehicles.html">Store Vehicles</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        <a href="returns-refunds.html">Returns &amp; Refunds</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    const scheduleForm =
+      document.getElementById("scheduleForm");
+
+    const vehiclePrice =
+      document.getElementById("vehiclePrice");
+
+    const upfrontPercent =
+      document.getElementById("upfrontPercent");
+
+    const leaseTerm =
+      document.getElementById("leaseTerm");
+
+    const startMonth =
+      document.getElementById("startMonth");
+
+    const scheduleSummary =
+      document.getElementById("scheduleSummary");
+
+    const summaryPrice =
+      document.getElementById("summaryPrice");
+
+    const summaryUpfront =
+      document.getElementById("summaryUpfront");
+
+    const summaryBalance =
+      document.getElementById("summaryBalance");
+
+    const summaryTerm =
+      document.getElementById("summaryTerm");
+
+    const summaryMonthly =
+      document.getElementById("summaryMonthly");
+
+    const summaryTotal =
+      document.getElementById("summaryTotal");
+
+    const scheduleBody =
+      document.getElementById("scheduleBody");
+
+    const existingOrder =
+      JSON.parse(
+        sessionStorage.getItem("teslaOrderData")
+      ) || null;
+
+    const existingLease =
+      JSON.parse(
+        sessionStorage.getItem("teslaLeaseApplication")
+      ) || null;
+
+    if (existingOrder?.price) {
+      vehiclePrice.value =
+        Number(existingOrder.price);
+    }
+
+    if (existingLease?.vehiclePrice) {
+      vehiclePrice.value =
+        Number(existingLease.vehiclePrice);
+    }
+
+    const now = new Date();
+
+    startMonth.value =
+      now.getFullYear() +
+      "-" +
+      String(now.getMonth() + 1).padStart(2, "0");
+
+    function money(value) {
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          style: "currency",
+          currency: "USD"
+        }
+      ).format(value);
+    }
+
+    function addMonths(date, months) {
+      const result = new Date(date);
+      result.setMonth(result.getMonth() + months);
+      return result;
+    }
+
+    function formatMonth(date) {
+      return date.toLocaleDateString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "long"
+        }
+      );
+    }
+
+    scheduleForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        const price =
+          Number(vehiclePrice.value);
+
+        const upfrontRate =
+          Number(upfrontPercent.value);
+
+        const term =
+          Number(leaseTerm.value);
+
+        if (
+          !Number.isFinite(price) ||
+          price <= 0 ||
+          !Number.isFinite(upfrontRate) ||
+          upfrontRate < 0 ||
+          upfrontRate > 100
+        ) {
+          alert(
+            "Please enter valid lease information."
+          );
+          return;
+        }
+
+        const upfront =
+          price * (upfrontRate / 100);
+
+        const remaining =
+          Math.max(0, price - upfront);
+
+        const monthly =
+          remaining / term;
+
+        summaryPrice.textContent =
+          money(price);
+
+        summaryUpfront.textContent =
+          money(upfront);
+
+        summaryBalance.textContent =
+          money(remaining);
+
+        summaryTerm.textContent =
+          term + " months";
+
+        summaryMonthly.textContent =
+          money(monthly);
+
+        summaryTotal.textContent =
+          money(remaining);
+
+        scheduleBody.innerHTML = "";
+
+        const [year, month] =
+          startMonth.value
+            .split("-")
+            .map(Number);
+
+        const firstPaymentDate =
+          new Date(year, month - 1, 1);
+
+        let remainingAfterPayment =
+          remaining;
+
+        for (let i = 1; i <= term; i++) {
+
+          const paymentDate =
+            addMonths(
+              firstPaymentDate,
+              i - 1
+            );
+
+          remainingAfterPayment =
+            Math.max(
+              0,
+              remainingAfterPayment - monthly
+            );
+
+          const row =
+            document.createElement("tr");
+
+          row.innerHTML =
+            "<td>" +
+            i +
+            "</td>" +
+            "<td>" +
+            formatMonth(paymentDate) +
+            "</td>" +
+            "<td>" +
+            money(monthly) +
+            "</td>" +
+            "<td>" +
+            money(remainingAfterPayment) +
+            "</td>";
+
+          scheduleBody.appendChild(row);
+        }
+
+        scheduleSummary.classList.add("visible");
+
+        sessionStorage.setItem(
+          "teslaLeasePaymentSchedule",
+          JSON.stringify({
+            vehiclePrice: price,
+            upfrontPercent: upfrontRate,
+            upfrontPayment: upfront,
+            remainingBalance: remaining,
+            termMonths: term,
+            monthlyPayment: monthly,
+            totalScheduledPayments: remaining,
+            startMonth: startMonth.value,
+            generatedAt: new Date().toISOString()
+          })
+        );
+      }
+    );
+  </script>
+
+</body>
+</html>

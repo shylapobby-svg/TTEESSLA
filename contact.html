@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 115px 6% 80px;
+        }
+
+        .contact-hero {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            margin-bottom: 16px;
+        }
+
+        .contact-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .contact-card,
+        .contact-form-card {
+            background: #f4f4f4;
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .contact-card h2,
+        .contact-form-card h2 {
+            margin-bottom: 14px;
+        }
+
+        .contact-card > p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail {
+            margin-bottom: 22px;
+        }
+
+        .contact-detail strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-detail span,
+        .contact-detail a {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-detail a {
+            color: inherit;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #fff;
+            font: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            border: 0;
+            border-radius: 999px;
+            padding: 14px 24px;
+            background: #111;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .contact-status {
+            display: none;
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .contact-status.show {
+            display: block;
+        }
+
+        .contact-resources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .resource-card {
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 16px;
+        }
+
+        .resource-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .resource-card a {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        body.dark-mode .contact-hero p,
+        body.dark-mode .contact-card > p,
+        body.dark-mode .contact-detail span,
+        body.dark-mode .contact-detail a,
+        body.dark-mode .resource-card p {
+            color: #aaa;
+        }
+
+        body.dark-mode .contact-card,
+        body.dark-mode .contact-form-card {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .resource-card {
+            border-color: #3a3a3a;
+        }
+
+        body.dark-mode .contact-form input,
+        body.dark-mode .contact-form select,
+        body.dark-mode .contact-form textarea {
+            background: #111;
+            color: #fff;
+            border-color: #444;
+        }
+
+        @media (max-width: 850px) {
+            .contact-grid,
+            .contact-resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            type="button"
+            aria-label="Account">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="document.html">Documents</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button
+        class="menu-close"
+        id="menuClose"
+        aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+            </div>
+
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+            </div>
+
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="charging-history.html">Charging History</a>
+        <a href="document.html">Documents</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="contact-page">
+
+    <section class="contact-hero">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question about a vehicle, order, charging,
+            service, or your account? We're here to help.
+        </p>
+
+    </section>
+
+
+    <section class="contact-grid">
+
+        <article class="contact-card">
+
+            <h2>Get in Touch</h2>
+
+            <p>
+                Choose the support option that best matches your
+                question. For account or order-specific assistance,
+                please use the support request form.
+            </p>
+
+            <div class="contact-detail">
+                <strong>Support</strong>
+                <a href="support.html">
+                    Visit Support Center
+                </a>
+            </div>
+
+            <div class="contact-detail">
+                <strong>Order Assistance</strong>
+                <a href="support-request.html">
+                    Submit Support Request
+                </a>
+            </div>
+
+            <div class="contact-detail">
+                <strong>Charging</strong>
+                <a href="charging.html">
+                    Charging Information
+                </a>
+            </div>
+
+            <div class="contact-detail">
+                <strong>Service</strong>
+                <a href="service.html">
+                    Request Service
+                </a>
+            </div>
+
+        </article>
+
+
+        <article class="contact-form-card">
+
+            <h2>Send a Message</h2>
+
+            <form class="contact-form" id="contactForm">
+
+                <div>
+                    <label for="contactName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contactName"
+                        required>
+                </div>
+
+                <div>
+                    <label for="contactEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        required>
+                </div>
+
+                <div>
+                    <label for="contactTopic">
+                        Topic
+                    </label>
+
+                    <select id="contactTopic" required>
+
+                        <option value="">
+                            Select a topic
+                        </option>
+
+                        <option value="vehicle">
+                            Vehicle
+                        </option>
+
+                        <option value="order">
+                            Order
+                        </option>
+
+                        <option value="lease">
+                            Lease
+                        </option>
+
+                        <option value="charging">
+                            Charging
+                        </option>
+
+                        <option value="solar">
+                            Solar
+                        </option>
+
+                        <option value="service">
+                            Service
+                        </option>
+
+                        <option value="account">
+                            Account
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label for="contactMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="contactMessage"
+                        required></textarea>
+                </div>
+
+                <div
+                    class="contact-status"
+                    id="contactStatus"
+                    role="status">
+                </div>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </article>
+
+    </section>
+
+
+    <section class="contact-resources">
+
+        <article class="resource-card">
+
+            <h3>Support Center</h3>
+
+            <p>
+                Find answers and support resources for your Tesla.
+            </p>
+
+            <a href="support.html">
+                Visit Support →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <h3>Find a Charging Location</h3>
+
+            <p>
+                Explore charging-location information and charging
+                resources.
+            </p>
+
+            <a href="charging-locations.html">
+                Charging Locations →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <h3>Account</h3>
+
+            <p>
+                Manage your profile, vehicles, orders, documents,
+                and account settings.
+            </p>
+
+            <a href="dashboard.html">
+                Open Dashboard →
+            </a>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="charging-locations.html">
+                Charging Locations
+            </a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            <a href="accessibility.html">Accessibility</a>
+            <a href="returns-refunds.html">Returns & Refunds</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button id="acceptCookies" type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+<script>
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const contactStatus =
+        document.getElementById("contactStatus");
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("contactName")
+                .value.trim();
+
+        const email =
+            document.getElementById("contactEmail")
+                .value.trim();
+
+        const topic =
+            document.getElementById("contactTopic")
+                .value;
+
+        const message =
+            document.getElementById("contactMessage")
+                .value.trim();
+
+        if (!name || !email || !topic || !message) {
+
+            contactStatus.textContent =
+                "Please complete all required fields.";
+
+            contactStatus.classList.add("show");
+
+            return;
+        }
+
+        const reference =
+            "TESLA-CONTACT-" +
+            Date.now().toString().slice(-8);
+
+        const contactRequest = {
+            reference,
+            name,
+            email,
+            topic,
+            message,
+            submittedAt: new Date().toISOString()
+        };
+
+        sessionStorage.setItem(
+            "teslaContactRequest",
+            JSON.stringify(contactRequest)
+        );
+
+        contactStatus.textContent =
+            "Your message has been received. " +
+            "Your reference number is " +
+            reference + ".";
+
+        contactStatus.classList.add("show");
+
+        contactForm.reset();
+
+    });
+</script>
+
+</body>
+</html>

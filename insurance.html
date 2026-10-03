@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance | Tesla</title>
+    <meta name="description" content="Learn about vehicle insurance options, coverage information, and insurance support.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="insurance.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="Tesla Home">TESLA</a>
+
+        <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" type="button" aria-label="Account">
+                <span>◯</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+        <div class="side-menu-header">
+            <span>Menu</span>
+
+            <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+                ×
+            </button>
+        </div>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button">
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button">
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="batteries.html#car-battery">Car Battery</a>
+                    <a href="batteries.html#powerwall-2">Powerwall 2</a>
+                    <a href="batteries.html#powerwall-3">Powerwall 3</a>
+                    <a href="batteries.html#powerwall-3-expansion">Powerwall 3 Expansion</a>
+                    <a href="batteries.html#megapack-2">Megapack 2</a>
+                    <a href="batteries.html#megapack-3">Megapack 3</a>
+                </div>
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html" class="active">Insurance</a>
+            <a href="stores.html">Stores</a>
+            <a href="store-vehicles.html">Store Vehicles</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+        </nav>
+    </aside>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="accountMenu" aria-hidden="true">
+        <a href="account.html">Account</a>
+        <a href="login.html">Sign In</a>
+        <a href="create-account.html">Create Account</a>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="insurance-hero">
+            <div class="insurance-hero-content">
+                <p class="eyebrow">Protection for your vehicle</p>
+                <h1>Insurance</h1>
+                <p>
+                    Explore insurance information, coverage options, claims support,
+                    and resources for your vehicle.
+                </p>
+
+                <div class="insurance-hero-actions">
+                    <a href="#coverage" class="insurance-button primary">
+                        Explore Coverage
+                    </a>
+
+                    <a href="#support" class="insurance-button secondary">
+                        Insurance Support
+                    </a>
+                </div>
+            </div>
+
+            <div class="insurance-hero-media" aria-label="Insurance image placeholder">
+                <div class="image-placeholder">
+                    <span>Insurance Image</span>
+                    <small>Add your insurance image here</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Notice -->
+        <section class="insurance-notice">
+            <div class="insurance-container">
+                <div class="notice-card">
+                    <strong>Important:</strong>
+                    This website currently contains demonstration insurance information.
+                    Actual insurance availability, pricing, eligibility, coverage,
+                    underwriting, and claims services may vary by location and provider.
+                    Replace this content with verified insurance information before
+                    publishing the website.
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="insurance-intro">
+            <div class="insurance-container">
+                <p class="eyebrow">Insurance resources</p>
+
+                <h2>Coverage designed around your needs.</h2>
+
+                <p class="section-description">
+                    Use this section to provide customers with clear information about
+                    available insurance products, coverage options, eligibility,
+                    deductibles, claims, and customer support.
+                </p>
+
+                <div class="insurance-feature-grid">
+
+                    <article class="insurance-feature-card">
+                        <div class="feature-icon">◈</div>
+                        <h3>Vehicle Coverage</h3>
+                        <p>
+                            Information about protection for your vehicle, subject to
+                            applicable policy terms and conditions.
+                        </p>
+                        <a href="#coverage">View Coverage</a>
+                    </article>
+
+                    <article class="insurance-feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Claims Support</h3>
+                        <p>
+                            Provide customers with instructions for reporting and
+                            managing an insurance claim.
+                        </p>
+                        <a href="#claims">Claims Information</a>
+                    </article>
+
+                    <article class="insurance-feature-card">
+                        <div class="feature-icon">?</div>
+                        <h3>Insurance Help</h3>
+                        <p>
+                            Find answers to common insurance questions and ways to
+                            contact the appropriate support team.
+                        </p>
+                        <a href="#support">Get Support</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage -->
+        <section class="insurance-section" id="coverage">
+            <div class="insurance-container">
+
+                <div class="insurance-section-heading">
+                    <p class="eyebrow">Coverage</p>
+                    <h2>Insurance coverage options</h2>
+                    <p>
+                        Coverage shown below is for demonstration purposes and should
+                        be replaced with the actual products available in each market.
+                    </p>
+                </div>
+
+                <div class="coverage-grid">
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">01</span>
+                        <h3>Vehicle Damage</h3>
+                        <p>
+                            Protection information for covered vehicle damage caused
+                            by eligible events.
+                        </p>
+                    </article>
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">02</span>
+                        <h3>Collision</h3>
+                        <p>
+                            Information about collision-related coverage and applicable
+                            deductibles.
+                        </p>
+                    </article>
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">03</span>
+                        <h3>Comprehensive</h3>
+                        <p>
+                            Information about eligible non-collision events and
+                            applicable policy conditions.
+                        </p>
+                    </article>
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">04</span>
+                        <h3>Liability</h3>
+                        <p>
+                            Information about liability protection where available
+                            under the applicable policy.
+                        </p>
+                    </article>
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">05</span>
+                        <h3>Uninsured Motorist</h3>
+                        <p>
+                            Provide market-specific information regarding uninsured
+                            or underinsured motorists.
+                        </p>
+                    </article>
+
+                    <article class="coverage-card">
+                        <span class="coverage-number">06</span>
+                        <h3>Roadside Assistance</h3>
+                        <p>
+                            Explain eligible roadside assistance services and
+                            applicable limitations.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Insurance Details -->
+        <section class="insurance-details">
+            <div class="insurance-container">
+
+                <div class="details-grid">
+
+                    <div class="details-content">
+                        <p class="eyebrow">Before you purchase</p>
+                        <h2>Know what your policy includes.</h2>
+
+                        <p>
+                            Insurance policies can differ by state, country, vehicle,
+                            driver, coverage selection, deductible, insurer, and other
+                            factors.
+                        </p>
+
+                        <ul class="insurance-check-list">
+                            <li>Review available coverage and exclusions.</li>
+                            <li>Confirm deductibles and policy limits.</li>
+                            <li>Review eligibility requirements.</li>
+                            <li>Check applicable premiums and fees.</li>
+                            <li>Keep your policy and vehicle information current.</li>
+                            <li>Review the complete policy documents before purchase.</li>
+                        </ul>
+                    </div>
+
+                    <div class="details-media">
+                        <div class="image-placeholder">
+                            <span>Coverage Image</span>
+                            <small>Add your coverage image here</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Claims -->
+        <section class="insurance-section claims-section" id="claims">
+            <div class="insurance-container">
+
+                <div class="insurance-section-heading">
+                    <p class="eyebrow">Claims</p>
+                    <h2>Need to report a claim?</h2>
+                    <p>
+                        Provide customers with the official process for reporting
+                        an insurance claim and receiving assistance.
+                    </p>
+                </div>
+
+                <div class="claims-steps">
+
+                    <div class="claim-step">
+                        <span>1</span>
+                        <h3>Stay safe</h3>
+                        <p>
+                            Move to a safe location when possible and contact emergency
+                            services when necessary.
+                        </p>
+                    </div>
+
+                    <div class="claim-step">
+                        <span>2</span>
+                        <h3>Document the incident</h3>
+                        <p>
+                            Collect relevant information, photographs, reports, and
+                            other documentation when appropriate.
+                        </p>
+                    </div>
+
+                    <div class="claim-step">
+                        <span>3</span>
+                        <h3>Contact your insurer</h3>
+                        <p>
+                            Follow the official claim-reporting process provided by
+                            your insurance provider.
+                        </p>
+                    </div>
+
+                    <div class="claim-step">
+                        <span>4</span>
+                        <h3>Track your claim</h3>
+                        <p>
+                            Keep your claim reference number and follow the instructions
+                            provided by your insurer.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section class="insurance-support" id="support">
+            <div class="insurance-container">
+
+                <div class="support-card">
+                    <div>
+                        <p class="eyebrow">Support</p>
+                        <h2>Insurance assistance</h2>
+                        <p>
+                            For questions about insurance, contact the appropriate
+                            insurance support team using the verified contact details
+                            for your market.
+                        </p>
+                    </div>
+
+                    <div class="support-actions">
+                        <a href="mailto:support@example.com" class="insurance-button primary">
+                            Email Support
+                        </a>
+
+                        <a href="tel:+18005550199" class="insurance-button secondary">
+                            Call Support
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Related Links -->
+        <section class="insurance-related">
+            <div class="insurance-container">
+
+                <p class="eyebrow">Explore more</p>
+                <h2>Related resources</h2>
+
+                <div class="related-grid">
+
+                    <a href="warranty.html" class="related-card">
+                        <span>Warranty</span>
+                        <small>Coverage and service information →</small>
+                    </a>
+
+                    <a href="vehicle-agreement.html" class="related-card">
+                        <span>Vehicle Agreement</span>
+                        <small>Review vehicle purchase information →</small>
+                    </a>
+
+                    <a href="account.html" class="related-card">
+                        <span>Account</span>
+                        <small>Manage your account →</small>
+                    </a>
+
+                    <a href="privacy-policy.html" class="related-card">
+                        <span>Privacy Policy</span>
+                        <small>Learn about privacy →</small>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="https://wa.me/18005550199">WhatsApp</a>
+                <a href="https://t.me/">Telegram</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="#">X</a>
+                <a href="tel:+18005550199">Call</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-overlay" id="cookieOverlay" aria-hidden="true">
+        <div class="cookie-card">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies and similar technologies to help operate this website,
+                remember preferences, and improve your experience.
+            </p>
+
+            <div class="cookie-actions">
+                <button type="button" id="acceptCookies" class="cookie-primary">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" id="cookieSettings" class="cookie-secondary">
+                    Cookie Settings
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Utilities -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        ↑
+    </button>
+
+    <button class="refresh-button" id="refreshButton" type="button" aria-label="Refresh page">
+        ↻
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

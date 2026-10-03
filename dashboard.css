@@ -1,0 +1,712 @@
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #171717;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.dashboard-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.dashboard-welcome {
+    padding: 145px 0 90px;
+    background: #f5f5f5;
+}
+
+.welcome-copy {
+    max-width: 760px;
+}
+
+.dashboard-eyebrow,
+.section-eyebrow {
+    display: block;
+    margin-bottom: 14px;
+    color: #777777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.welcome-copy h1 {
+    margin: 0 0 18px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+}
+
+.welcome-copy p {
+    max-width: 620px;
+    margin: 0;
+    color: #666666;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.dashboard-primary-button,
+.dashboard-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 26px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dashboard-primary-button {
+    background: #171717;
+    color: #ffffff;
+}
+
+.dashboard-primary-button:hover {
+    background: #333333;
+}
+
+.dashboard-secondary-button {
+    border: 1px solid #c8c8c8;
+    background: #ffffff;
+    color: #171717;
+}
+
+.dashboard-secondary-button:hover {
+    background: #eeeeee;
+}
+
+.dashboard-primary-button:active,
+.dashboard-secondary-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.dashboard-section {
+    padding: 95px 0;
+}
+
+.section-heading {
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   VEHICLE CARD
+   ========================================================= */
+
+.vehicle-dashboard {
+    background: #ffffff;
+}
+
+.vehicle-dashboard-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f4f4f4;
+}
+
+.dashboard-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    background: #dddddd;
+    color: #888888;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.vehicle-dashboard-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+}
+
+.vehicle-status {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 7px 11px;
+    border-radius: 20px;
+    background: #e2e2e2;
+    color: #555555;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.vehicle-dashboard-info h3 {
+    margin: 0 0 14px;
+    font-size: 32px;
+    letter-spacing: -0.03em;
+}
+
+.vehicle-dashboard-info p {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.vehicle-dashboard-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.vehicle-dashboard-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #171717;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.vehicle-dashboard-buttons a:first-child {
+    border-color: #171717;
+    background: #171717;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   QUICK ACCESS CARDS
+   ========================================================= */
+
+.dashboard-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+    padding: 28px;
+    border: 1px solid #dedede;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #171717;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    border-color: #bcbcbc;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    background: #eeeeee;
+    color: #333333;
+    font-size: 17px;
+}
+
+.dashboard-card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+}
+
+.dashboard-card p {
+    margin: 0;
+    color: #707070;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.dashboard-card-link {
+    margin-top: auto;
+    padding-top: 22px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INVESTMENT
+   ========================================================= */
+
+.dashboard-investment {
+    padding: 100px 0;
+    background: #111111;
+    color: #ffffff;
+}
+
+.dashboard-investment .dashboard-container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 60px;
+}
+
+.investment-content {
+    max-width: 500px;
+}
+
+.investment-content .section-eyebrow {
+    color: #999999;
+}
+
+.investment-content h2 {
+    margin: 0 0 18px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.investment-content p {
+    margin: 0;
+    color: #b5b5b5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.investment-content a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    margin-top: 28px;
+    padding: 0 23px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.investment-content a:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+.investment-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 430px;
+    background: #292929;
+    color: #777777;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   SWIPE CARDS
+   ========================================================= */
+
+.dashboard-swipe-wrapper {
+    overflow: hidden;
+}
+
+.dashboard-swipe-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-swipe-track::-webkit-scrollbar {
+    height: 5px;
+}
+
+.dashboard-swipe-card {
+    flex: 0 0 min(390px, 82vw);
+    overflow: hidden;
+    border: 1px solid #dedede;
+    border-radius: 7px;
+    background: #ffffff;
+    scroll-snap-align: start;
+}
+
+.swipe-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 245px;
+    background: #e0e0e0;
+    color: #888888;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.swipe-card-content {
+    padding: 28px;
+}
+
+.swipe-card-content > span {
+    display: block;
+    margin-bottom: 10px;
+    color: #777777;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.swipe-card-content h3 {
+    margin: 0 0 10px;
+    font-size: 23px;
+    letter-spacing: -0.025em;
+}
+
+.swipe-card-content p {
+    margin: 0;
+    color: #6c6c6c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.swipe-card-content a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #171717;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.dashboard-media {
+    padding: 95px 0;
+    background: #f5f5f5;
+}
+
+.dashboard-media-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    gap: 16px;
+}
+
+.media-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    background: #dddddd;
+    color: #888888;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.media-placeholder.large {
+    min-height: 430px;
+}
+
+
+/* =========================================================
+   DEMO NOTICE
+   ========================================================= */
+
+.dashboard-demo-notice {
+    padding: 30px 0;
+    background: #ededed;
+}
+
+.dashboard-demo-notice strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+}
+
+.dashboard-demo-notice p {
+    max-width: 850px;
+    margin: 0;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .dashboard-page {
+    background: #111111;
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-welcome {
+    background: #191919;
+}
+
+body.dark-mode .dashboard-eyebrow,
+body.dark-mode .section-eyebrow {
+    color: #999999;
+}
+
+body.dark-mode .welcome-copy p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .dashboard-secondary-button {
+    border-color: #444444;
+    background: #222222;
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-secondary-button:hover {
+    background: #2d2d2d;
+}
+
+body.dark-mode .vehicle-dashboard {
+    background: #111111;
+}
+
+body.dark-mode .vehicle-dashboard-card,
+body.dark-mode .dashboard-card {
+    border-color: #333333;
+    background: #191919;
+}
+
+body.dark-mode .dashboard-image-placeholder,
+body.dark-mode .swipe-image-placeholder,
+body.dark-mode .media-placeholder {
+    background: #252525;
+    color: #777777;
+}
+
+body.dark-mode .vehicle-dashboard-info p,
+body.dark-mode .dashboard-card p,
+body.dark-mode .swipe-card-content p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .vehicle-status,
+body.dark-mode .dashboard-card-icon {
+    background: #292929;
+    color: #bbbbbb;
+}
+
+body.dark-mode .vehicle-dashboard-buttons a {
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-mode .vehicle-dashboard-buttons a:first-child {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: #111111;
+}
+
+body.dark-mode .dashboard-card:hover {
+    border-color: #555555;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .dashboard-card-link,
+body.dark-mode .swipe-card-content a {
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-media {
+    background: #191919;
+}
+
+body.dark-mode .dashboard-demo-notice {
+    background: #1d1d1d;
+}
+
+body.dark-mode .dashboard-demo-notice p {
+    color: #999999;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-investment .dashboard-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .investment-content {
+        max-width: 700px;
+    }
+
+    .investment-image-placeholder {
+        min-height: 360px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .dashboard-container {
+        width: min(100%, calc(100% - 36px));
+    }
+
+    .dashboard-welcome {
+        padding: 120px 0 70px;
+    }
+
+    .dashboard-section {
+        padding: 70px 0;
+    }
+
+    .vehicle-dashboard-card {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-image-placeholder {
+        min-height: 300px;
+    }
+
+    .vehicle-dashboard-info {
+        padding: 32px;
+    }
+
+    .dashboard-media-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .media-placeholder.large {
+        grid-column: 1 / -1;
+        min-height: 330px;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .dashboard-container {
+        width: calc(100% - 30px);
+    }
+
+    .welcome-copy h1 {
+        font-size: 43px;
+    }
+
+    .welcome-copy p {
+        font-size: 15px;
+    }
+
+    .dashboard-actions {
+        flex-direction: column;
+    }
+
+    .dashboard-primary-button,
+    .dashboard-secondary-button {
+        width: 100%;
+    }
+
+    .dashboard-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        min-height: 210px;
+    }
+
+    .vehicle-dashboard-info {
+        padding: 26px;
+    }
+
+    .vehicle-dashboard-buttons {
+        flex-direction: column;
+    }
+
+    .vehicle-dashboard-buttons a {
+        width: 100%;
+    }
+
+    .investment-image-placeholder {
+        min-height: 270px;
+    }
+
+    .dashboard-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-placeholder,
+    .media-placeholder.large {
+        grid-column: auto;
+        min-height: 250px;
+    }
+
+    .dashboard-demo-notice {
+        padding: 25px 0;
+    }
+}

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lease Agreement | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .lease-agreement-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 24px 80px;
+    }
+
+    .agreement-hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .agreement-hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      margin-bottom: 14px;
+      letter-spacing: -2px;
+    }
+
+    .agreement-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .agreement-card {
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .agreement-card h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 25px;
+    }
+
+    .agreement-card h3 {
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .agreement-card p,
+    .agreement-card li {
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .agreement-card ul {
+      padding-left: 22px;
+    }
+
+    .agreement-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .summary-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .summary-box span {
+      display: block;
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .summary-box strong {
+      font-size: 19px;
+    }
+
+    .agreement-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .agreement-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .agreement-button.secondary {
+      background: transparent;
+      color: #111;
+    }
+
+    .signature-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 25px;
+    }
+
+    .signature-box label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .signature-box input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .agreement-status {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #e8f5e9;
+      color: #1b5e20;
+      line-height: 1.5;
+    }
+
+    .agreement-note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .agreement-summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .lease-agreement-page {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .agreement-card {
+        padding: 22px;
+      }
+
+      .agreement-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .agreement-actions {
+        flex-direction: column;
+      }
+
+      .agreement-button {
+        width: 100%;
+      }
+    }
+
+    body.dark-mode .agreement-card {
+      background: #1d1d1d;
+    }
+
+    body.dark-mode .summary-box,
+    body.dark-mode .signature-box {
+      background: #111;
+      border-color: #444;
+    }
+
+    body.dark-mode .agreement-card p,
+    body.dark-mode .agreement-card li,
+    body.dark-mode .agreement-hero p {
+      color: #ccc;
+    }
+
+    body.dark-mode .summary-box span,
+    body.dark-mode .agreement-note {
+      color: #aaa;
+    }
+
+    body.dark-mode .agreement-button.secondary {
+      color: #fff;
+      border-color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+      <button id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button id="accountButton" aria-label="Account">
+        ◯
+      </button>
+    </div>
+
+    <div class="account-menu" id="accountMenu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="payment-history.html">Payment History</a>
+      <a href="service-history.html">Service History</a>
+      <a href="account-security.html">Account Security</a>
+      <a href="support.html">Support</a>
+    </div>
+  </header>
+
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+      ×
+    </button>
+
+    <nav>
+
+      <div class="navigation-group">
+        <button class="navigation-group-button">
+          Car Models <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="car-models.html">All Models</a>
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+        <button class="navigation-group-button">
+          Batteries <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html">Car Battery</a>
+          <a href="batteries.html">Powerwall 2</a>
+          <a href="batteries.html">Powerwall 3</a>
+          <a href="batteries.html">Powerwall 3 Expansion</a>
+          <a href="batteries.html">Megapack 2</a>
+          <a href="batteries.html">Megapack 3</a>
+        </div>
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+  </aside>
+
+  <main class="lease-agreement-page">
+
+    <section class="agreement-hero">
+      <h1>Lease Agreement</h1>
+      <p>
+        Review the key terms and information associated with your Tesla vehicle
+        lease before completing the leasing process.
+      </p>
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>Lease Summary</h2>
+
+      <div class="agreement-summary">
+
+        <div class="summary-box">
+          <span>Vehicle</span>
+          <strong id="agreementVehicle">Tesla Vehicle</strong>
+        </div>
+
+        <div class="summary-box">
+          <span>Vehicle Price</span>
+          <strong id="agreementPrice">$0.00</strong>
+        </div>
+
+        <div class="summary-box">
+          <span>Initial Payment</span>
+          <strong id="agreementUpfront">$0.00</strong>
+        </div>
+
+        <div class="summary-box">
+          <span>Lease Term</span>
+          <strong id="agreementTerm">6 Months</strong>
+        </div>
+
+      </div>
+
+      <p>
+        This summary is generated from the lease information entered during
+        your application or order process.
+      </p>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>1. Vehicle Lease</h2>
+
+      <p>
+        The lease provides the customer with the right to use the selected
+        Tesla vehicle during the agreed lease period, subject to the terms
+        applicable to the lease.
+      </p>
+
+      <h3>Vehicle Condition</h3>
+
+      <p>
+        The vehicle should be operated responsibly and maintained according
+        to the applicable vehicle maintenance requirements.
+      </p>
+
+      <h3>Authorized Use</h3>
+
+      <p>
+        The leased vehicle should only be used for lawful purposes and in
+        accordance with applicable transportation and vehicle regulations.
+      </p>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>2. Lease Payments</h2>
+
+      <p>
+        The lease payment schedule is determined from the vehicle price,
+        initial payment, selected lease term and applicable charges.
+      </p>
+
+      <ul>
+        <li>Initial payment is calculated according to the selected lease arrangement.</li>
+        <li>Remaining lease payments are scheduled across the selected term.</li>
+        <li>Applicable taxes, fees and charges may affect the final amount.</li>
+        <li>Payment dates and amounts should be reviewed before signing a final agreement.</li>
+      </ul>
+
+      <div class="agreement-actions">
+        <a href="lease-payment-schedule.html" class="agreement-button">
+          View Payment Schedule
+        </a>
+
+        <a href="payment-history.html" class="agreement-button secondary">
+          Payment History
+        </a>
+      </div>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>3. Insurance and Responsibility</h2>
+
+      <p>
+        The customer may be required to maintain applicable insurance coverage
+        for the leased vehicle throughout the lease period.
+      </p>
+
+      <p>
+        Customers are responsible for complying with applicable laws,
+        insurance requirements and vehicle-use requirements.
+      </p>
+
+      <div class="agreement-actions">
+        <a href="insurance.html" class="agreement-button secondary">
+          Insurance Information
+        </a>
+
+        <a href="warranty.html" class="agreement-button secondary">
+          Warranty Information
+        </a>
+      </div>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>4. Lease Term and Return</h2>
+
+      <p>
+        At the end of the selected lease period, the customer should follow
+        the applicable vehicle return, purchase or lease-end instructions.
+      </p>
+
+      <ul>
+        <li>Review the vehicle condition before lease completion.</li>
+        <li>Review outstanding payments or applicable charges.</li>
+        <li>Follow the applicable return or end-of-lease process.</li>
+        <li>Keep copies of relevant lease and vehicle documents.</li>
+      </ul>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>5. Agreement Review</h2>
+
+      <p>
+        Please review all information carefully before proceeding. A final
+        legally binding lease agreement may contain additional terms,
+        disclosures and requirements that are not reproduced on this page.
+      </p>
+
+      <div class="signature-box">
+
+        <label for="agreementName">
+          Customer Name
+        </label>
+
+        <input
+          type="text"
+          id="agreementName"
+          placeholder="Enter your full name"
+          autocomplete="name"
+        >
+
+        <div class="agreement-actions">
+
+          <button
+            type="button"
+            class="agreement-button"
+            id="reviewAgreementButton"
+          >
+            Confirm Review
+          </button>
+
+          <a
+            href="lease-application.html"
+            class="agreement-button secondary"
+          >
+            Return to Lease Application
+          </a>
+
+        </div>
+
+        <div class="agreement-status" id="agreementStatus"></div>
+
+      </div>
+
+      <p class="agreement-note">
+        This page is an informational lease-agreement interface for the
+        website. Final contractual terms should be supplied and accepted
+        through the appropriate legally binding agreement process.
+      </p>
+
+    </section>
+
+    <section class="agreement-card">
+
+      <h2>Need Assistance?</h2>
+
+      <p>
+        If you have questions about your lease information, payment schedule,
+        vehicle documents or account, contact support.
+      </p>
+
+      <div class="agreement-actions">
+        <a href="support-request.html" class="agreement-button">
+          Contact Support
+        </a>
+
+        <a href="document.html" class="agreement-button secondary">
+          View Documents
+        </a>
+
+        <a href="dashboard.html" class="agreement-button secondary">
+          Dashboard
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support</a>
+        <a href="support-request.html">Support Request</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h3>Ownership</h3>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="service.html">Service</a>
+        <a href="delivery.html">Delivery</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        <a href="lease-agreement.html">Lease Agreement</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      ©️ 2026 TESLA, Inc. All rights reserved.
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+  <div class="cookie-overlay" id="cookieOverlay">
+    <div class="cookie-box">
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve your experience.
+      </p>
+
+      <div class="cookie-actions">
+        <button id="acceptCookies">Accept</button>
+        <a href="cookie-settings.html">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+
+  <button id="refreshButton" class="refresh-button" aria-label="Refresh page">
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const orderData =
+        JSON.parse(sessionStorage.getItem("teslaOrderData") || "null");
+
+      const leaseData =
+        JSON.parse(sessionStorage.getItem("teslaLeaseApplication") || "null");
+
+      const profile =
+        JSON.parse(sessionStorage.getItem("teslaAccountProfile") || "null");
+
+      const vehicleElement =
+        document.getElementById("agreementVehicle");
+
+      const priceElement =
+        document.getElementById("agreementPrice");
+
+      const upfrontElement =
+        document.getElementById("agreementUpfront");
+
+      const termElement =
+        document.getElementById("agreementTerm");
+
+      const nameInput =
+        document.getElementById("agreementName");
+
+      const status =
+        document.getElementById("agreementStatus");
+
+      const vehicle =
+        orderData?.model ||
+        leaseData?.model ||
+        "Tesla Vehicle";
+
+      const price =
+        Number(orderData?.price || leaseData?.vehiclePrice || 0);
+
+      const term =
+        Number(orderData?.leaseTerm || leaseData?.leaseTerm || 6);
+
+      const upfront =
+        price > 0 ? price * 0.50 : 0;
+
+      vehicleElement.textContent = vehicle;
+
+      priceElement.textContent =
+        price > 0
+          ? "$" + price.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })
+          : "$0.00";
+
+      upfrontElement.textContent =
+        upfront > 0
+          ? "$" + upfront.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })
+          : "$0.00";
+
+      termElement.textContent =
+        term + (term === 1 ? " Month" : " Months");
+
+      if (profile?.firstName || profile?.lastName) {
+        nameInput.value =
+          [profile.firstName, profile.lastName]
+            .filter(Boolean)
+            .join(" ");
+      }
+
+      document
+        .getElementById("reviewAgreementButton")
+        .addEventListener("click", function () {
+
+          const name = nameInput.value.trim();
+
+          if (!name) {
+            status.style.display = "block";
+            status.style.background = "#ffebee";
+            status.style.color = "#b71c1c";
+            status.textContent =
+              "Please enter your full name before confirming your review.";
+            return;
+          }
+
+          const reviewData = {
+            customerName: name,
+            vehicle: vehicle,
+            vehiclePrice: price,
+            upfrontPayment: upfront,
+            leaseTerm: term,
+            reviewedAt: new Date().toISOString()
+          };
+
+          sessionStorage.setItem(
+            "teslaLeaseAgreementReview",
+            JSON.stringify(reviewData)
+          );
+
+          status.style.display = "block";
+          status.style.background = "#e8f5e9";
+          status.style.color = "#1b5e20";
+
+          status.innerHTML =
+            "<strong>Agreement review recorded.</strong><br>" +
+            "Your lease information has been marked as reviewed. " +
+            "Continue through the applicable lease process for the next step.";
+        });
+
+    });
+  </script>
+
+</body>
+</html>

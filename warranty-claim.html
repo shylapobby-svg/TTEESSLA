@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Warranty Claim | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .warranty-claim-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 24px 80px;
+    }
+
+    .claim-hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .claim-hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .claim-hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .claim-card {
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .claim-card h2 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+
+    .claim-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .claim-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .claim-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .claim-field label {
+      font-weight: 600;
+    }
+
+    .claim-field input,
+    .claim-field select,
+    .claim-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .claim-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .claim-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .claim-button {
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      border-radius: 999px;
+      min-height: 48px;
+      padding: 0 24px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .claim-button.secondary {
+      background: transparent;
+      color: #111;
+    }
+
+    .claim-error,
+    .claim-success {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 12px;
+      line-height: 1.6;
+    }
+
+    .claim-error {
+      background: #ffebee;
+      color: #b71c1c;
+    }
+
+    .claim-success {
+      background: #e8f5e9;
+      color: #1b5e20;
+    }
+
+    .claim-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .claim-info {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 22px;
+    }
+
+    .claim-info h3 {
+      margin-top: 0;
+    }
+
+    .claim-info p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .claim-note {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 22px;
+    }
+
+    @media (max-width: 750px) {
+      .claim-grid,
+      .claim-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .claim-field.full {
+        grid-column: auto;
+      }
+
+      .warranty-claim-page {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .claim-card {
+        padding: 22px;
+      }
+
+      .claim-actions {
+        flex-direction: column;
+      }
+
+      .claim-button {
+        width: 100%;
+      }
+    }
+
+    body.dark-mode .claim-card {
+      background: #1d1d1d;
+    }
+
+    body.dark-mode .claim-info,
+    body.dark-mode .claim-field input,
+    body.dark-mode .claim-field select,
+    body.dark-mode .claim-field textarea {
+      background: #111;
+      border-color: #444;
+      color: #fff;
+    }
+
+    body.dark-mode .claim-hero p,
+    body.dark-mode .claim-info p,
+    body.dark-mode .claim-note {
+      color: #aaa;
+    }
+
+    body.dark-mode .claim-button.secondary {
+      color: #fff;
+      border-color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+      <button id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button id="accountButton" aria-label="Account">
+        ◯
+      </button>
+
+    </div>
+
+    <div class="account-menu" id="accountMenu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="payment-history.html">Payment History</a>
+      <a href="service-history.html">Service History</a>
+      <a href="account-security.html">Account Security</a>
+      <a href="support.html">Support</a>
+    </div>
+
+  </header>
+
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+      ×
+    </button>
+
+    <nav>
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button">
+          Car Models <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="car-models.html">All Models</a>
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button">
+          Batteries <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html">Car Battery</a>
+          <a href="batteries.html">Powerwall 2</a>
+          <a href="batteries.html">Powerwall 3</a>
+          <a href="batteries.html">Powerwall 3 Expansion</a>
+          <a href="batteries.html">Megapack 2</a>
+          <a href="batteries.html">Megapack 3</a>
+        </div>
+
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+  </aside>
+
+  <main class="warranty-claim-page">
+
+    <section class="claim-hero">
+      <h1>Warranty Claim</h1>
+
+      <p>
+        Submit a request for assistance with a vehicle component or concern
+        that you believe may be covered by your applicable warranty.
+      </p>
+    </section>
+
+    <section class="claim-card">
+
+      <h2>Vehicle & Customer Information</h2>
+
+      <form id="warrantyClaimForm">
+
+        <div class="claim-grid">
+
+          <div class="claim-field">
+            <label for="claimFirstName">First Name</label>
+            <input
+              type="text"
+              id="claimFirstName"
+              autocomplete="given-name"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimLastName">Last Name</label>
+            <input
+              type="text"
+              id="claimLastName"
+              autocomplete="family-name"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimEmail">Email</label>
+            <input
+              type="email"
+              id="claimEmail"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimPhone">Phone</label>
+            <input
+              type="tel"
+              id="claimPhone"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimModel">Vehicle Model</label>
+
+            <select id="claimModel" required>
+              <option value="">Select model</option>
+              <option value="Model 3">Model 3</option>
+              <option value="Model Y">Model Y</option>
+              <option value="Model S">Model S</option>
+              <option value="Model X">Model X</option>
+              <option value="Cybertruck">Cybertruck</option>
+            </select>
+          </div>
+
+          <div class="claim-field">
+            <label for="claimYear">Vehicle Year</label>
+
+            <select id="claimYear" required>
+              <option value="">Select year</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+              <option>2014</option>
+              <option>2013</option>
+              <option>2012</option>
+            </select>
+          </div>
+
+          <div class="claim-field">
+            <label for="claimVin">VIN</label>
+            <input
+              type="text"
+              id="claimVin"
+              maxlength="17"
+              placeholder="17-character VIN"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimMileage">Current Mileage</label>
+            <input
+              type="number"
+              id="claimMileage"
+              min="0"
+              placeholder="0"
+              required
+            >
+          </div>
+
+          <div class="claim-field">
+            <label for="claimCategory">Issue Category</label>
+
+            <select id="claimCategory" required>
+              <option value="">Select category</option>
+              <option value="Battery">Battery</option>
+              <option value="Charging">Charging</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Exterior">Exterior</option>
+              <option value="Interior">Interior</option>
+              <option value="Software">Software</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="claim-field">
+            <label for="claimDate">Issue Date</label>
+            <input type="date" id="claimDate" required>
+          </div>
+
+          <div class="claim-field full">
+            <label for="claimDescription">
+              Describe the issue
+            </label>
+
+            <textarea
+              id="claimDescription"
+              placeholder="Describe what happened, when it started, and any relevant details."
+              required
+            ></textarea>
+          </div>
+
+          <div class="claim-field full">
+            <label for="claimFile">
+              Supporting Document or Image
+            </label>
+
+            <input
+              type="file"
+              id="claimFile"
+              accept="image/*,.pdf,.txt"
+            >
+          </div>
+
+        </div>
+
+        <div class="claim-actions">
+
+          <button
+            type="submit"
+            class="claim-button"
+            id="submitClaimButton"
+          >
+            Submit Warranty Claim
+          </button>
+
+          <a
+            href="warranty.html"
+            class="claim-button secondary"
+          >
+            Warranty Information
+          </a>
+
+          <a
+            href="service.html"
+            class="claim-button secondary"
+          >
+            Request Service
+          </a>
+
+        </div>
+
+        <div class="claim-error" id="claimError"></div>
+        <div class="claim-success" id="claimSuccess"></div>
+
+      </form>
+
+      <p class="claim-note">
+        Warranty coverage depends on the applicable vehicle warranty,
+        component, vehicle condition, time, mileage and other relevant
+        requirements. Submission of a claim does not by itself establish
+        warranty coverage.
+      </p>
+
+    </section>
+
+    <section class="claim-card">
+
+      <h2>What Happens Next?</h2>
+
+      <div class="claim-info-grid">
+
+        <div class="claim-info">
+          <h3>1. Request Received</h3>
+          <p>
+            Your warranty request is recorded with a unique reference number.
+          </p>
+        </div>
+
+        <div class="claim-info">
+          <h3>2. Review</h3>
+          <p>
+            The submitted vehicle and issue information can be reviewed as
+            part of the warranty process.
+          </p>
+        </div>
+
+        <div class="claim-info">
+          <h3>3. Service</h3>
+          <p>
+            If service is required, the applicable service process can be
+            arranged.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="claim-card">
+
+      <h2>Need Help?</h2>
+
+      <p>
+        For general warranty questions or assistance with an existing request,
+        visit the support center.
+      </p>
+
+      <div class="claim-actions">
+
+        <a href="support.html" class="claim-button">
+          Support Center
+        </a>
+
+        <a href="support-request.html" class="claim-button secondary">
+          Contact Support
+        </a>
+
+        <a href="dashboard.html" class="claim-button secondary">
+          Dashboard
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support</a>
+        <a href="support-request.html">Support Request</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h3>Ownership</h3>
+        <a href="warranty.html">Warranty</a>
+        <a href="warranty-claim.html">Warranty Claim</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="service.html">Service</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        <a href="lease-agreement.html">Lease Agreement</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      ©️ 2026 TESLA, Inc. All rights reserved.
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+  <div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve your experience.
+      </p>
+
+      <div class="cookie-actions">
+        <button id="acceptCookies">Accept</button>
+        <a href="cookie-settings.html">Cookie Settings</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    id="refreshButton"
+    class="refresh-button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const form = document.getElementById("warrantyClaimForm");
+      const errorBox = document.getElementById("claimError");
+      const successBox = document.getElementById("claimSuccess");
+      const submitButton = document.getElementById("submitClaimButton");
+
+      const profile =
+        JSON.parse(
+          sessionStorage.getItem("teslaAccountProfile") || "null"
+        );
+
+      const order =
+        JSON.parse(
+          sessionStorage.getItem("teslaOrderData") || "null"
+        );
+
+      if (profile) {
+        document.getElementById("claimFirstName").value =
+          profile.firstName || "";
+
+        document.getElementById("claimLastName").value =
+          profile.lastName || "";
+
+        document.getElementById("claimEmail").value =
+          profile.email || "";
+
+        document.getElementById("claimPhone").value =
+          profile.phone || "";
+      }
+
+      if (order) {
+        const model = order.model || "";
+
+        const modelSelect =
+          document.getElementById("claimModel");
+
+        if (
+          [...modelSelect.options]
+            .some(option => option.value === model)
+        ) {
+          modelSelect.value = model;
+        }
+      }
+
+      document.getElementById("claimDate").max =
+        new Date().toISOString().split("T")[0];
+
+      form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        errorBox.style.display = "none";
+        successBox.style.display = "none";
+
+        const firstName =
+          document.getElementById("claimFirstName").value.trim();
+
+        const lastName =
+          document.getElementById("claimLastName").value.trim();
+
+        const email =
+          document.getElementById("claimEmail").value.trim();
+
+        const phone =
+          document.getElementById("claimPhone").value.trim();
+
+        const model =
+          document.getElementById("claimModel").value;
+
+        const year =
+          document.getElementById("claimYear").value;
+
+        const vin =
+          document.getElementById("claimVin").value
+            .trim()
+            .toUpperCase();
+
+        const mileage =
+          document.getElementById("claimMileage").value;
+
+        const category =
+          document.getElementById("claimCategory").value;
+
+        const issueDate =
+          document.getElementById("claimDate").value;
+
+        const description =
+          document.getElementById("claimDescription").value.trim();
+
+        const file =
+          document.getElementById("claimFile").files[0];
+
+        if (
+          !firstName ||
+          !lastName ||
+          !email ||
+          !phone ||
+          !model ||
+          !year ||
+          !vin ||
+          !mileage ||
+          !category ||
+          !issueDate ||
+          !description
+        ) {
+          errorBox.textContent =
+            "Please complete all required fields.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          errorBox.textContent =
+            "Please enter a valid email address.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        if (!/^[A-HJ-NPR-Z0-9]{17}$/i.test(vin)) {
+          errorBox.textContent =
+            "Please enter a valid 17-character VIN.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        if (file && file.size > 10 * 1024 * 1024) {
+          errorBox.textContent =
+            "The supporting file must be 10 MB or smaller.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        const claimReference =
+          "TESLA-WARRANTY-" +
+          Date.now().toString().slice(-8);
+
+        const claimData = {
+          reference: claimReference,
+          firstName,
+          lastName,
+          email,
+          phone,
+          model,
+          year,
+          vin,
+          mileage,
+          category,
+          issueDate,
+          description,
+          fileName: file ? file.name : "",
+          submittedAt: new Date().toISOString()
+        };
+
+        sessionStorage.setItem(
+          "teslaWarrantyClaim",
+          JSON.stringify(claimData)
+        );
+
+        successBox.innerHTML =
+          "<strong>Warranty claim submitted.</strong><br><br>" +
+          "Your warranty request has been received.<br>" +
+          "Claim reference: <strong>" +
+          claimReference +
+          "</strong><br><br>" +
+          "Please keep this reference for your records.";
+
+        successBox.style.display = "block";
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Claim Submitted";
+
+        form.querySelectorAll("input, select, textarea")
+          .forEach(function (field) {
+            field.disabled = true;
+          });
+
+        successBox.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>

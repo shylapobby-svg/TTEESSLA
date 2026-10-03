@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a Tesla vehicle insurance quote.">
+  <title>Insurance Quote | Tesla</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="Tesla home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button class="account-button" id="accountButton" aria-label="Account">
+        ◯
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- Side Navigation -->
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+      ×
+    </button>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button" type="button">
+          Car Models
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button" type="button">
+          Batteries
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html">Car Battery</a>
+          <a href="batteries.html">Powerwall 2</a>
+          <a href="batteries.html">Powerwall 3</a>
+          <a href="batteries.html">Powerwall 3 Expansion</a>
+          <a href="batteries.html">Megapack 2</a>
+          <a href="batteries.html">Megapack 3</a>
+        </div>
+
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- Account Menu -->
+  <div class="account-menu" id="accountMenu">
+
+    <a href="dashboard.html">Dashboard</a>
+    <a href="profile.html">Profile</a>
+    <a href="my-orders.html">My Orders</a>
+    <a href="payment-history.html">Payment History</a>
+    <a href="service-history.html">Service History</a>
+    <a href="notifications.html">Notifications</a>
+    <a href="account-security.html">Account Security</a>
+    <a href="support.html">Support</a>
+
+  </div>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="insurance-hero">
+
+      <div class="insurance-hero-content">
+
+        <p class="eyebrow">TESLA INSURANCE</p>
+
+        <h1>Request an Insurance Quote</h1>
+
+        <p>
+          Provide your vehicle and contact information to
+          request an insurance quote or coverage review.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Quote Form -->
+    <section class="insurance-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">GET STARTED</p>
+
+        <h2>Your Information</h2>
+
+        <p>
+          Complete the form below. We do not request credit
+          or debit card information on this page.
+        </p>
+
+      </div>
+
+
+      <form class="insurance-form" id="insuranceQuoteForm">
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label for="insuranceFirstName">
+              First Name
+            </label>
+
+            <input
+              type="text"
+              id="insuranceFirstName"
+              name="firstName"
+              autocomplete="given-name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceLastName">
+              Last Name
+            </label>
+
+            <input
+              type="text"
+              id="insuranceLastName"
+              name="lastName"
+              autocomplete="family-name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceEmail">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="insuranceEmail"
+              name="email"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insurancePhone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="insurancePhone"
+              name="phone"
+              autocomplete="tel"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceCountry">
+              Country
+            </label>
+
+            <select id="insuranceCountry" name="country" required>
+
+              <option value="">Select country</option>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="Other">Other</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceState">
+              State / Province
+            </label>
+
+            <input
+              type="text"
+              id="insuranceState"
+              name="state"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insurancePostal">
+              ZIP / Postal Code
+            </label>
+
+            <input
+              type="text"
+              id="insurancePostal"
+              name="postalCode"
+              autocomplete="postal-code"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceCity">
+              City
+            </label>
+
+            <input
+              type="text"
+              id="insuranceCity"
+              name="city"
+              autocomplete="address-level2"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-divider"></div>
+
+
+        <div class="section-heading form-heading">
+
+          <p class="eyebrow">VEHICLE</p>
+
+          <h2>Vehicle Information</h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label for="insuranceModel">
+              Tesla Model
+            </label>
+
+            <select id="insuranceModel" name="model" required>
+
+              <option value="">Select model</option>
+              <option value="Model 3">Model 3</option>
+              <option value="Model Y">Model Y</option>
+              <option value="Model S">Model S</option>
+              <option value="Model X">Model X</option>
+              <option value="Cybertruck">Cybertruck</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceYear">
+              Vehicle Year
+            </label>
+
+            <select id="insuranceYear" name="year" required>
+
+              <option value="">Select year</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+              <option>2014</option>
+              <option>2013</option>
+              <option>2012</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceMileage">
+              Current Mileage
+            </label>
+
+            <input
+              type="number"
+              id="insuranceMileage"
+              name="mileage"
+              min="0"
+              placeholder="e.g. 12500"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceOwnership">
+              Ownership Status
+            </label>
+
+            <select id="insuranceOwnership" name="ownership" required>
+
+              <option value="">Select status</option>
+              <option value="Own">I own the vehicle</option>
+              <option value="Lease">I lease the vehicle</option>
+              <option value="Financed">Vehicle is financed</option>
+              <option value="Purchasing">Currently purchasing</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceVin">
+              VIN
+            </label>
+
+            <input
+              type="text"
+              id="insuranceVin"
+              name="vin"
+              minlength="17"
+              maxlength="17"
+              pattern="[A-HJ-NPR-Z0-9]{17}"
+              placeholder="17-character VIN"
+              autocomplete="off"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="insuranceCoverage">
+              Coverage Interest
+            </label>
+
+            <select id="insuranceCoverage" name="coverage" required>
+
+              <option value="">Select coverage</option>
+              <option value="Basic">Basic coverage</option>
+              <option value="Standard">Standard coverage</option>
+              <option value="Comprehensive">Comprehensive coverage</option>
+              <option value="Not sure">I'm not sure</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-divider"></div>
+
+
+        <div class="form-field">
+
+          <label for="insuranceNotes">
+            Additional Information
+          </label>
+
+          <textarea
+            id="insuranceNotes"
+            name="notes"
+            rows="6"
+            placeholder="Tell us anything else that may help with your request."
+          ></textarea>
+
+        </div>
+
+
+        <label class="checkbox-field">
+
+          <input
+            type="checkbox"
+            id="insuranceConsent"
+            name="consent"
+            required
+          >
+
+          <span>
+            I confirm that the information provided is accurate
+            and I would like to request an insurance quote or
+            coverage information.
+          </span>
+
+        </label>
+
+
+        <div
+          class="form-error"
+          id="insuranceError"
+          aria-live="polite">
+        </div>
+
+
+        <button type="submit" class="primary-button submit-button">
+          Request Insurance Quote
+        </button>
+
+      </form>
+
+
+      <div
+        class="insurance-success"
+        id="insuranceSuccess"
+        aria-live="polite">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Request Received</h2>
+
+        <p>
+          Your insurance quote request has been received.
+        </p>
+
+        <p>
+          Request reference:
+          <strong id="insuranceReference"></strong>
+        </p>
+
+        <a href="insurance.html" class="secondary-button">
+          View Insurance Information
+        </a>
+
+        <a href="dashboard.html" class="secondary-button">
+          Go to Dashboard
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Coverage Information -->
+    <section class="insurance-section insurance-light">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">COVERAGE</p>
+
+        <h2>Explore Your Options</h2>
+
+      </div>
+
+
+      <div class="coverage-grid">
+
+        <article class="coverage-card">
+
+          <h3>Vehicle Protection</h3>
+
+          <p>
+            Explore coverage designed around your Tesla
+            vehicle and its ownership or lease status.
+          </p>
+
+        </article>
+
+
+        <article class="coverage-card">
+
+          <h3>Collision Coverage</h3>
+
+          <p>
+            Review options that may help cover eligible
+            collision-related vehicle damage.
+          </p>
+
+        </article>
+
+
+        <article class="coverage-card">
+
+          <h3>Comprehensive Coverage</h3>
+
+          <p>
+            Ask about coverage for eligible events other
+            than vehicle collisions.
+          </p>
+
+        </article>
+
+
+        <article class="coverage-card">
+
+          <h3>Coverage Questions</h3>
+
+          <p>
+            If you are unsure which coverage may fit your
+            situation, request assistance before making a decision.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Important Notice -->
+    <section class="insurance-notice">
+
+      <div>
+
+        <p class="eyebrow">IMPORTANT</p>
+
+        <h2>No Card Information Required</h2>
+
+        <p>
+          This quote request does not ask for or collect
+          credit-card or debit-card numbers, expiration dates,
+          security codes, or other card-payment information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+      <div class="footer-grid">
+
+        <div class="footer-column">
+
+          <h3>Company</h3>
+
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="news.html">News</a>
+          <a href="stores.html">Stores</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Support</h3>
+
+          <a href="support.html">Support Center</a>
+          <a href="support-request.html">Support Request</a>
+          <a href="service.html">Service</a>
+          <a href="service-centers.html">Service Centers</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Ownership</h3>
+
+          <a href="purchase-tesla.html">Purchased a Tesla</a>
+          <a href="lease-tesla.html">Lease a Tesla</a>
+          <a href="my-orders.html">My Orders</a>
+          <a href="vehicle-garage.html">Vehicle Garage</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Legal</h3>
+
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="cookie-settings.html">Cookie Settings</a>
+          <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          ©️ 2026 TESLA, Inc. All rights reserved.
+        </p>
+
+        <p>United States</p>
+
+        <a href="accessibility.html">
+          Accessibility
+        </a>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <!-- Cookie Notice -->
+  <div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve
+        your experience and remember your preferences.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button id="acceptCookies" class="primary-button">
+          Accept
+        </button>
+
+        <a href="cookie-settings.html" class="secondary-button">
+          Cookie Settings
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    aria-label="Refresh page">
+    ↻
+  </button>
+
+
+  <script src="script.js"></script>
+
+
+  <script>
+
+    const insuranceForm =
+      document.getElementById("insuranceQuoteForm");
+
+    const insuranceError =
+      document.getElementById("insuranceError");
+
+    const insuranceSuccess =
+      document.getElementById("insuranceSuccess");
+
+    const insuranceReference =
+      document.getElementById("insuranceReference");
+
+
+    insuranceForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      insuranceError.textContent = "";
+
+      const formData =
+        new FormData(insuranceForm);
+
+      const email =
+        formData.get("email").trim();
+
+      const vin =
+        formData.get("vin").trim().toUpperCase();
+
+
+      if (!email.includes("@") || !email.includes(".")) {
+
+        insuranceError.textContent =
+          "Please enter a valid email address.";
+
+        return;
+      }
+
+
+      if (!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)) {
+
+        insuranceError.textContent =
+          "Please enter a valid 17-character VIN.";
+
+        return;
+      }
+
+
+      const reference =
+        "TESLA-INS-" +
+        Date.now().toString().slice(-8);
+
+
+      const requestData = {
+
+        reference: reference,
+
+        firstName: formData.get("firstName"),
+        lastName: formData.get("lastName"),
+        email: email,
+        phone: formData.get("phone"),
+
+        country: formData.get("country"),
+        state: formData.get("state"),
+        city: formData.get("city"),
+        postalCode: formData.get("postalCode"),
+
+        model: formData.get("model"),
+        year: formData.get("year"),
+        mileage: formData.get("mileage"),
+        ownership: formData.get("ownership"),
+        vin: vin,
+        coverage: formData.get("coverage"),
+        notes: formData.get("notes"),
+
+        submittedAt:
+          new Date().toISOString()
+
+      };
+
+
+      sessionStorage.setItem(
+        "teslaInsuranceQuoteRequest",
+        JSON.stringify(requestData)
+      );
+
+
+      insuranceReference.textContent = reference;
+
+      insuranceForm.style.display = "none";
+      insuranceSuccess.classList.add("visible");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+  </script>
+
+
+  <style>
+
+    .insurance-hero {
+      min-height: 58vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: #f5f5f5;
+    }
+
+    .insurance-hero-content {
+      max-width: 850px;
+    }
+
+    .insurance-hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      letter-spacing: -3px;
+      margin: 10px 0 20px;
+    }
+
+    .insurance-hero p:not(.eyebrow) {
+      max-width: 680px;
+      margin: auto;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+
+    .insurance-section {
+      padding: 90px 6%;
+    }
+
+    .insurance-light {
+      background: #f5f5f5;
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -2px;
+      margin: 10px 0 15px;
+    }
+
+    .section-heading p:not(.eyebrow) {
+      line-height: 1.7;
+      opacity: .7;
+    }
+
+    .insurance-form {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-field label {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px;
+      border: 1px solid #cfcfcf;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      font: inherit;
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-divider {
+      height: 1px;
+      background: #ddd;
+      margin: 50px 0;
+    }
+
+    .form-heading {
+      margin-bottom: 35px;
+    }
+
+    .checkbox-field {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 28px 0;
+      line-height: 1.6;
+    }
+
+    .checkbox-field input {
+      margin-top: 5px;
+    }
+
+    .form-error {
+      min-height: 25px;
+      color: #b00020;
+      margin-bottom: 10px;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 56px;
+      border: 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .insurance-success {
+      display: none;
+      max-width: 650px;
+      margin: 40px auto 0;
+      padding: 45px;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .insurance-success.visible {
+      display: block;
+    }
+
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .insurance-success h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .insurance-success p {
+      line-height: 1.7;
+      opacity: .75;
+    }
+
+    .insurance-success .secondary-button {
+      margin: 8px 5px 0;
+      display: inline-flex;
+      text-decoration: none;
+      background: #eee;
+      color: #111;
+      padding: 13px 20px;
+      border-radius: 7px;
+    }
+
+    .coverage-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .coverage-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .coverage-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .coverage-card p {
+      line-height: 1.7;
+      opacity: .7;
+    }
+
+    .insurance-notice {
+      padding: 80px 6%;
+      background: #111;
+      color: #fff;
+    }
+
+    .insurance-notice > div {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .insurance-notice h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      margin: 12px 0 18px;
+      letter-spacing: -2px;
+    }
+
+    .insurance-notice p:not(.eyebrow) {
+      line-height: 1.7;
+      opacity: .8;
+    }
+
+    body.dark-mode .insurance-hero,
+    body.dark-mode .insurance-light {
+      background: #151515;
+    }
+
+    body.dark-mode .form-field input,
+    body.dark-mode .form-field select,
+    body.dark-mode .form-field textarea {
+      background: #1c1c1c;
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode .form-divider {
+      background: #333;
+    }
+
+    body.dark-mode .insurance-success,
+    body.dark-mode .coverage-card {
+      background: #1c1c1c;
+      border-color: #333;
+    }
+
+    body.dark-mode .insurance-success .secondary-button {
+      background: #333;
+      color: #fff;
+    }
+
+    body.dark-mode .success-icon {
+      background: #fff;
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+
+      .coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .insurance-section {
+        padding: 65px 20px;
+      }
+
+      .insurance-hero {
+        min-height: 50vh;
+        padding: 110px 20px 70px;
+      }
+
+      .insurance-hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .form-grid,
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .insurance-success {
+        padding: 30px 20px;
+      }
+
+      .insurance-success .secondary-button {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 6px 0;
+      }
+
+      .insurance-notice {
+        padding: 65px 20px;
+      }
+
+    }
+
+  </style>
+
+</body>
+</html>

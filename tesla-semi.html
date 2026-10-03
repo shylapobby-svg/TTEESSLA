@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tesla Semi | Future Cars</title>
+  <meta
+    name="description"
+    content="Explore the Tesla Semi, an all-electric heavy-duty truck designed for long-distance transportation."
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="future-cars.css">
+  <link rel="stylesheet" href="tesla-semi.css">
+
+  <style>
+    .future-detail-page {
+      min-height: 100vh;
+    }
+
+    .future-detail-hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #e5e5e5;
+    }
+
+    .future-detail-hero-image {
+      position: absolute;
+      inset: 0;
+    }
+
+    .future-detail-hero-image .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d4d4d4;
+      color: #555;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .future-detail-hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1100px, 92%);
+      padding: 130px 20px 90px;
+      text-align: center;
+    }
+
+    .future-detail-hero-content h1 {
+      margin: 0 0 20px;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .future-detail-hero-content p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.65;
+    }
+
+    .future-detail-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .future-detail-actions a {
+      min-width: 160px;
+    }
+
+    .future-detail-section {
+      padding: 100px 24px;
+    }
+
+    .future-detail-container {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+    }
+
+    .future-detail-heading {
+      max-width: 800px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .future-detail-heading h2 {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .future-detail-heading p {
+      margin: 0;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .future-spec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .future-spec-card {
+      padding: 32px 25px;
+      min-height: 170px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .future-spec-card span {
+      display: block;
+      margin-bottom: 12px;
+      color: #777;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .future-spec-card strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    .future-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .future-feature-card {
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .future-feature-image {
+      min-height: 300px;
+    }
+
+    .future-feature-image .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #dcdcdc;
+      color: #555;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .future-feature-content {
+      padding: 30px;
+    }
+
+    .future-feature-content h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    .future-feature-content p {
+      margin: 0;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    .future-info-section {
+      background: #f3f3f3;
+    }
+
+    .future-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .future-info-image {
+      min-height: 480px;
+    }
+
+    .future-info-image .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d5d5d5;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+    }
+
+    .future-info-content h2 {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .future-info-content p {
+      margin: 0 0 20px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .future-info-list {
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .future-info-list li {
+      position: relative;
+      padding: 15px 0 15px 25px;
+      border-bottom: 1px solid #d0d0d0;
+      line-height: 1.6;
+    }
+
+    .future-info-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 15px;
+      font-weight: 700;
+    }
+
+    .future-detail-cta {
+      padding: 100px 24px;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .future-detail-cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .future-detail-cta h2 {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 5vw, 58px);
+      letter-spacing: -0.04em;
+    }
+
+    .future-detail-cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .future-detail-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .future-detail-notice {
+      width: min(1100px, calc(100% - 48px));
+      margin: 70px auto;
+      padding: 24px 28px;
+      border: 1px solid #d2d2d2;
+      background: #fafafa;
+      border-radius: 4px;
+    }
+
+    .future-detail-notice strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .future-detail-notice p {
+      margin: 0;
+      color: #666;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* Dark mode */
+
+    body.dark-mode .future-detail-hero {
+      background: #181818;
+    }
+
+    body.dark-mode .future-detail-hero-image .image-placeholder,
+    body.dark-mode .future-feature-image .image-placeholder,
+    body.dark-mode .future-info-image .image-placeholder {
+      background: #292929;
+      color: #aaa;
+    }
+
+    body.dark-mode .future-detail-heading p,
+    body.dark-mode .future-feature-content p,
+    body.dark-mode .future-info-content p {
+      color: #aaa;
+    }
+
+    body.dark-mode .future-spec-card,
+    body.dark-mode .future-feature-card {
+      background: #202020;
+      border-color: #3a3a3a;
+    }
+
+    body.dark-mode .future-spec-card span {
+      color: #999;
+    }
+
+    body.dark-mode .future-info-section {
+      background: #161616;
+    }
+
+    body.dark-mode .future-info-list li {
+      border-color: #383838;
+    }
+
+    body.dark-mode .future-detail-notice {
+      background: #202020;
+      border-color: #3a3a3a;
+    }
+
+    body.dark-mode .future-detail-notice p {
+      color: #aaa;
+    }
+
+    /* Tablet */
+
+    @media (max-width: 900px) {
+      .future-spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .future-feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .future-info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .future-info-image,
+      .future-info-image .image-placeholder {
+        min-height: 380px;
+      }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+      .future-detail-hero {
+        min-height: 65vh;
+      }
+
+      .future-detail-hero-image .image-placeholder {
+        min-height: 65vh;
+      }
+
+      .future-detail-hero-content {
+        padding: 110px 15px 70px;
+      }
+
+      .future-detail-hero-content h1 {
+        font-size: 52px;
+      }
+
+      .future-detail-section {
+        padding: 70px 18px;
+      }
+
+      .future-spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .future-spec-card {
+        min-height: auto;
+      }
+
+      .future-feature-image,
+      .future-feature-image .image-placeholder {
+        min-height: 240px;
+      }
+
+      .future-feature-content {
+        padding: 24px;
+      }
+
+      .future-info-image,
+      .future-info-image .image-placeholder {
+        min-height: 280px;
+      }
+
+      .future-detail-cta {
+        padding: 70px 20px;
+      }
+
+      .future-detail-cta-actions {
+        flex-direction: column;
+      }
+
+      .future-detail-cta-actions a {
+        width: 100%;
+      }
+
+      .future-detail-notice {
+        width: calc(100% - 36px);
+        margin: 50px auto;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="Home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch theme"
+      >
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+        aria-expanded="false"
+      >
+        ◯
+      </button>
+
+    </div>
+
+    <!-- ACCOUNT MENU -->
+    <div class="account-menu" id="accountMenu">
+      <a href="login.html">Sign In</a>
+      <a href="create-account.html">Create Account</a>
+    </div>
+
+  </header>
+
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+      <strong>Menu</strong>
+
+      <button
+        class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
+    </div>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Car Models</span>
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a href="model-3.html" class="navigation-link">
+            Model 3
+          </a>
+
+          <a href="model-y.html" class="navigation-link">
+            Model Y
+          </a>
+
+          <a href="model-s.html" class="navigation-link">
+            Model S
+          </a>
+
+          <a href="model-x.html" class="navigation-link">
+            Model X
+          </a>
+
+          <a href="cybertruck.html" class="navigation-link">
+            Cybertruck
+          </a>
+
+        </div>
+      </div>
+
+
+      <a href="test-drive.html" class="navigation-link">
+        Request Test Drive
+      </a>
+
+
+      <div class="navigation-group">
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Batteries</span>
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a href="batteries.html" class="navigation-link">
+            Car Battery
+          </a>
+
+          <a href="batteries.html#powerwall" class="navigation-link">
+            Powerwall 2
+          </a>
+
+          <a href="batteries.html#powerwall-3" class="navigation-link">
+            Powerwall 3
+          </a>
+
+          <a href="batteries.html#megapack" class="navigation-link">
+            Megapack 2
+          </a>
+
+          <a href="batteries.html#megapack-3" class="navigation-link">
+            Megapack 3
+          </a>
+
+        </div>
+      </div>
+
+
+      <a href="solar.html" class="navigation-link">
+        Solar Panels
+      </a>
+
+      <a href="charging.html" class="navigation-link">
+        How to Charge
+      </a>
+
+      <a href="future-cars.html" class="navigation-link">
+        Future Cars
+      </a>
+
+      <a href="awards.html" class="navigation-link">
+        Awards
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="future-detail-page">
+
+    <!-- HERO -->
+    <section class="future-detail-hero">
+
+      <div class="future-detail-hero-image">
+        <div class="image-placeholder">
+          Tesla Semi Hero Image
+        </div>
+      </div>
+
+      <div class="future-detail-hero-content">
+
+        <h1>Tesla Semi</h1>
+
+        <p>
+          An all-electric heavy-duty truck designed to combine
+          long-distance capability, performance and energy efficiency.
+        </p>
+
+        <div class="future-detail-actions">
+
+          <a
+            href="#specifications"
+            class="primary-button"
+          >
+            Explore Semi
+          </a>
+
+          <a
+            href="future-cars.html"
+            class="secondary-button"
+          >
+            Future Cars
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="future-detail-section">
+
+      <div class="future-detail-container">
+
+        <div class="future-detail-heading">
+
+          <h2>Built for the Long Haul</h2>
+
+          <p>
+            Tesla Semi is designed around electric propulsion,
+            aerodynamic efficiency and a driver-focused interior.
+            The final production specifications and availability
+            should be verified before publication.
+          </p>
+
+        </div>
+
+
+        <div class="future-spec-grid" id="specifications">
+
+          <div class="future-spec-card">
+            <span>Vehicle Type</span>
+            <strong>Electric Truck</strong>
+          </div>
+
+          <div class="future-spec-card">
+            <span>Powertrain</span>
+            <strong>Battery Electric</strong>
+          </div>
+
+          <div class="future-spec-card">
+            <span>Designed For</span>
+            <strong>Long-Distance Freight</strong>
+          </div>
+
+          <div class="future-spec-card">
+            <span>Configuration</span>
+            <strong>Heavy Duty</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="future-detail-section">
+
+      <div class="future-detail-container">
+
+        <div class="future-detail-heading">
+
+          <h2>Designed Around Efficiency</h2>
+
+          <p>
+            Every part of the Semi concept is centered around
+            reducing energy use while supporting demanding
+            transportation operations.
+          </p>
+
+        </div>
+
+
+        <div class="future-feature-grid">
+
+          <article class="future-feature-card">
+
+            <div class="future-feature-image">
+              <div class="image-placeholder">
+                Semi Exterior Image
+              </div>
+            </div>
+
+            <div class="future-feature-content">
+
+              <h3>Aerodynamic Design</h3>
+
+              <p>
+                A streamlined exterior is designed to reduce
+                aerodynamic drag and support efficient highway
+                operation.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="future-feature-card">
+
+            <div class="future-feature-image">
+              <div class="image-placeholder">
+                Semi Interior Image
+              </div>
+            </div>
+
+            <div class="future-feature-content">
+
+              <h3>Driver-Focused Interior</h3>
+
+              <p>
+                The cabin concept places visibility, controls and
+                driver comfort at the center of the driving experience.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="future-feature-card">
+
+            <div class="future-feature-image">
+              <div class="image-placeholder">
+                Semi Charging Image
+              </div>
+            </div>
+
+            <div class="future-feature-content">
+
+              <h3>High-Power Charging</h3>
+
+              <p>
+                Tesla's commercial charging approach is intended
+                to support efficient turnaround for fleet operators.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="future-feature-card">
+
+            <div class="future-feature-image">
+              <div class="image-placeholder">
+                Semi Fleet Image
+              </div>
+            </div>
+
+            <div class="future-feature-content">
+
+              <h3>Fleet Operations</h3>
+
+              <p>
+                Electric trucks can be integrated into fleet
+                operations with charging, energy and vehicle
+                management systems.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section class="future-detail-section future-info-section">
+
+      <div class="future-detail-container">
+
+        <div class="future-info-grid">
+
+          <div class="future-info-image">
+            <div class="image-placeholder">
+              Tesla Semi Technology Image
+            </div>
+          </div>
+
+
+          <div class="future-info-content">
+
+            <h2>Electric Freight</h2>
+
+            <p>
+              The Semi represents Tesla's approach to bringing
+              battery-electric technology into heavy transportation.
+            </p>
+
+            <p>
+              Commercial deployment depends on production,
+              charging infrastructure, fleet requirements and
+              regional availability.
+            </p>
+
+            <ul class="future-info-list">
+
+              <li>
+                Battery-electric powertrain
+              </li>
+
+              <li>
+                Designed for commercial transportation
+              </li>
+
+              <li>
+                Integrated charging strategy
+              </li>
+
+              <li>
+                Fleet-focused operating concept
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="future-detail-cta">
+
+      <div class="future-detail-cta-content">
+
+        <h2>Explore Tesla's Future</h2>
+
+        <p>
+          Explore other future vehicles or return to the current
+          Tesla vehicle lineup.
+        </p>
+
+        <div class="future-detail-cta-actions">
+
+          <a
+            href="future-cars.html"
+            class="primary-button"
+          >
+            Future Cars
+          </a>
+
+          <a
+            href="car-models.html"
+            class="secondary-button"
+          >
+            Current Models
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEMO NOTICE -->
+    <div class="future-detail-notice">
+
+      <strong>Website development notice</strong>
+
+      <p>
+        This page is currently a frontend demonstration.
+        Replace image placeholders, specifications, pricing,
+        availability, performance figures and other production
+        information with verified official information before
+        publishing.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+        <h3>Company</h3>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Support</h3>
+        <a href="https://wa.me/18005550199">WhatsApp</a>
+        <a href="https://t.me/">Telegram</a>
+        <a href="mailto:support@example.com">Email</a>
+        <a href="https://x.com/">X</a>
+        <a href="tel:+18005550199">Call Support</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Services</h3>
+        <a href="#">Warranty</a>
+        <a href="#">Insurance</a>
+        <a href="#">Stores</a>
+        <a href="#">Store Vehicles</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Vehicle Agreement</a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        ©️ 2026 TESLA, Inc. All rights reserved.
+      </span>
+
+      <span>
+        United States
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- COOKIE NOTICE -->
+  <div
+    class="cookie-overlay"
+    id="cookieOverlay"
+    aria-hidden="true"
+  >
+
+    <div class="cookie-box">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve
+        your experience and understand website usage.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          class="primary-button"
+          id="acceptCookies"
+          type="button"
+        >
+          Accept
+        </button>
+
+        <button
+          class="secondary-button"
+          id="cookieSettings"
+          type="button"
+        >
+          Cookie Settings
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- UTILITIES -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

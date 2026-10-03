@@ -1,0 +1,325 @@
+.account-page {
+    background: #ffffff;
+    color: #171717;
+}
+
+/* =========================
+   ACCOUNT MAIN
+========================= */
+
+.account-main {
+    padding-top: 90px;
+}
+
+.account-hero {
+    min-height: 55vh;
+    padding: 120px 6vw 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.account-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.account-hero h1 {
+    margin: 0 0 22px;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.account-hero > p:last-child {
+    max-width: 650px;
+    margin: 0;
+    color: #666666;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   ACCOUNT OPTIONS
+========================= */
+
+.account-options-section {
+    padding: 90px 6vw;
+}
+
+.account-options-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.account-option-card {
+    min-height: 230px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #171717;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 16px;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.account-option-card:hover {
+    transform: translateY(-5px);
+    border-color: #999999;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.account-option-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #171717;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.account-option-card h2 {
+    margin: 28px 0 10px;
+    font-size: 25px;
+    letter-spacing: -0.03em;
+}
+
+.account-option-card p {
+    margin: 0;
+    color: #666666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.account-benefits-section {
+    padding: 100px 6vw;
+    background: #f5f5f5;
+}
+
+.account-section-heading {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.account-section-heading h2 {
+    margin: 0;
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -0.05em;
+}
+
+.account-benefits-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.account-benefit {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #dddddd;
+}
+
+.benefit-placeholder {
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4e4e4;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.account-benefit h3 {
+    margin: 25px 25px 10px;
+    font-size: 21px;
+}
+
+.account-benefit p {
+    margin: 0 25px 28px;
+    color: #666666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* =========================
+   DEMO NOTICE
+========================= */
+
+.account-demo-section {
+    padding: 60px 6vw;
+}
+
+.account-demo-notice {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    background: #f7f7f7;
+}
+
+.account-demo-notice strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.account-demo-notice p {
+    margin: 0;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .account-page {
+    background: #111111;
+    color: #ffffff;
+}
+
+body.dark-mode .account-hero,
+body.dark-mode .account-benefits-section {
+    background: #181818;
+}
+
+body.dark-mode .account-hero > p:last-child,
+body.dark-mode .account-option-card p,
+body.dark-mode .account-benefit p {
+    color: #b5b5b5;
+}
+
+body.dark-mode .account-option-card {
+    background: #1f1f1f;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+body.dark-mode .account-option-card:hover {
+    border-color: #555555;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .account-option-icon {
+    background: #ffffff;
+    color: #111111;
+}
+
+body.dark-mode .account-benefit {
+    background: #1f1f1f;
+    border-color: #333333;
+}
+
+body.dark-mode .benefit-placeholder {
+    background: #252525;
+    color: #aaaaaa;
+}
+
+body.dark-mode .account-demo-notice {
+    background: #1c1c1c;
+    border-color: #333333;
+}
+
+body.dark-mode .account-demo-notice p {
+    color: #aaaaaa;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .account-options-grid,
+    .account-benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .account-option-card {
+        min-height: 200px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .account-main {
+        padding-top: 70px;
+    }
+
+    .account-hero {
+        min-height: 50vh;
+        padding: 100px 20px 60px;
+    }
+
+    .account-hero h1 {
+        font-size: 52px;
+    }
+
+    .account-hero > p:last-child {
+        font-size: 16px;
+    }
+
+    .account-options-section,
+    .account-benefits-section,
+    .account-demo-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .account-options-section,
+    .account-benefits-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .account-section-heading h2 {
+        font-size: 38px;
+    }
+
+    .benefit-placeholder {
+        min-height: 200px;
+    }
+
+}

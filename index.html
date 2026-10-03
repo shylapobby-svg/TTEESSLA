@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TESLA electric vehicle, energy and mobility experience."
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <title>TESLA</title>
+
+    <!-- MAIN STYLESHEET -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         COOKIE NOTICE
+         ===================================================== -->
+
+    <div
+        class="cookie-overlay"
+        id="cookieOverlay"
+    >
+
+        <div class="cookie-box">
+
+            <div class="cookie-logo">
+                TESLA
+            </div>
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies and similar technologies to improve
+                your browsing experience and remember your preferences.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="acceptCookies"
+                >
+                    Accept All Cookies
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cookieSettings"
+                >
+                    Cookie Settings
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FIXED SITE HEADER
+         ===================================================== -->
+
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
+
+        <!-- LEFT: MENU -->
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+
+            <span class="menu-button-text">
+                MENU
+            </span>
+
+        </button>
+
+
+        <!-- CENTER: TESLA LOGO PLACEHOLDER -->
+
+        <a
+            href="index.html"
+            class="site-logo"
+            aria-label="TESLA Home"
+        >
+            TESLA
+        </a>
+
+
+        <!-- RIGHT: THEME + ACCOUNT -->
+
+        <div class="header-controls">
+
+            <!-- THEME -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Switch theme"
+            >
+
+                <span
+                    class="theme-icon"
+                    id="themeIcon"
+                >
+                    ◐
+                </span>
+
+            </button>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="account-wrapper">
+
+                <button
+                    class="account-button"
+                    id="accountButton"
+                    type="button"
+                    aria-label="Open account"
+                    aria-expanded="false"
+                >
+
+                    <span class="account-icon">
+
+                        <span class="account-head"></span>
+
+                        <span class="account-body"></span>
+
+                    </span>
+
+                </button>
+
+
+                <!-- ACCOUNT DROPDOWN -->
+
+                <div
+                    class="account-menu"
+                    id="accountMenu"
+                >
+
+                    <a href="login.html">
+                        Sign In
+                    </a>
+
+                    <a href="create-account.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SIDE NAVIGATION
+         ===================================================== -->
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-label="Main navigation"
+    >
+
+        <div class="side-menu-header">
+
+            <span>
+                MENU
+            </span>
+
+            <button
+                class="menu-close"
+                id="menuClose"
+                type="button"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+
+            <!-- =============================================
+                 CAR MODELS
+                 ============================================= -->
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-dropdown"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Car Models
+                    </span>
+
+                    <span class="dropdown-arrow">
+                        ˅
+                    </span>
+
+                </button>
+
+
+                <!-- HIDDEN UNTIL CAR MODELS IS CLICKED -->
+
+                <div class="navigation-submenu">
+
+                    <a
+                        href="model-3.html"
+                        data-page="model-3"
+                    >
+                        Model 3
+                    </a>
+
+                    <a
+                        href="model-y.html"
+                        data-page="model-y"
+                    >
+                        Model Y
+                    </a>
+
+                    <a
+                        href="model-s.html"
+                        data-page="model-s"
+                    >
+                        Model S
+                    </a>
+
+                    <a
+                        href="model-x.html"
+                        data-page="model-x"
+                    >
+                        Model X
+                    </a>
+
+                    <a
+                        href="cybertruck.html"
+                        data-page="cybertruck"
+                    >
+                        Cybertruck
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 REQUEST TEST DRIVE
+                 ============================================= -->
+
+            <a
+                class="navigation-link"
+                href="test-drive.html"
+                data-page="test-drive"
+            >
+                Request Test Drive
+            </a>
+
+
+
+            <!-- =============================================
+                 BATTERIES
+                 ============================================= -->
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-dropdown"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Batteries
+                    </span>
+
+                    <span class="dropdown-arrow">
+                        ˅
+                    </span>
+
+                </button>
+
+
+                <!-- HIDDEN UNTIL BATTERIES IS CLICKED -->
+
+                <div class="navigation-submenu">
+
+                    <a
+                        href="batteries.html"
+                        data-page="car-battery"
+                    >
+                        Car Battery
+                    </a>
+
+                    <a
+                        href="batteries.html"
+                        data-page="powerwall-2"
+                    >
+                        Powerwall 2
+                    </a>
+
+                    <a
+                        href="batteries.html"
+                        data-page="powerwall-3"
+                    >
+                        Powerwall 3
+                    </a>
+
+                    <a
+                        href="batteries.html"
+                        data-page="powerwall-3-expansion"
+                    >
+                        Powerwall 3 Expansion
+                    </a>
+
+                    <a
+                        href="batteries.html"
+                        data-page="megapack-2"
+                    >
+                        Megapack 2
+                    </a>
+
+                    <a
+                        href="batteries.html"
+                        data-page="megapack-3"
+                    >
+                        Megapack 3
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SOLAR PANELS
+                 ============================================= -->
+
+            <a
+                class="navigation-link"
+                href="solar.html"
+                data-page="solar"
+            >
+                Solar Panels
+            </a>
+
+
+
+            <!-- =============================================
+                 HOW TO CHARGE
+                 ============================================= -->
+
+            <a
+                class="navigation-link"
+                href="charging.html"
+                data-page="charging"
+            >
+                How to Charge
+            </a>
+
+
+
+            <!-- =============================================
+                 FUTURE CARS
+                 ============================================= -->
+
+            <a
+                class="navigation-link"
+                href="future-cars.html"
+                data-page="future-cars"
+            >
+                Future Cars
+            </a>
+
+
+
+            <!-- =============================================
+                 AWARDS
+                 ============================================= -->
+
+            <a
+                class="navigation-link"
+                href="awards.html"
+                data-page="awards"
+            >
+                Awards
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN PAGE
+         ===================================================== -->
+
+    <main id="mainContent">
+
+
+        <!-- =================================================
+             HERO / FEATURE IMAGE AREA
+             ================================================= -->
+
+        <section class="homepage-hero">
+
+            <!--
+
+                IMAGE PLACEHOLDER
+
+                Your actual car picture will be added later.
+
+                For now this is intentionally empty.
+
+            -->
+
+            <div class="hero-image-placeholder">
+
+                <span>
+                    TESLA IMAGE
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CAR MODELS SECTION
+             ================================================= -->
+
+        <section
+            class="home-section car-models-section"
+            id="carModelsSection"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    TESLA
+                </span>
+
+                <h1>
+                    Our Cars
+                </h1>
+
+            </div>
+
+
+            <!-- SCROLL CONTROLS -->
+
+            <div class="car-scroll-controls">
+
+                <button
+                    type="button"
+                    id="scrollLeft"
+                    aria-label="Scroll cars left"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    id="scrollRight"
+                    aria-label="Scroll cars right"
+                >
+                    →
+                </button>
+
+            </div>
+
+
+            <!-- HORIZONTAL CAR SCROLLER -->
+
+            <div
+                class="car-scroller"
+                aria-label="Tesla car models"
+            >
+
+
+                <!-- MODEL 3 -->
+
+                <article class="car-card">
+
+                    <div class="car-image-placeholder">
+
+                        <span>
+                            MODEL 3 IMAGE
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Model 3
+                    </h2>
+
+                    <p>
+                        Electric performance and everyday driving.
+                    </p>
+
+                </article>
+
+
+
+                <!-- MODEL Y -->
+
+                <article class="car-card">
+
+                    <div class="car-image-placeholder">
+
+                        <span>
+                            MODEL Y IMAGE
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Model Y
+                    </h2>
+
+                    <p>
+                        Versatile electric SUV.
+                    </p>
+
+                </article>
+
+
+
+                <!-- MODEL S -->
+
+                <article class="car-card">
+
+                    <div class="car-image-placeholder">
+
+                        <span>
+                            MODEL S IMAGE
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Model S
+                    </h2>
+
+                    <p>
+                        Long-range electric performance.
+                    </p>
+
+                </article>
+
+
+
+                <!-- MODEL X -->
+
+                <article class="car-card">
+
+                    <div class="car-image-placeholder">
+
+                        <span>
+                            MODEL X IMAGE
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Model X
+                    </h2>
+
+                    <p>
+                        Electric SUV with distinctive design.
+                    </p>
+
+                </article>
+
+
+
+                <!-- CYBERTRUCK -->
+
+                <article class="car-card">
+
+                    <div class="car-image-placeholder">
+
+                        <span>
+                            CYBERTRUCK IMAGE
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Cybertruck
+                    </h2>
+
+                    <p>
+                        An electric vehicle with a distinctive
+                        angular design.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECOND FEATURE IMAGE
+             ================================================= -->
+
+        <section class="homepage-feature">
+
+            <div class="feature-image-placeholder">
+
+                <span>
+                    TESLA FEATURE IMAGE
+                </span>
+
+            </div>
+
+            <div class="feature-caption">
+
+                <h2>
+                    Electric Innovation
+                </h2>
+
+                <p>
+                    A place for your image description.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             THIRD FEATURE IMAGE
+             ================================================= -->
+
+        <section class="homepage-feature">
+
+            <div class="feature-image-placeholder">
+
+                <span>
+                    TESLA FEATURE IMAGE
+                </span>
+
+            </div>
+
+            <div class="feature-caption">
+
+                <h2>
+                    Built for the Future
+                </h2>
+
+                <p>
+                    A place for your image description.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOMEPAGE INFORMATION
+             ================================================= -->
+
+        <section class="home-information">
+
+            <div class="information-content">
+
+                <span class="section-eyebrow">
+                    TESLA
+                </span>
+
+                <h2>
+                    Electric Mobility
+                </h2>
+
+                <p>
+                    Explore electric vehicles, energy products,
+                    charging, future vehicles and more.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+
+        <!-- ================================================
+             FOOTER COLUMNS
+             ================================================ -->
+
+        <div class="footer-content">
+
+
+            <!-- COMPANY -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="careers.html">
+                    Careers
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+            </div>
+
+
+
+            <!-- SUPPORT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+
+                <!-- SOCIAL / CONTACT ICONS -->
+
+                <div class="social-row">
+
+
+                    <a
+                        href="#"
+                        aria-label="WhatsApp"
+                        class="social-icon"
+                    >
+                        WA
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Telegram"
+                        class="social-icon"
+                    >
+                        TG
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Email"
+                        class="social-icon"
+                    >
+                        @
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="X"
+                        class="social-icon"
+                    >
+                        X
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Call"
+                        class="social-icon"
+                    >
+                        ☎
+                    </a>
+
+                </div>
+
+
+                <a href="warranty.html">
+                    Warranty
+                </a>
+
+                <a href="insurance.html">
+                    Insurance
+                </a>
+
+            </div>
+
+
+
+            <!-- STORES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Stores
+                </h3>
+
+                <a href="stores.html">
+                    Store
+                </a>
+
+                <a href="store-vehicles.html">
+                    Vehicles
+                </a>
+
+            </div>
+
+
+
+            <!-- LEGAL -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms-of-use.html">
+                    Terms of Use
+                </a>
+
+                <a href="cookie-settings.html">
+                    Cookie Settings
+                </a>
+
+                <a href="vehicle-agreement.html">
+                    Vehicle Agreement
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================
+             FOOTER BOTTOM BAR
+             ================================================ -->
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 TESLA, Inc. All rights reserved.
+            </p>
+
+            <p>
+                United States
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+
+    <!-- =====================================================
+         REFRESH BUTTON
+         ===================================================== -->
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

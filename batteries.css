@@ -1,0 +1,884 @@
+/* =========================================================
+   BATTERIES PAGE
+   ========================================================= */
+
+.batteries-page {
+    padding-bottom: 0;
+}
+
+/* =========================================================
+   BATTERIES HERO
+   ========================================================= */
+
+.batteries-hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 5% 70px;
+    background: #f5f5f5;
+}
+
+.batteries-hero-container {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.batteries-hero-image {
+    width: 100%;
+    min-height: 430px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.batteries-image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d9d9d9;
+    color: #666;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.batteries-hero-content {
+    max-width: 600px;
+}
+
+.batteries-eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.batteries-hero-content h1 {
+    margin: 0 0 20px;
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.batteries-hero-content p {
+    margin: 0 0 30px;
+    max-width: 520px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.batteries-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.batteries-primary-button,
+.batteries-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    border: 1px solid #111;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.batteries-primary-button {
+    background: #111;
+    color: #fff;
+}
+
+.batteries-secondary-button {
+    background: transparent;
+    color: #111;
+}
+
+.batteries-primary-button:hover,
+.batteries-secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.batteries-primary-button:hover {
+    background: #333;
+}
+
+.batteries-secondary-button:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.batteries-intro {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.batteries-intro-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.batteries-intro-container h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.04em;
+}
+
+.batteries-intro-container p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5d5d5d;
+}
+
+/* =========================================================
+   BATTERY PRODUCTS
+   ========================================================= */
+
+.batteries-products-section {
+    padding: 90px 5%;
+    background: #f4f4f4;
+}
+
+.batteries-products-container {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.batteries-section-heading {
+    max-width: 760px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.batteries-section-heading h2 {
+    margin: 0 0 14px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    letter-spacing: -0.04em;
+}
+
+.batteries-section-heading p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+.battery-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.battery-product-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.battery-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.battery-product-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.battery-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d8d8d8;
+    color: #666;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.battery-product-content {
+    padding: 28px;
+}
+
+.battery-product-category {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #777;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.battery-product-content h3 {
+    margin: 0 0 12px;
+    font-size: 1.55rem;
+    letter-spacing: -0.025em;
+}
+
+.battery-product-content p {
+    margin: 0 0 20px;
+    color: #666;
+    line-height: 1.65;
+}
+
+.battery-product-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.battery-spec-item {
+    padding: 13px;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+.battery-spec-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.92rem;
+}
+
+.battery-spec-item span {
+    display: block;
+    font-size: 0.76rem;
+    color: #777;
+}
+
+/* =========================================================
+   COMPARISON
+   ========================================================= */
+
+.batteries-comparison-section {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.batteries-comparison-container {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.batteries-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.batteries-comparison-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.batteries-comparison-table th,
+.batteries-comparison-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.batteries-comparison-table th {
+    background: #f1f1f1;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.batteries-comparison-table td {
+    font-size: 0.92rem;
+    color: #555;
+}
+
+.batteries-comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.batteries-comparison-table tbody tr:hover {
+    background: #fafafa;
+}
+
+/* =========================================================
+   CHARGING CALCULATOR
+   ========================================================= */
+
+.battery-calculator-section {
+    padding: 100px 5%;
+    background: #f4f4f4;
+}
+
+.battery-calculator-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.battery-calculator-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 45px;
+    border: 1px solid #ddd;
+}
+
+.battery-calculator-heading {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.battery-calculator-heading h2 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.04em;
+}
+
+.battery-calculator-heading p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+.battery-calculator-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.battery-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.battery-form-group label {
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.battery-form-group input,
+.battery-form-group select {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.battery-form-group input:focus,
+.battery-form-group select:focus {
+    border-color: #111;
+}
+
+.battery-calculator-button {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.battery-calculator-button:hover {
+    background: #333;
+}
+
+.battery-calculator-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.battery-result-card {
+    padding: 22px;
+    border-radius: 14px;
+    background: #f2f2f2;
+}
+
+.battery-result-card span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.78rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.battery-result-card strong {
+    display: block;
+    font-size: 1.45rem;
+}
+
+/* =========================================================
+   PURCHASE / LEASE
+   ========================================================= */
+
+.battery-purchase-section {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.battery-purchase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.battery-purchase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.battery-purchase-card {
+    padding: 38px;
+    border-radius: 20px;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+}
+
+.battery-purchase-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.7rem;
+}
+
+.battery-purchase-card p {
+    margin: 0 0 24px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.battery-purchase-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.battery-purchase-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.92rem;
+}
+
+.battery-purchase-list li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================================
+   ENERGY LEASE CALCULATOR
+   ========================================================= */
+
+.energy-lease-section {
+    padding: 100px 5%;
+    background: #f4f4f4;
+}
+
+.energy-lease-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.energy-lease-card {
+    padding: 45px;
+    background: #fff;
+    border-radius: 22px;
+    border: 1px solid #ddd;
+}
+
+.energy-lease-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.energy-lease-term {
+    grid-column: 1 / -1;
+}
+
+.energy-lease-term h4 {
+    margin: 5px 0 12px;
+    font-size: 0.9rem;
+}
+
+.energy-lease-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.energy-lease-option {
+    min-width: 110px;
+    min-height: 45px;
+    padding: 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.energy-lease-option:hover,
+.energy-lease-option.active {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.energy-lease-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.energy-lease-result {
+    padding: 22px;
+    border-radius: 14px;
+    background: #f1f1f1;
+}
+
+.energy-lease-result span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.76rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.energy-lease-result strong {
+    font-size: 1.35rem;
+}
+
+.energy-lease-button {
+    grid-column: 1 / -1;
+    min-height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.batteries-contact-section {
+    padding: 90px 5%;
+    background: #111;
+    color: #fff;
+}
+
+.batteries-contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.batteries-contact-container h2 {
+    margin: 0 0 15px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.batteries-contact-container p {
+    margin: 0 auto 28px;
+    max-width: 700px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.batteries-contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.batteries-contact-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 22px;
+    border: 1px solid #555;
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.batteries-contact-links a:hover {
+    background: #292929;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .batteries-hero {
+    background: #171717;
+}
+
+body.dark-mode .batteries-hero-content p,
+body.dark-mode .batteries-section-heading p,
+body.dark-mode .batteries-intro-container p,
+body.dark-mode .battery-product-content p,
+body.dark-mode .battery-calculator-heading p,
+body.dark-mode .battery-purchase-card p {
+    color: #aaa;
+}
+
+body.dark-mode .batteries-intro,
+body.dark-mode .batteries-comparison-section,
+body.dark-mode .battery-purchase-section {
+    background: #111;
+    color: #fff;
+}
+
+body.dark-mode .batteries-products-section,
+body.dark-mode .battery-calculator-section,
+body.dark-mode .energy-lease-section {
+    background: #181818;
+}
+
+body.dark-mode .battery-product-card,
+body.dark-mode .battery-calculator-card,
+body.dark-mode .energy-lease-card,
+body.dark-mode .batteries-table-wrapper {
+    background: #1d1d1d;
+    border-color: #333;
+}
+
+body.dark-mode .battery-image-placeholder,
+body.dark-mode .batteries-image-placeholder {
+    background: #292929;
+    color: #aaa;
+}
+
+body.dark-mode .battery-spec-item,
+body.dark-mode .battery-result-card,
+body.dark-mode .energy-lease-result {
+    background: #292929;
+}
+
+body.dark-mode .battery-spec-item span,
+body.dark-mode .battery-result-card span,
+body.dark-mode .energy-lease-result span {
+    color: #aaa;
+}
+
+body.dark-mode .batteries-comparison-table th {
+    background: #292929;
+}
+
+body.dark-mode .batteries-comparison-table td {
+    border-color: #333;
+    color: #bbb;
+}
+
+body.dark-mode .batteries-comparison-table tbody tr:hover {
+    background: #222;
+}
+
+body.dark-mode .battery-form-group input,
+body.dark-mode .battery-form-group select,
+body.dark-mode .energy-lease-option {
+    background: #181818;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .battery-form-group input:focus,
+body.dark-mode .battery-form-group select:focus {
+    border-color: #fff;
+}
+
+body.dark-mode .battery-purchase-card {
+    background: #1d1d1d;
+    border-color: #333;
+}
+
+body.dark-mode .battery-purchase-list li {
+    border-color: #333;
+}
+
+body.dark-mode .batteries-primary-button,
+body.dark-mode .battery-calculator-button,
+body.dark-mode .energy-lease-button {
+    background: #fff;
+    color: #111;
+}
+
+body.dark-mode .batteries-secondary-button {
+    border-color: #fff;
+    color: #fff;
+}
+
+body.dark-mode .batteries-secondary-button:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .batteries-hero-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .batteries-hero-content {
+        max-width: 800px;
+    }
+
+    .battery-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .battery-calculator-results,
+    .energy-lease-results {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .batteries-hero {
+        min-height: auto;
+        padding: 95px 20px 55px;
+    }
+
+    .batteries-hero-container {
+        gap: 25px;
+    }
+
+    .batteries-hero-image,
+    .batteries-image-placeholder {
+        min-height: 280px;
+    }
+
+    .batteries-hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .batteries-hero-content p {
+        font-size: 0.98rem;
+    }
+
+    .batteries-hero-actions {
+        flex-direction: column;
+    }
+
+    .batteries-primary-button,
+    .batteries-secondary-button {
+        width: 100%;
+    }
+
+    .batteries-intro,
+    .batteries-products-section,
+    .batteries-comparison-section,
+    .battery-calculator-section,
+    .battery-purchase-section,
+    .energy-lease-section {
+        padding: 65px 20px;
+    }
+
+    .battery-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .battery-product-image {
+        height: 230px;
+    }
+
+    .battery-calculator-card,
+    .energy-lease-card {
+        padding: 25px;
+    }
+
+    .battery-calculator-form,
+    .energy-lease-form {
+        grid-template-columns: 1fr;
+    }
+
+    .battery-calculator-results,
+    .energy-lease-results {
+        grid-template-columns: 1fr;
+    }
+
+    .battery-purchase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .energy-lease-term {
+        grid-column: auto;
+    }
+
+    .energy-lease-button {
+        grid-column: auto;
+    }
+
+    .batteries-contact-section {
+        padding: 65px 20px;
+    }
+
+    .batteries-contact-links {
+        flex-direction: column;
+    }
+
+    .batteries-contact-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}

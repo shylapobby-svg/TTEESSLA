@@ -1,0 +1,1277 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Request a Test Drive | TESLA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test-drive.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="TESLA Home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle theme"
+      >
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+        aria-expanded="false"
+      >
+        ◯
+      </button>
+
+    </div>
+
+    <!-- ACCOUNT MENU -->
+
+    <div class="account-menu" id="accountMenu">
+
+      <a href="#" class="account-menu-link">
+        Sign In
+      </a>
+
+      <a href="#" class="account-menu-link">
+        Create Account
+      </a>
+
+      <a href="#" class="account-menu-link">
+        Dashboard
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       SIDE NAVIGATION
+       ===================================================== -->
+
+  <aside class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+
+      <span>Menu</span>
+
+      <button
+        class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <nav class="side-navigation">
+
+      <!-- CAR MODELS -->
+
+      <div class="navigation-group">
+
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Car Models</span>
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a href="model-3.html" class="navigation-link">
+            Model 3
+          </a>
+
+          <a href="car-models.html" class="navigation-link">
+            Model Y
+          </a>
+
+          <a href="car-models.html" class="navigation-link">
+            Model S
+          </a>
+
+          <a href="car-models.html" class="navigation-link">
+            Model X
+          </a>
+
+          <a href="car-models.html" class="navigation-link">
+            Cybertruck
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEST DRIVE -->
+
+      <a
+        href="test-drive.html"
+        class="navigation-link navigation-main-link"
+      >
+        Request a Test Drive
+      </a>
+
+
+      <!-- BATTERIES -->
+
+      <div class="navigation-group">
+
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Batteries</span>
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a href="#" class="navigation-link">
+            Car Battery
+          </a>
+
+          <a href="#" class="navigation-link">
+            Powerwall 2
+          </a>
+
+          <a href="#" class="navigation-link">
+            Powerwall 3
+          </a>
+
+          <a href="#" class="navigation-link">
+            Powerwall 3 Expansion
+          </a>
+
+          <a href="#" class="navigation-link">
+            Megapack 2
+          </a>
+
+          <a href="#" class="navigation-link">
+            Megapack 3
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- OTHER PAGES -->
+
+      <a href="#" class="navigation-link navigation-main-link">
+        Solar Panels
+      </a>
+
+      <a href="#" class="navigation-link navigation-main-link">
+        How to Charge
+      </a>
+
+      <a href="#" class="navigation-link navigation-main-link">
+        Future Cars
+      </a>
+
+      <a href="#" class="navigation-link navigation-main-link">
+        Awards
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main class="page-content test-drive-page">
+
+    <!-- HERO -->
+
+    <section class="test-drive-hero">
+
+      <div class="test-drive-hero-content">
+
+        <span class="test-drive-eyebrow">
+          EXPERIENCE TESLA
+        </span>
+
+        <h1>
+          Request a Test Drive
+        </h1>
+
+        <p>
+          Choose a Tesla, select a preferred location and time,
+          and submit your request. A Tesla representative can
+          follow up with the next available appointment details.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         PROGRESS
+         =================================================== -->
+
+    <section class="test-drive-progress">
+
+      <div class="progress-step active" data-step="1">
+        <span class="progress-number">1</span>
+        <span class="progress-label">Personal Info</span>
+      </div>
+
+      <div class="progress-line"></div>
+
+      <div class="progress-step" data-step="2">
+        <span class="progress-number">2</span>
+        <span class="progress-label">Vehicle</span>
+      </div>
+
+      <div class="progress-line"></div>
+
+      <div class="progress-step" data-step="3">
+        <span class="progress-number">3</span>
+        <span class="progress-label">Appointment</span>
+      </div>
+
+      <div class="progress-line"></div>
+
+      <div class="progress-step" data-step="4">
+        <span class="progress-number">4</span>
+        <span class="progress-label">Confirmation</span>
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         TEST DRIVE FORM
+         =================================================== -->
+
+    <section class="test-drive-form-section">
+
+      <div class="test-drive-form-container">
+
+        <form id="testDriveForm" novalidate>
+
+
+          <!-- =============================================
+               STEP 1
+               ============================================= -->
+
+          <div class="test-drive-step active" data-step-content="1">
+
+            <div class="form-heading">
+
+              <span class="form-step-label">
+                STEP 1 OF 3
+              </span>
+
+              <h2>
+                Tell us about yourself
+              </h2>
+
+              <p>
+                Enter your contact information so we can
+                provide appointment details.
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-field">
+
+                <label for="firstName">
+                  First Name
+                </label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First name"
+                  autocomplete="given-name"
+                  required
+                >
+
+                <span class="field-error" id="firstNameError"></span>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="lastName">
+                  Last Name
+                </label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last name"
+                  autocomplete="family-name"
+                  required
+                >
+
+                <span class="field-error" id="lastNameError"></span>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="email">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <span class="field-error" id="emailError"></span>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="phone">
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone number"
+                  autocomplete="tel"
+                  required
+                >
+
+                <span class="field-error" id="phoneError"></span>
+
+              </div>
+
+
+              <div class="form-field full-width">
+
+                <label for="country">
+                  Country
+                </label>
+
+                <select
+                  id="country"
+                  name="country"
+                  required
+                >
+
+                  <option value="">
+                    Select country
+                  </option>
+
+                  <option value="United States">
+                    United States
+                  </option>
+
+                  <option value="Canada">
+                    Canada
+                  </option>
+
+                  <option value="United Kingdom">
+                    United Kingdom
+                  </option>
+
+                  <option value="Australia">
+                    Australia
+                  </option>
+
+                  <option value="Other">
+                    Other
+                  </option>
+
+                </select>
+
+                <span class="field-error" id="countryError"></span>
+
+              </div>
+
+            </div>
+
+
+            <div class="step-actions">
+
+              <a
+                href="car-models.html"
+                class="form-button secondary"
+              >
+                Back
+              </a>
+
+              <button
+                type="button"
+                class="form-button primary next-step"
+                data-next="2"
+              >
+                Continue
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 2
+               ============================================= -->
+
+          <div class="test-drive-step" data-step-content="2">
+
+            <div class="form-heading">
+
+              <span class="form-step-label">
+                STEP 2 OF 3
+              </span>
+
+              <h2>
+                Choose your Tesla
+              </h2>
+
+              <p>
+                Select the vehicle you would like to experience.
+              </p>
+
+            </div>
+
+
+            <div class="vehicle-selection-grid">
+
+
+              <!-- MODEL 3 -->
+
+              <label class="vehicle-choice">
+
+                <input
+                  type="radio"
+                  name="vehicleModel"
+                  value="Model 3"
+                  required
+                >
+
+                <span class="vehicle-choice-card">
+
+                  <span class="vehicle-choice-image">
+                    IMAGE PLACEHOLDER
+                  </span>
+
+                  <span class="vehicle-choice-content">
+
+                    <strong>Model 3</strong>
+
+                    <small>
+                      Electric sedan
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </label>
+
+
+              <!-- MODEL Y -->
+
+              <label class="vehicle-choice">
+
+                <input
+                  type="radio"
+                  name="vehicleModel"
+                  value="Model Y"
+                >
+
+                <span class="vehicle-choice-card">
+
+                  <span class="vehicle-choice-image">
+                    IMAGE PLACEHOLDER
+                  </span>
+
+                  <span class="vehicle-choice-content">
+
+                    <strong>Model Y</strong>
+
+                    <small>
+                      Electric SUV
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </label>
+
+
+              <!-- MODEL S -->
+
+              <label class="vehicle-choice">
+
+                <input
+                  type="radio"
+                  name="vehicleModel"
+                  value="Model S"
+                >
+
+                <span class="vehicle-choice-card">
+
+                  <span class="vehicle-choice-image">
+                    IMAGE PLACEHOLDER
+                  </span>
+
+                  <span class="vehicle-choice-content">
+
+                    <strong>Model S</strong>
+
+                    <small>
+                      Electric sedan
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </label>
+
+
+              <!-- MODEL X -->
+
+              <label class="vehicle-choice">
+
+                <input
+                  type="radio"
+                  name="vehicleModel"
+                  value="Model X"
+                >
+
+                <span class="vehicle-choice-card">
+
+                  <span class="vehicle-choice-image">
+                    IMAGE PLACEHOLDER
+                  </span>
+
+                  <span class="vehicle-choice-content">
+
+                    <strong>Model X</strong>
+
+                    <small>
+                      Electric SUV
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </label>
+
+
+              <!-- CYBERTRUCK -->
+
+              <label class="vehicle-choice">
+
+                <input
+                  type="radio"
+                  name="vehicleModel"
+                  value="Cybertruck"
+                >
+
+                <span class="vehicle-choice-card">
+
+                  <span class="vehicle-choice-image">
+                    IMAGE PLACEHOLDER
+                  </span>
+
+                  <span class="vehicle-choice-content">
+
+                    <strong>Cybertruck</strong>
+
+                    <small>
+                      Electric pickup
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </label>
+
+            </div>
+
+
+            <div class="form-grid vehicle-details-grid">
+
+              <div class="form-field">
+
+                <label for="vehicleYear">
+                  Model Year
+                </label>
+
+                <select
+                  id="vehicleYear"
+                  name="vehicleYear"
+                  required
+                >
+
+                  <option value="">
+                    Select year
+                  </option>
+
+                  <option value="2026">2026</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="vehicleColor">
+                  Preferred Color
+                </label>
+
+                <select
+                  id="vehicleColor"
+                  name="vehicleColor"
+                  required
+                >
+
+                  <option value="">
+                    Select color
+                  </option>
+
+                  <option value="White">
+                    White
+                  </option>
+
+                  <option value="Black">
+                    Black
+                  </option>
+
+                  <option value="Pearl White">
+                    Pearl White
+                  </option>
+
+                  <option value="Deep Blue Metallic">
+                    Deep Blue Metallic
+                  </option>
+
+                  <option value="Red Multi-Coat">
+                    Red Multi-Coat
+                  </option>
+
+                  <option value="Midnight Silver Metallic">
+                    Midnight Silver Metallic
+                  </option>
+
+                  <option value="Stealth Grey">
+                    Stealth Grey
+                  </option>
+
+                  <option value="Stainless Steel">
+                    Stainless Steel
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <div class="step-actions">
+
+              <button
+                type="button"
+                class="form-button secondary previous-step"
+                data-previous="1"
+              >
+                Back
+              </button>
+
+              <button
+                type="button"
+                class="form-button primary next-step"
+                data-next="3"
+              >
+                Continue
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 3
+               ============================================= -->
+
+          <div class="test-drive-step" data-step-content="3">
+
+            <div class="form-heading">
+
+              <span class="form-step-label">
+                STEP 3 OF 3
+              </span>
+
+              <h2>
+                Select your appointment
+              </h2>
+
+              <p>
+                Choose your preferred location, date and time.
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-field full-width">
+
+                <label for="location">
+                  Preferred Location
+                </label>
+
+                <select
+                  id="location"
+                  name="location"
+                  required
+                >
+
+                  <option value="">
+                    Select a location
+                  </option>
+
+                  <option value="Tesla Store">
+                    Tesla Store
+                  </option>
+
+                  <option value="Tesla Service Center">
+                    Tesla Service Center
+                  </option>
+
+                  <option value="Mobile Test Drive Location">
+                    Mobile Test Drive Location
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="appointmentDate">
+                  Preferred Date
+                </label>
+
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  name="appointmentDate"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="appointmentTime">
+                  Preferred Time
+                </label>
+
+                <select
+                  id="appointmentTime"
+                  name="appointmentTime"
+                  required
+                >
+
+                  <option value="">
+                    Select time
+                  </option>
+
+                  <option value="9:00 AM">
+                    9:00 AM
+                  </option>
+
+                  <option value="10:00 AM">
+                    10:00 AM
+                  </option>
+
+                  <option value="11:00 AM">
+                    11:00 AM
+                  </option>
+
+                  <option value="12:00 PM">
+                    12:00 PM
+                  </option>
+
+                  <option value="1:00 PM">
+                    1:00 PM
+                  </option>
+
+                  <option value="2:00 PM">
+                    2:00 PM
+                  </option>
+
+                  <option value="3:00 PM">
+                    3:00 PM
+                  </option>
+
+                  <option value="4:00 PM">
+                    4:00 PM
+                  </option>
+
+                  <option value="5:00 PM">
+                    5:00 PM
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-field full-width">
+
+                <label for="driverLicense">
+                  Driver's License
+                </label>
+
+                <div class="file-upload">
+
+                  <input
+                    type="file"
+                    id="driverLicense"
+                    name="driverLicense"
+                    accept="image/*,.pdf"
+                  >
+
+                  <label for="driverLicense">
+                    <span class="file-upload-title">
+                      Upload driver's license
+                    </span>
+
+                    <span class="file-upload-subtitle">
+                      JPG, PNG or PDF
+                    </span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-field full-width">
+
+                <label for="additionalNotes">
+                  Additional Notes
+                </label>
+
+                <textarea
+                  id="additionalNotes"
+                  name="additionalNotes"
+                  rows="5"
+                  placeholder="Anything else you would like us to know?"
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-consent">
+
+              <label class="checkbox-label">
+
+                <input
+                  type="checkbox"
+                  id="testDriveTerms"
+                  name="testDriveTerms"
+                  required
+                >
+
+                <span>
+                  I confirm that the information provided is accurate
+                  and I agree to be contacted regarding this test drive
+                  request.
+                </span>
+
+              </label>
+
+            </div>
+
+
+            <div class="step-actions">
+
+              <button
+                type="button"
+                class="form-button secondary previous-step"
+                data-previous="2"
+              >
+                Back
+              </button>
+
+              <button
+                type="submit"
+                class="form-button primary"
+              >
+                Submit Request
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 4 — CONFIRMATION
+               ============================================= -->
+
+          <div
+            class="test-drive-step confirmation-step"
+            data-step-content="4"
+          >
+
+            <div class="confirmation-success-icon">
+              ✓
+            </div>
+
+            <span class="form-step-label">
+              REQUEST RECEIVED
+            </span>
+
+            <h2>
+              Your test drive request has been received.
+            </h2>
+
+            <p>
+              Thank you for your interest. Your request details
+              are shown below.
+            </p>
+
+
+            <div class="test-drive-confirmation-card">
+
+              <div class="confirmation-detail">
+
+                <span>Vehicle</span>
+
+                <strong id="confirmationVehicle">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div class="confirmation-detail">
+
+                <span>Year</span>
+
+                <strong id="confirmationYear">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div class="confirmation-detail">
+
+                <span>Color</span>
+
+                <strong id="confirmationColor">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div class="confirmation-detail">
+
+                <span>Location</span>
+
+                <strong id="confirmationLocation">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div class="confirmation-detail">
+
+                <span>Date</span>
+
+                <strong id="confirmationDate">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div class="confirmation-detail">
+
+                <span>Time</span>
+
+                <strong id="confirmationTime">
+                  —
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="confirmation-note">
+
+              <strong>Important:</strong>
+
+              <span>
+                This frontend demonstration does not create a real
+                appointment or transmit personal information to Tesla.
+                Backend functionality can be connected later.
+              </span>
+
+            </div>
+
+
+            <div class="step-actions confirmation-actions">
+
+              <a
+                href="index.html"
+                class="form-button primary"
+              >
+                Return Home
+              </a>
+
+              <a
+                href="car-models.html"
+                class="form-button secondary"
+              >
+                Explore Vehicles
+              </a>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <h3>Company</h3>
+
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Support</h3>
+
+        <a href="#">WhatsApp</a>
+        <a href="#">Telegram</a>
+        <a href="#">Email</a>
+        <a href="#">X</a>
+        <a href="#">Call</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Resources</h3>
+
+        <a href="#">Warranty</a>
+        <a href="#">Insurance</a>
+        <a href="#">Stores</a>
+        <a href="#">Store Vehicles</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Legal</h3>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Vehicle Agreement</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        ©️ 2026 TESLA, Inc. All rights reserved.
+      </span>
+
+      <span>
+        United States
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       UTILITY BUTTONS
+       ===================================================== -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+
+  <!-- =====================================================
+       COOKIE NOTICE
+       ===================================================== -->
+
+  <div
+    class="cookie-overlay"
+    id="cookieOverlay"
+    aria-hidden="true"
+  >
+
+    <div class="cookie-card">
+
+      <h2>
+        Your Privacy
+      </h2>
+
+      <p>
+        We use cookies and similar technologies to improve
+        your browsing experience, remember your preferences
+        and understand how our website is used.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          id="cookieSettings"
+          class="cookie-secondary"
+        >
+          Cookie Settings
+        </button>
+
+        <button
+          type="button"
+          id="acceptCookies"
+          class="cookie-primary"
+        >
+          Accept
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SCRIPTS
+       ===================================================== -->
+
+  <script src="script.js"></script>
+  <script src="test-drive.js"></script>
+
+</body>
+</html>

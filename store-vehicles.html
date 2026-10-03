@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Store Vehicles | TESLA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="store-vehicles.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" type="button"
+      aria-label="Open navigation" aria-controls="sideMenu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="TESLA Home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button class="theme-toggle" id="themeToggle" type="button"
+        aria-label="Toggle dark mode">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button class="account-button" id="accountButton" type="button"
+        aria-label="Account" aria-controls="accountMenu" aria-expanded="false">
+        <span class="account-icon">◯</span>
+      </button>
+
+    </div>
+
+    <!-- ACCOUNT MENU -->
+    <div class="account-menu" id="accountMenu" aria-hidden="true">
+      <a href="account.html">Account</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Sign In</a>
+      <a href="create-account.html">Create Account</a>
+    </div>
+
+  </header>
+
+
+  <!-- SIDE NAVIGATION -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+    <div class="side-menu-header">
+      <span>Menu</span>
+
+      <button class="menu-close" id="menuClose" type="button"
+        aria-label="Close navigation">
+        ×
+      </button>
+    </div>
+
+    <nav class="side-navigation">
+
+      <!-- CAR MODELS -->
+      <div class="navigation-group">
+
+        <button class="navigation-group-button" type="button"
+          aria-expanded="false">
+          <span>Car Models</span>
+          <span class="navigation-chevron">⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+
+        </div>
+
+      </div>
+
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <!-- BATTERIES -->
+      <div class="navigation-group">
+
+        <button class="navigation-group-button" type="button"
+          aria-expanded="false">
+          <span>Batteries</span>
+          <span class="navigation-chevron">⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+
+          <a href="batteries.html#car-battery">Car Battery</a>
+          <a href="batteries.html#powerwall-2">Powerwall 2</a>
+          <a href="batteries.html#powerwall-3">Powerwall 3</a>
+          <a href="batteries.html#powerwall-3-expansion">Powerwall 3 Expansion</a>
+          <a href="batteries.html#megapack-2">Megapack 2</a>
+          <a href="batteries.html#megapack-3">Megapack 3</a>
+
+        </div>
+
+      </div>
+
+
+      <a href="solar.html">Solar Panels</a>
+
+      <a href="charging.html">How to Charge</a>
+
+      <a href="future-cars.html">Future Cars</a>
+
+      <a href="awards.html">Awards</a>
+
+
+      <div class="navigation-divider"></div>
+
+
+      <a href="stores.html">Stores</a>
+
+      <a href="store-vehicles.html" class="active">Store Vehicles</a>
+
+      <a href="warranty.html">Warranty</a>
+
+      <a href="insurance.html">Insurance</a>
+
+      <a href="investment.html">Investment</a>
+
+      <a href="ride-hailing.html">Ride-Hailing</a>
+
+
+      <div class="navigation-divider"></div>
+
+
+      <a href="privacy-policy.html">Privacy Policy</a>
+
+      <a href="terms-of-use.html">Terms of Use</a>
+
+      <a href="cookie-settings.html">Cookie Settings</a>
+
+      <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="store-vehicles-page">
+
+    <!-- HERO -->
+    <section class="store-vehicles-hero">
+
+      <div class="store-vehicles-hero-image image-placeholder">
+        <span>Vehicle Inventory Image</span>
+      </div>
+
+      <div class="store-vehicles-hero-content">
+
+        <p class="eyebrow">STORE VEHICLES</p>
+
+        <h1>Available Vehicles</h1>
+
+        <p>
+          Explore vehicles currently listed through our store inventory.
+          Availability, configuration, pricing and delivery timing may vary
+          by location.
+        </p>
+
+        <a href="#inventory" class="primary-button">
+          View Inventory
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH / FILTER -->
+    <section class="inventory-controls" id="inventory">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">INVENTORY</p>
+
+        <h2>Find Your Vehicle</h2>
+
+        <p>
+          Browse available vehicle listings and narrow your search by model,
+          location or purchase type.
+        </p>
+
+      </div>
+
+
+      <div class="inventory-filter-card">
+
+        <div class="filter-field">
+
+          <label for="vehicleSearch">
+            Search
+          </label>
+
+          <input
+            type="search"
+            id="vehicleSearch"
+            placeholder="Search model or location"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <div class="filter-field">
+
+          <label for="vehicleModelFilter">
+            Model
+          </label>
+
+          <select id="vehicleModelFilter">
+
+            <option value="all">All Models</option>
+            <option value="model-3">Model 3</option>
+            <option value="model-y">Model Y</option>
+            <option value="model-s">Model S</option>
+            <option value="model-x">Model X</option>
+            <option value="cybertruck">Cybertruck</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="filter-field">
+
+          <label for="vehicleLocationFilter">
+            Location
+          </label>
+
+          <select id="vehicleLocationFilter">
+
+            <option value="all">All Locations</option>
+            <option value="houston">Houston</option>
+            <option value="austin">Austin</option>
+            <option value="dallas">Dallas</option>
+            <option value="los-angeles">Los Angeles</option>
+            <option value="new-york">New York</option>
+            <option value="miami">Miami</option>
+
+          </select>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="secondary-button"
+          id="clearVehicleFilters">
+          Clear Filters
+        </button>
+
+      </div>
+
+
+      <div class="inventory-status" id="inventoryStatus" aria-live="polite">
+        Showing available vehicles
+      </div>
+
+    </section>
+
+
+    <!-- VEHICLE GRID -->
+    <section class="vehicle-inventory-section">
+
+      <div class="vehicle-inventory-grid" id="vehicleInventoryGrid">
+
+
+        <!-- MODEL 3 -->
+        <article
+          class="inventory-card"
+          data-model="model-3"
+          data-location="houston">
+
+          <div class="inventory-image image-placeholder">
+            <span>Model 3 Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">Houston, TX</p>
+
+            <h3>Model 3</h3>
+
+            <p class="inventory-description">
+              Electric sedan with long-range performance and modern
+              driver-focused technology.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="model-3.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MODEL Y -->
+        <article
+          class="inventory-card"
+          data-model="model-y"
+          data-location="austin">
+
+          <div class="inventory-image image-placeholder">
+            <span>Model Y Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">Austin, TX</p>
+
+            <h3>Model Y</h3>
+
+            <p class="inventory-description">
+              Versatile electric SUV with flexible space and everyday
+              utility.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="model-y.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MODEL S -->
+        <article
+          class="inventory-card"
+          data-model="model-s"
+          data-location="dallas">
+
+          <div class="inventory-image image-placeholder">
+            <span>Model S Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">Dallas, TX</p>
+
+            <h3>Model S</h3>
+
+            <p class="inventory-description">
+              Premium electric sedan combining performance, range and
+              technology.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="model-s.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MODEL X -->
+        <article
+          class="inventory-card"
+          data-model="model-x"
+          data-location="los-angeles">
+
+          <div class="inventory-image image-placeholder">
+            <span>Model X Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">Los Angeles, CA</p>
+
+            <h3>Model X</h3>
+
+            <p class="inventory-description">
+              Spacious electric SUV designed for performance, comfort and
+              versatility.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="model-x.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CYBERTRUCK -->
+        <article
+          class="inventory-card"
+          data-model="cybertruck"
+          data-location="new-york">
+
+          <div class="inventory-image image-placeholder">
+            <span>Cybertruck Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">New York, NY</p>
+
+            <h3>Cybertruck</h3>
+
+            <p class="inventory-description">
+              Distinctive electric pickup with a stainless-steel exterior
+              and utility-focused design.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="cybertruck.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MODEL 3 MIAMI -->
+        <article
+          class="inventory-card"
+          data-model="model-3"
+          data-location="miami">
+
+          <div class="inventory-image image-placeholder">
+            <span>Model 3 Image</span>
+          </div>
+
+          <div class="inventory-card-content">
+
+            <p class="inventory-location">Miami, FL</p>
+
+            <h3>Model 3</h3>
+
+            <p class="inventory-description">
+              Efficient electric sedan with premium technology and
+              responsive performance.
+            </p>
+
+            <div class="inventory-meta">
+              <span>New</span>
+              <span>2026</span>
+              <span>AWD</span>
+            </div>
+
+            <a href="model-3.html" class="card-link">
+              View Model
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- NO RESULTS -->
+      <div class="no-inventory-results" id="noInventoryResults" hidden>
+
+        <div class="no-results-icon">⌕</div>
+
+        <h3>No vehicles found</h3>
+
+        <p>
+          Try changing your search or selecting a different model or
+          location.
+        </p>
+
+        <button
+          type="button"
+          class="secondary-button"
+          id="resetInventory">
+          Reset Search
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="store-process-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">PURCHASE PROCESS</p>
+
+        <h2>From Selection to Delivery</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <article class="process-card">
+
+          <span class="process-number">01</span>
+
+          <h3>Select</h3>
+
+          <p>
+            Choose a vehicle and review its configuration, location and
+            available purchase options.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">02</span>
+
+          <h3>Review</h3>
+
+          <p>
+            Review your vehicle information and continue to the order
+            process.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">03</span>
+
+          <h3>Order</h3>
+
+          <p>
+            Submit your configuration and selected payment option through
+            the order page.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">04</span>
+
+          <h3>Delivery</h3>
+
+          <p>
+            Delivery timing and final arrangements depend on vehicle
+            availability and location.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SUPPORT CTA -->
+    <section class="store-support-section">
+
+      <div class="store-support-content">
+
+        <p class="eyebrow">NEED HELP?</p>
+
+        <h2>We're Here to Help</h2>
+
+        <p>
+          Have questions about a vehicle, availability or the purchase
+          process? Visit a store or contact support.
+        </p>
+
+        <div class="support-actions">
+
+          <a href="stores.html" class="primary-button">
+            Find a Store
+          </a>
+
+          <a href="account.html" class="secondary-button">
+            Account
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <h3>Company</h3>
+
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Support</h3>
+
+        <a href="stores.html">Stores</a>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="charging.html">How to Charge</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Vehicles</h3>
+
+        <a href="car-models.html">Car Models</a>
+        <a href="store-vehicles.html">Store Vehicles</a>
+        <a href="test-drive.html">Test Drive</a>
+        <a href="future-cars.html">Future Cars</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Legal</h3>
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        ©️ 2026 TESLA, Inc. All rights reserved.
+      </span>
+
+      <span>
+        United States
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- COOKIE NOTICE -->
+  <div class="cookie-overlay" id="cookieOverlay" aria-hidden="true">
+
+    <div class="cookie-card">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve site
+        functionality, remember preferences and understand how the site is
+        used.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          class="primary-button"
+          id="acceptCookies">
+          Accept
+        </button>
+
+        <a href="cookie-settings.html" class="secondary-button"
+          id="cookieSettings">
+          Cookie Settings
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- UTILITIES -->
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+  </button>
+
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+  <script src="store-vehicles.js"></script>
+
+</body>
+</html>

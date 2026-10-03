@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Charging History | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .charging-history-page {
+            padding: 110px 6% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .charging-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .charging-hero h1 {
+            font-size: clamp(36px, 5vw, 62px);
+            margin-bottom: 14px;
+        }
+
+        .charging-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .charging-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .summary-card {
+            padding: 28px;
+            background: #f5f5f5;
+            border-radius: 18px;
+        }
+
+        .summary-card span {
+            display: block;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .summary-card strong {
+            font-size: 32px;
+        }
+
+        .charging-panel {
+            background: #f5f5f5;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .charging-panel h2 {
+            margin-bottom: 10px;
+        }
+
+        .charging-panel > p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .charging-table-wrapper {
+            overflow-x: auto;
+            margin-top: 25px;
+        }
+
+        .charging-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 750px;
+        }
+
+        .charging-table th,
+        .charging-table td {
+            text-align: left;
+            padding: 17px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .charging-table th {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .charging-status {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #e8f5eb;
+            color: #176b32;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .charging-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .charging-button {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 999px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .charging-button.secondary {
+            background: transparent;
+            color: #111;
+            border: 1px solid #aaa;
+        }
+
+        .charging-note {
+            margin-top: 30px;
+            padding: 22px;
+            border-radius: 14px;
+            background: #ededed;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        body.dark-mode .charging-hero p,
+        body.dark-mode .charging-panel > p,
+        body.dark-mode .charging-note {
+            color: #bbb;
+        }
+
+        body.dark-mode .summary-card,
+        body.dark-mode .charging-panel {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .summary-card span,
+        body.dark-mode .charging-table th {
+            color: #aaa;
+        }
+
+        body.dark-mode .charging-table th,
+        body.dark-mode .charging-table td {
+            border-color: #444;
+        }
+
+        body.dark-mode .charging-button.secondary {
+            color: #fff;
+        }
+
+        body.dark-mode .charging-note {
+            background: #252525;
+        }
+
+        @media (max-width: 800px) {
+            .charging-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            type="button"
+            aria-label="Account">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+
+            <button class="navigation-group-button" type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+            </div>
+
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+
+            <button class="navigation-group-button" type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+            </div>
+
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="charging-history.html">Charging History</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="charging-history-page">
+
+    <section class="charging-hero">
+
+        <h1>Charging History</h1>
+
+        <p>
+            View your recent charging sessions, energy usage,
+            charging locations, and session costs in one place.
+        </p>
+
+    </section>
+
+
+    <section class="charging-summary">
+
+        <div class="summary-card">
+
+            <span>Total Sessions</span>
+
+            <strong id="totalSessions">0</strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>Total Energy</span>
+
+            <strong id="totalEnergy">0 kWh</strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>Total Charging Cost</span>
+
+            <strong id="totalCost">$0.00</strong>
+
+        </div>
+
+    </section>
+
+
+    <section class="charging-panel">
+
+        <h2>Recent Charging Sessions</h2>
+
+        <p>
+            Your latest charging activity will appear here.
+        </p>
+
+
+        <div class="charging-table-wrapper">
+
+            <table class="charging-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Date</th>
+                        <th>Vehicle</th>
+                        <th>Location</th>
+                        <th>Energy</th>
+                        <th>Cost</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="chargingHistoryBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="charging-actions">
+
+            <a
+                href="charging.html"
+                class="charging-button">
+                Charging Information
+            </a>
+
+            <a
+                href="vehicle-garage.html"
+                class="charging-button secondary">
+                Vehicle Garage
+            </a>
+
+            <a
+                href="support.html"
+                class="charging-button secondary">
+                Contact Support
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <div class="charging-note">
+
+        <strong>Charging data</strong><br>
+
+        Charging-session records are displayed from this website's
+        current frontend data. Live vehicle charging information,
+        Supercharger billing, connected-vehicle telemetry, and
+        synchronized charging history require secure backend
+        integration.
+
+    </div>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button id="acceptCookies" type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const historyBody =
+        document.getElementById("chargingHistoryBody");
+
+    const totalSessions =
+        document.getElementById("totalSessions");
+
+    const totalEnergy =
+        document.getElementById("totalEnergy");
+
+    const totalCost =
+        document.getElementById("totalCost");
+
+
+    /*
+     * Sample frontend records.
+     * These can later be replaced with backend/API data.
+     */
+
+    const sessions = [
+        {
+            date: "2026-09-28",
+            vehicle: "Model Y",
+            location: "Home Charging",
+            energy: 42.6,
+            cost: 7.24,
+            status: "Completed"
+        },
+        {
+            date: "2026-09-24",
+            vehicle: "Model Y",
+            location: "Supercharger",
+            energy: 51.2,
+            cost: 13.87,
+            status: "Completed"
+        },
+        {
+            date: "2026-09-19",
+            vehicle: "Model Y",
+            location: "Home Charging",
+            energy: 37.8,
+            cost: 6.43,
+            status: "Completed"
+        }
+    ];
+
+
+    function renderHistory() {
+
+        historyBody.innerHTML = "";
+
+
+        let energyTotal = 0;
+        let costTotal = 0;
+
+
+        if (sessions.length === 0) {
+
+            historyBody.innerHTML = `
+                <tr>
+                    <td colspan="6">
+                        No charging sessions available.
+                    </td>
+                </tr>
+            `;
+
+        }
+
+
+        sessions.forEach(function (session) {
+
+            energyTotal += session.energy;
+            costTotal += session.cost;
+
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${session.date}</td>
+                <td>${session.vehicle}</td>
+                <td>${session.location}</td>
+                <td>${session.energy.toFixed(1)} kWh</td>
+                <td>$${session.cost.toFixed(2)}</td>
+                <td>
+                    <span class="charging-status">
+                        ${session.status}
+                    </span>
+                </td>
+            `;
+
+            historyBody.appendChild(row);
+
+        });
+
+
+        totalSessions.textContent = sessions.length;
+
+        totalEnergy.textContent =
+            energyTotal.toFixed(1) + " kWh";
+
+        totalCost.textContent =
+            "$" + costTotal.toFixed(2);
+
+    }
+
+
+    renderHistory();
+
+});
+</script>
+
+</body>
+</html>

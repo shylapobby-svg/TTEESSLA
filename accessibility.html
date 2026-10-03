@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accessibility | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .accessibility-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 6% 80px;
+        }
+
+        .accessibility-hero {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .accessibility-hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            margin-bottom: 18px;
+        }
+
+        .accessibility-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .accessibility-section {
+            margin-bottom: 42px;
+        }
+
+        .accessibility-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .accessibility-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .accessibility-section ul {
+            padding-left: 25px;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        .accessibility-contact {
+            background: #f3f3f3;
+            border-radius: 18px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .accessibility-contact h2 {
+            margin-bottom: 12px;
+        }
+
+        .accessibility-contact p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .accessibility-contact a {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        body.dark-mode
+        .accessibility-hero p,
+        body.dark-mode
+        .accessibility-section p,
+        body.dark-mode
+        .accessibility-section ul,
+        body.dark-mode
+        .accessibility-contact p {
+            color: #aaa;
+        }
+
+        body.dark-mode .accessibility-contact {
+            background: #1d1d1d;
+        }
+
+        @media (max-width: 700px) {
+            .accessibility-page {
+                padding-top: 100px;
+            }
+
+            .accessibility-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            type="button"
+            aria-label="Account">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="document.html">Documents</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button
+        class="menu-close"
+        id="menuClose"
+        aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+
+            </div>
+
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+
+            </div>
+
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="charging-history.html">Charging History</a>
+        <a href="document.html">Documents</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="accessibility-page">
+
+    <section class="accessibility-hero">
+
+        <h1>Accessibility</h1>
+
+        <p>
+            We want our website and digital services to be accessible
+            and usable by as many people as possible.
+        </p>
+
+    </section>
+
+
+    <section class="accessibility-section">
+
+        <h2>Our Commitment</h2>
+
+        <p>
+            We are committed to improving the accessibility and
+            usability of this website. Our goal is to provide a
+            clear experience for visitors using different devices,
+            browsers, input methods, and assistive technologies.
+        </p>
+
+    </section>
+
+
+    <section class="accessibility-section">
+
+        <h2>Accessibility Features</h2>
+
+        <p>
+            This website is designed with accessibility considerations
+            that may include:
+        </p>
+
+        <ul>
+            <li>Keyboard-accessible controls and navigation.</li>
+            <li>Responsive layouts for different screen sizes.</li>
+            <li>Labels and descriptions for important controls.</li>
+            <li>Readable text and structured page headings.</li>
+            <li>Alternative text for applicable images.</li>
+            <li>Theme controls for different viewing preferences.</li>
+            <li>Forms with visible validation and error messages.</li>
+        </ul>
+
+    </section>
+
+
+    <section class="accessibility-section">
+
+        <h2>Keyboard Navigation</h2>
+
+        <p>
+            Where supported, visitors can use keyboard controls to
+            navigate links, buttons, menus, forms, and other
+            interactive elements.
+        </p>
+
+    </section>
+
+
+    <section class="accessibility-section">
+
+        <h2>Screen Readers and Assistive Technology</h2>
+
+        <p>
+            Page structure, labels, navigation controls, and form
+            elements are designed to provide useful information to
+            assistive technologies. Accessibility may vary depending
+            on the browser, operating system, and assistive technology
+            being used.
+        </p>
+
+    </section>
+
+
+    <section class="accessibility-section">
+
+        <h2>Ongoing Improvements</h2>
+
+        <p>
+            Accessibility is an ongoing process. We may continue to
+            review and improve the website as new features and
+            technologies are introduced.
+        </p>
+
+    </section>
+
+
+    <section class="accessibility-contact">
+
+        <h2>Need Assistance?</h2>
+
+        <p>
+            If you experience difficulty accessing information or
+            using a feature on this website, please contact our
+            support team so the issue can be reviewed.
+        </p>
+
+        <p>
+            <a href="support-request.html">
+                Contact Support →
+            </a>
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            <a href="accessibility.html">Accessibility</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button
+                id="acceptCookies"
+                type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

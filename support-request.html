@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support Request | TESLA</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .support-request-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 6% 80px;
+        }
+
+        .request-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .request-header h1 {
+            font-size: clamp(42px, 7vw, 70px);
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .request-header p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .support-form {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-weight: 600;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font: inherit;
+            background: #fff;
+        }
+
+        .field textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: 2px solid #888;
+            outline-offset: 1px;
+        }
+
+        .error {
+            display: none;
+            color: #c00;
+            font-size: 13px;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .form-footer {
+            margin-top: 25px;
+        }
+
+        .terms-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .terms-row input {
+            margin-top: 4px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px 20px;
+            border: 0;
+            border-radius: 8px;
+            background: #111;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            opacity: .9;
+        }
+
+        .form-status {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        .form-status.show {
+            display: block;
+        }
+
+        .confirmation {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 18px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .confirmation.show {
+            display: block;
+        }
+
+        .confirmation h2 {
+            margin-bottom: 10px;
+        }
+
+        .confirmation p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .reference-number {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .support-note {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 12px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .support-form {
+                padding: 25px;
+            }
+        }
+
+        body.dark-mode .support-form {
+            background: #151515;
+            border-color: #333;
+        }
+
+        body.dark-mode .field input,
+        body.dark-mode .field select,
+        body.dark-mode .field textarea {
+            background: #202020;
+            color: #fff;
+            border-color: #444;
+        }
+
+        body.dark-mode .request-header p,
+        body.dark-mode .confirmation p {
+            color: #aaa;
+        }
+
+        body.dark-mode .form-status,
+        body.dark-mode .confirmation,
+        body.dark-mode .support-note {
+            background: #1d1d1d;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="TESLA Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" aria-label="Account">
+                ◯
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- SIDE MENU -->
+    <aside class="side-menu" id="sideMenu">
+
+        <button class="menu-close" id="menuClose" aria-label="Close menu">
+            ×
+        </button>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Car Models
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Batteries
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="batteries.html">Car Battery</a>
+                    <a href="batteries.html">Powerwall 2</a>
+                    <a href="batteries.html">Powerwall 3</a>
+                    <a href="batteries.html">Powerwall 3 Expansion</a>
+                    <a href="batteries.html">Megapack 2</a>
+                    <a href="batteries.html">Megapack 3</a>
+                </div>
+
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="investment.html">Tesla Investment</a>
+            <a href="support.html">Support</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <section class="support-request-page">
+
+            <div class="request-header">
+
+                <h1>Support Request</h1>
+
+                <p>
+                    Tell us what you need help with and provide the relevant
+                    details. Your request will receive a reference number.
+                </p>
+
+            </div>
+
+
+            <form class="support-form" id="supportRequestForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label for="supportFirstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportFirstName"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                        <span class="error" id="firstNameError">
+                            Enter your first name.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="supportLastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportLastName"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                        <span class="error" id="lastNameError">
+                            Enter your last name.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="supportEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="supportEmail"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <span class="error" id="emailError">
+                            Enter a valid email address.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="supportPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="supportPhone"
+                            autocomplete="tel"
+                            placeholder="+1 555 555 0199"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="supportTopic">
+                            Support Topic
+                        </label>
+
+                        <select id="supportTopic" required>
+
+                            <option value="">
+                                Select a topic
+                            </option>
+
+                            <option value="vehicle">
+                                Vehicle
+                            </option>
+
+                            <option value="charging">
+                                Charging
+                            </option>
+
+                            <option value="order">
+                                Order
+                            </option>
+
+                            <option value="delivery">
+                                Delivery
+                            </option>
+
+                            <option value="payment">
+                                Payment
+                            </option>
+
+                            <option value="account">
+                                Account
+                            </option>
+
+                            <option value="warranty">
+                                Warranty
+                            </option>
+
+                            <option value="insurance">
+                                Insurance
+                            </option>
+
+                            <option value="solar">
+                                Solar
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <span class="error" id="topicError">
+                            Select a support topic.
+                        </span>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="supportReference">
+                            Order / Reference Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportReference"
+                            placeholder="Optional"
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="supportMessage">
+                            How Can We Help?
+                        </label>
+
+                        <textarea
+                            id="supportMessage"
+                            placeholder="Describe the issue or question..."
+                            required
+                        ></textarea>
+
+                        <span class="error" id="messageError">
+                            Please describe how we can help.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-footer">
+
+                    <label class="terms-row">
+
+                        <input
+                            type="checkbox"
+                            id="supportConsent"
+                            required
+                        >
+
+                        <span>
+                            I confirm that the information provided is accurate
+                            and may be used to respond to this support request.
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                        id="supportSubmit"
+                    >
+                        Submit Support Request
+                    </button>
+
+                </div>
+
+
+                <div class="form-status" id="supportFormStatus"></div>
+
+            </form>
+
+
+            <section class="confirmation" id="supportConfirmation">
+
+                <h2>Request Received</h2>
+
+                <p>
+                    Your support request has been recorded in this
+                    frontend demonstration.
+                </p>
+
+                <p>
+                    Reference number:
+                </p>
+
+                <div class="reference-number" id="supportReferenceNumber">
+                    TESLA-SUPPORT
+                </div>
+
+                <p>
+                    In a production system, this reference would be connected
+                    to a secure support-management system.
+                </p>
+
+            </section>
+
+
+            <div class="support-note">
+
+                <strong>Demo website notice:</strong>
+                This form does not send information to a live support team.
+                Submitted information is stored only in the browser session
+                for demonstration purposes.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-column">
+
+                <h3>Company</h3>
+
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="news.html">News</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Support</h3>
+
+                <a href="support.html">Support Center</a>
+                <a href="support-request.html">Submit Request</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="tel:+18005550199">Call</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Services</h3>
+
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Legal</h3>
+
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            ©️ 2026 TESLA, Inc. All rights reserved.
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+
+    <!-- COOKIE NOTICE -->
+    <div class="cookie-overlay" id="cookieOverlay">
+
+        <div class="cookie-box">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies to improve website functionality, remember
+                preferences and understand how visitors use this demo website.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button id="acceptCookies" class="primary-button">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" class="secondary-button">
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        const supportForm =
+            document.getElementById("supportRequestForm");
+
+        const supportConfirmation =
+            document.getElementById("supportConfirmation");
+
+        const supportStatus =
+            document.getElementById("supportFormStatus");
+
+        supportForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const firstName =
+                document.getElementById("supportFirstName").value.trim();
+
+            const lastName =
+                document.getElementById("supportLastName").value.trim();
+
+            const email =
+                document.getElementById("supportEmail").value.trim();
+
+            const topic =
+                document.getElementById("supportTopic").value;
+
+            const message =
+                document.getElementById("supportMessage").value.trim();
+
+            let valid = true;
+
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.classList.remove("show");
+            });
+
+            if (!firstName) {
+                document.getElementById("firstNameError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!lastName) {
+                document.getElementById("lastNameError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!email || !email.includes("@")) {
+                document.getElementById("emailError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!topic) {
+                document.getElementById("topicError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!message) {
+                document.getElementById("messageError")
+                    .classList.add("show");
+                valid = false;
+            }
+
+            if (!valid) {
+                supportStatus.textContent =
+                    "Please correct the highlighted fields.";
+                supportStatus.classList.add("show");
+                return;
+            }
+
+            const reference =
+                "TESLA-SUPPORT-" +
+                Date.now().toString().slice(-8);
+
+            const requestData = {
+                firstName,
+                lastName,
+                email,
+                phone: document.getElementById("supportPhone").value.trim(),
+                topic,
+                referenceNumber:
+                    document.getElementById("supportReference").value.trim(),
+                message,
+                requestId: reference,
+                submittedAt: new Date().toISOString()
+            };
+
+            sessionStorage.setItem(
+                "teslaSupportRequest",
+                JSON.stringify(requestData)
+            );
+
+            document.getElementById("supportReferenceNumber")
+                .textContent = reference;
+
+            supportStatus.textContent =
+                "Your support request has been submitted successfully.";
+
+            supportStatus.classList.add("show");
+
+            supportConfirmation.classList.add("show");
+
+            supportConfirmation.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            supportForm.reset();
+        });
+    </script>
+
+</body>
+</html>

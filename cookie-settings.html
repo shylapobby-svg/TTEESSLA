@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cookie Settings">
+    <title>Cookie Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cookie-settings.css">
+</head>
+
+<body class="legal-page cookie-settings-page">
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+
+        <button class="menu-button" id="menuButton" type="button"
+            aria-label="Open menu" aria-controls="sideMenu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="Toggle theme" aria-pressed="false">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" type="button"
+                aria-label="Open account menu" aria-expanded="false">
+                <span class="account-icon">◯</span>
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="account.html">Account</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+        <div class="side-menu-header">
+            <span>Menu</span>
+
+            <button class="menu-close" id="menuClose" type="button"
+                aria-label="Close menu">
+                ×
+            </button>
+        </div>
+
+        <nav class="main-navigation" aria-label="Main navigation">
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button"
+                    aria-expanded="false">
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+                <button class="navigation-group-button" type="button"
+                    aria-expanded="false">
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-dropdown">
+                    <a href="batteries.html#car-battery">Car Battery</a>
+                    <a href="batteries.html#powerwall-2">Powerwall 2</a>
+                    <a href="batteries.html#powerwall-3">Powerwall 3</a>
+                    <a href="batteries.html#powerwall-3-expansion">Powerwall 3 Expansion</a>
+                    <a href="batteries.html#megapack-2">Megapack 2</a>
+                    <a href="batteries.html#megapack-3">Megapack 3</a>
+                </div>
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+            <a href="investment.html">Investment</a>
+            <a href="ride-hailing.html">Ride-Hailing</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main>
+
+        <section class="legal-hero cookie-settings-hero">
+            <div class="legal-hero-content">
+                <p class="cookie-eyebrow">Privacy & Preferences</p>
+                <h1>Cookie Settings</h1>
+                <p>
+                    Choose how cookies and similar technologies are used
+                    when you visit this website.
+                </p>
+            </div>
+        </section>
+
+        <section class="cookie-settings-content">
+
+            <div class="cookie-settings-intro">
+                <p class="legal-updated">
+                    Last updated: October 1, 2026
+                </p>
+
+                <p>
+                    Cookies help this website remember preferences, improve
+                    functionality, understand how visitors use the site,
+                    and support certain website features.
+                </p>
+
+                <p>
+                    You can change your preferences at any time using the
+                    controls below.
+                </p>
+            </div>
+
+            <!-- Cookie categories -->
+            <div class="cookie-preferences">
+
+                <div class="cookie-preference-card">
+                    <div class="cookie-preference-info">
+                        <div>
+                            <h2>Essential Cookies</h2>
+                            <p>
+                                Required for basic website functionality,
+                                security, navigation, and remembering
+                                necessary preferences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-control">
+                        <span>Always Active</span>
+                    </div>
+                </div>
+
+                <div class="cookie-preference-card">
+                    <div class="cookie-preference-info">
+                        <div>
+                            <h2>Functional Cookies</h2>
+                            <p>
+                                Help remember preferences such as theme,
+                                interface settings, and other optional
+                                functionality.
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="cookie-switch">
+                        <input
+                            type="checkbox"
+                            id="functionalCookies"
+                            checked
+                        >
+                        <span class="cookie-slider"></span>
+                        <span class="visually-hidden">
+                            Enable functional cookies
+                        </span>
+                    </label>
+                </div>
+
+                <div class="cookie-preference-card">
+                    <div class="cookie-preference-info">
+                        <div>
+                            <h2>Analytics Cookies</h2>
+                            <p>
+                                Help measure website traffic, performance,
+                                and usage patterns so the website can be
+                                improved.
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="cookie-switch">
+                        <input
+                            type="checkbox"
+                            id="analyticsCookies"
+                        >
+                        <span class="cookie-slider"></span>
+                        <span class="visually-hidden">
+                            Enable analytics cookies
+                        </span>
+                    </label>
+                </div>
+
+                <div class="cookie-preference-card">
+                    <div class="cookie-preference-info">
+                        <div>
+                            <h2>Marketing Cookies</h2>
+                            <p>
+                                May be used to personalize communications
+                                or measure the effectiveness of promotional
+                                content.
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="cookie-switch">
+                        <input
+                            type="checkbox"
+                            id="marketingCookies"
+                        >
+                        <span class="cookie-slider"></span>
+                        <span class="visually-hidden">
+                            Enable marketing cookies
+                        </span>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="cookie-settings-actions">
+
+                <button
+                    type="button"
+                    class="cookie-settings-button secondary"
+                    id="rejectOptionalCookies">
+                    Reject Optional Cookies
+                </button>
+
+                <button
+                    type="button"
+                    class="cookie-settings-button"
+                    id="saveCookiePreferences">
+                    Save Preferences
+                </button>
+
+                <button
+                    type="button"
+                    class="cookie-settings-button primary"
+                    id="acceptAllCookies">
+                    Accept All Cookies
+                </button>
+
+            </div>
+
+            <div
+                class="cookie-settings-status"
+                id="cookieSettingsStatus"
+                role="status"
+                aria-live="polite">
+            </div>
+
+            <!-- Information -->
+            <section class="cookie-information">
+
+                <h2>How Cookies Are Used</h2>
+
+                <p>
+                    The categories above are intended to give visitors
+                    control over optional cookie technologies. The actual
+                    cookies and technologies used on a production website
+                    should be documented in the site's final privacy and
+                    cookie disclosures.
+                </p>
+
+                <h3>Managing Your Preferences</h3>
+
+                <p>
+                    Saving your preferences stores your selections on this
+                    device. Clearing browser storage or using another device
+                    may require you to make your selections again.
+                </p>
+
+                <h3>Third-Party Services</h3>
+
+                <p>
+                    If analytics, advertising, payment, authentication,
+                    mapping, media, or other third-party services are added
+                    later, their applicable technologies and privacy
+                    practices should be reviewed and documented before
+                    launch.
+                </p>
+
+            </section>
+
+            <!-- Legal links -->
+            <div class="legal-actions">
+                <a href="privacy-policy.html" class="legal-action-link">
+                    Privacy Policy
+                </a>
+
+                <a href="terms-of-use.html" class="legal-action-link">
+                    Terms of Use
+                </a>
+
+                <a href="index.html" class="legal-action-link">
+                    Return Home
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="tel:+18005550199">Call</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Telegram</a>
+                <a href="#">X</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="#">Warranty</a>
+                <a href="#">Insurance</a>
+                <a href="#">Stores</a>
+                <a href="#">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="#">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+    <!-- Utilities -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top">
+        ↑
+    </button>
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+        aria-label="Refresh page">
+        ↻
+    </button>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-overlay" id="cookieOverlay" aria-hidden="true">
+        <div class="cookie-banner">
+            <h2>Cookies</h2>
+            <p>
+                We use cookies and similar technologies to improve your
+                experience. You can manage optional cookies in Cookie Settings.
+            </p>
+
+            <div class="cookie-actions">
+                <button id="acceptCookies" type="button">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" id="cookieSettings">
+                    Cookie Settings
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Existing shared JavaScript -->
+    <script src="script.js"></script>
+    <script src="cookie-settings.js"></script>
+
+</body>
+</html>

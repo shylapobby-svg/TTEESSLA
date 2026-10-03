@@ -1,0 +1,315 @@
+/* =========================================================
+   VEHICLE AGREEMENT
+   ========================================================= */
+
+.vehicle-agreement-page {
+    background: #fff;
+    color: #171717;
+}
+
+/* Hero */
+
+.vehicle-agreement-hero {
+    min-height: 42vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 140px 7vw 70px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.58)),
+        linear-gradient(135deg, #8c8c8c, #303030);
+    color: #fff;
+}
+
+.vehicle-agreement-hero .legal-hero-content {
+    width: min(100%, 900px);
+}
+
+.agreement-eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.vehicle-agreement-hero h1 {
+    margin: 0 0 18px;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+}
+
+.vehicle-agreement-hero p:not(.agreement-eyebrow) {
+    margin: 0;
+    max-width: 760px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+/* Main content */
+
+.vehicle-agreement-page .legal-content {
+    width: min(100% - 40px, 1100px);
+    margin: 0 auto;
+    padding: 70px 0 100px;
+}
+
+.vehicle-agreement-page .legal-updated {
+    margin: 0 0 28px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Demo notice */
+
+.vehicle-agreement-page .legal-demo-notice {
+    margin: 0 0 55px;
+    padding: 24px 26px;
+    border: 1px solid #d8d8d8;
+    border-left: 4px solid #111;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+.vehicle-agreement-page .legal-demo-notice strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.vehicle-agreement-page .legal-demo-notice p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Agreement sections */
+
+.vehicle-agreement-page .legal-section {
+    padding: 0 0 42px;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.vehicle-agreement-page .legal-section:last-of-type {
+    border-bottom: 0;
+}
+
+.vehicle-agreement-page .legal-section h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+.vehicle-agreement-page .legal-section h3 {
+    margin: 24px 0 10px;
+    font-size: 1.05rem;
+}
+
+.vehicle-agreement-page .legal-section p {
+    margin: 0 0 15px;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.vehicle-agreement-page .legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.vehicle-agreement-page .legal-section ul,
+.vehicle-agreement-page .legal-section ol {
+    margin: 14px 0 0;
+    padding-left: 24px;
+}
+
+.vehicle-agreement-page .legal-section li {
+    margin-bottom: 10px;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* Contact */
+
+.vehicle-agreement-page .legal-contact {
+    margin-top: 15px;
+    padding: 30px;
+    border-radius: 14px;
+    background: #f4f4f4;
+}
+
+.vehicle-agreement-page .legal-contact h2 {
+    margin: 0 0 12px;
+    font-size: 1.55rem;
+}
+
+.vehicle-agreement-page .legal-contact p {
+    margin: 0 0 8px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.vehicle-agreement-page .legal-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.vehicle-agreement-page .legal-contact a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.vehicle-agreement-page .legal-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Legal navigation */
+
+.vehicle-agreement-page .legal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 45px;
+}
+
+.vehicle-agreement-page .legal-action-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 1px solid #111;
+    border-radius: 999px;
+    background: #111;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.vehicle-agreement-page .legal-action-link:hover {
+    background: #fff;
+    color: #111 !important;
+    transform: translateY(-1px);
+}
+
+/* Dark mode */
+
+body.dark-mode .vehicle-agreement-page {
+    background: #111;
+    color: #f5f5f5;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-updated {
+    color: #aaa;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-demo-notice,
+body.dark-mode .vehicle-agreement-page .legal-contact {
+    background: #1b1b1b;
+    border-color: #333;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-demo-notice {
+    border-left-color: #fff;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-demo-notice strong,
+body.dark-mode .vehicle-agreement-page .legal-section h2,
+body.dark-mode .vehicle-agreement-page .legal-section h3,
+body.dark-mode .vehicle-agreement-page .legal-contact h2 {
+    color: #fff;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-demo-notice p,
+body.dark-mode .vehicle-agreement-page .legal-section p,
+body.dark-mode .vehicle-agreement-page .legal-section li,
+body.dark-mode .vehicle-agreement-page .legal-contact p {
+    color: #c8c8c8;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-section {
+    border-color: #303030;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-contact a {
+    color: #fff;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-action-link {
+    border-color: #fff;
+    background: #fff;
+    color: #111 !important;
+}
+
+body.dark-mode .vehicle-agreement-page .legal-action-link:hover {
+    background: transparent;
+    color: #fff !important;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .vehicle-agreement-hero {
+        min-height: 38vh;
+        padding: 120px 24px 50px;
+    }
+
+    .vehicle-agreement-page .legal-content {
+        width: min(100% - 32px, 1100px);
+        padding: 50px 0 70px;
+    }
+
+    .vehicle-agreement-page .legal-demo-notice {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .vehicle-agreement-page .legal-section {
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+    }
+
+    .vehicle-agreement-page .legal-section p,
+    .vehicle-agreement-page .legal-section li {
+        font-size: 0.95rem;
+    }
+
+    .vehicle-agreement-page .legal-contact {
+        padding: 24px 20px;
+    }
+
+    .vehicle-agreement-page .legal-actions {
+        flex-direction: column;
+    }
+
+    .vehicle-agreement-page .legal-action-link {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .vehicle-agreement-hero {
+        min-height: 34vh;
+        padding: 110px 20px 40px;
+    }
+
+    .vehicle-agreement-page .legal-content {
+        width: min(100% - 24px, 1100px);
+        padding-top: 40px;
+    }
+
+    .vehicle-agreement-page .legal-section p,
+    .vehicle-agreement-page .legal-section li {
+        line-height: 1.7;
+    }
+}

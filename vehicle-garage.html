@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle Garage | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .garage-page {
+            padding: 110px 6% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .garage-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .garage-hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            margin-bottom: 15px;
+        }
+
+        .garage-hero p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .garage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .vehicle-card,
+        .garage-panel {
+            background: #f5f5f5;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .vehicle-image {
+            height: 190px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #d8d8d8, #f3f3f3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 22px;
+            font-size: 14px;
+        }
+
+        .vehicle-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .vehicle-meta {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .garage-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .garage-button {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            background: #111;
+            color: #fff;
+            border: 1px solid #111;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .garage-button.secondary {
+            background: transparent;
+            color: #111;
+        }
+
+        .add-vehicle-section {
+            margin-top: 40px;
+        }
+
+        .garage-panel h2 {
+            margin-bottom: 10px;
+        }
+
+        .garage-panel > p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .garage-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #fff;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .form-error {
+            display: none;
+            color: #c00;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .form-success {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 12px;
+            background: #e9f7ed;
+            color: #176b32;
+            line-height: 1.6;
+        }
+
+        .garage-info {
+            margin-top: 35px;
+            padding: 22px;
+            border-radius: 14px;
+            background: #eeeeee;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .empty-garage {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        body.dark-mode .garage-hero p,
+        body.dark-mode .vehicle-meta,
+        body.dark-mode .garage-panel > p,
+        body.dark-mode .garage-info,
+        body.dark-mode .empty-garage {
+            color: #bbb;
+        }
+
+        body.dark-mode .vehicle-card,
+        body.dark-mode .garage-panel {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .vehicle-image {
+            background: linear-gradient(135deg, #292929, #383838);
+            color: #aaa;
+        }
+
+        body.dark-mode .garage-button.secondary {
+            color: #fff;
+            border-color: #777;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group select {
+            background: #111;
+            color: #fff;
+            border-color: #555;
+        }
+
+        body.dark-mode .garage-info {
+            background: #252525;
+        }
+
+        @media (max-width: 700px) {
+            .garage-page {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .garage-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .garage-actions {
+                flex-direction: column;
+            }
+
+            .garage-button {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+            type="button">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            aria-label="Account"
+            type="button">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+            <button class="navigation-group-button" type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+
+            </div>
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+            <button class="navigation-group-button" type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+
+            </div>
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="garage-page">
+
+    <section class="garage-hero">
+
+        <h1>Vehicle Garage</h1>
+
+        <p>
+            Manage your Tesla vehicles, view ownership information,
+            access service resources, and keep your vehicle details
+            organized in one place.
+        </p>
+
+    </section>
+
+
+    <section id="vehicleList" class="garage-grid">
+
+        <!-- Vehicles added through the form appear here -->
+
+    </section>
+
+
+    <section class="add-vehicle-section">
+
+        <div class="garage-panel">
+
+            <h2>Add a Vehicle</h2>
+
+            <p>
+                Add your Tesla to your garage using the vehicle details below.
+            </p>
+
+            <form class="garage-form" id="vehicleGarageForm">
+
+                <div class="form-group">
+                    <label for="garageModel">Vehicle Model</label>
+
+                    <select id="garageModel" required>
+
+                        <option value="">Select model</option>
+                        <option value="Model 3">Model 3</option>
+                        <option value="Model Y">Model Y</option>
+                        <option value="Model S">Model S</option>
+                        <option value="Model X">Model X</option>
+                        <option value="Cybertruck">Cybertruck</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="garageYear">Model Year</label>
+
+                    <select id="garageYear" required>
+
+                        <option value="">Select year</option>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="garageColor">Vehicle Color</label>
+
+                    <input
+                        type="text"
+                        id="garageColor"
+                        placeholder="Example: Pearl White"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="garageVin">VIN</label>
+
+                    <input
+                        type="text"
+                        id="garageVin"
+                        maxlength="17"
+                        placeholder="17-character VIN"
+                        required>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="garageNickname">
+                        Vehicle Nickname
+                    </label>
+
+                    <input
+                        type="text"
+                        id="garageNickname"
+                        maxlength="40"
+                        placeholder="Example: My Tesla">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <button
+                        class="garage-button"
+                        type="submit">
+                        Add Vehicle
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div class="form-error" id="garageError"></div>
+
+            <div class="form-success" id="garageSuccess"></div>
+
+        </div>
+
+    </section>
+
+
+    <section class="garage-info">
+
+        <strong>Vehicle information</strong><br>
+
+        Your garage information is stored locally in this frontend
+        version. Vehicle ownership verification, VIN validation,
+        connected-vehicle data, live vehicle status, and secure account
+        synchronization can be connected when the backend is added.
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button id="acceptCookies" type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top"
+    type="button">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    aria-label="Refresh page"
+    type="button">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const vehicleList = document.getElementById("vehicleList");
+    const form = document.getElementById("vehicleGarageForm");
+
+    const errorBox = document.getElementById("garageError");
+    const successBox = document.getElementById("garageSuccess");
+
+    const modelInput = document.getElementById("garageModel");
+    const yearInput = document.getElementById("garageYear");
+    const colorInput = document.getElementById("garageColor");
+    const vinInput = document.getElementById("garageVin");
+    const nicknameInput = document.getElementById("garageNickname");
+
+
+    let vehicles = JSON.parse(
+        localStorage.getItem("teslaVehicleGarage") || "[]"
+    );
+
+
+    function saveVehicles() {
+
+        localStorage.setItem(
+            "teslaVehicleGarage",
+            JSON.stringify(vehicles)
+        );
+
+    }
+
+
+    function renderVehicles() {
+
+        vehicleList.innerHTML = "";
+
+        if (vehicles.length === 0) {
+
+            vehicleList.innerHTML = `
+                <div class="garage-panel empty-garage">
+                    <h2>Your Garage Is Empty</h2>
+                    <p>
+                        Add your Tesla below to begin building
+                        your vehicle garage.
+                    </p>
+                </div>
+            `;
+
+            return;
+        }
+
+
+        vehicles.forEach(function (vehicle, index) {
+
+            const card = document.createElement("article");
+
+            card.className = "vehicle-card";
+
+            card.innerHTML = `
+                <div class="vehicle-image">
+                    Vehicle Image Placeholder
+                </div>
+
+                <h2>
+                    ${vehicle.nickname || vehicle.model}
+                </h2>
+
+                <div class="vehicle-meta">
+                    <strong>${vehicle.model}</strong><br>
+                    Model Year: ${vehicle.year}<br>
+                    Color: ${vehicle.color}<br>
+                    VIN: ${vehicle.vin}
+                </div>
+
+                <div class="garage-actions">
+
+                    <a
+                        class="garage-button"
+                        href="purchase-tesla.html">
+                        Ownership
+                    </a>
+
+                    <a
+                        class="garage-button secondary"
+                        href="service.html">
+                        Service
+                    </a>
+
+                    <button
+                        class="garage-button secondary"
+                        type="button"
+                        data-remove="${index}">
+                        Remove
+                    </button>
+
+                </div>
+            `;
+
+            vehicleList.appendChild(card);
+
+        });
+
+
+        document.querySelectorAll("[data-remove]").forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const index = Number(
+                    button.getAttribute("data-remove")
+                );
+
+                vehicles.splice(index, 1);
+
+                saveVehicles();
+                renderVehicles();
+
+            });
+
+        });
+
+    }
+
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        errorBox.style.display = "none";
+        successBox.style.display = "none";
+
+
+        const model = modelInput.value.trim();
+        const year = yearInput.value.trim();
+        const color = colorInput.value.trim();
+        const vin = vinInput.value.trim().toUpperCase();
+        const nickname = nicknameInput.value.trim();
+
+
+        if (!model || !year || !color || !vin) {
+
+            errorBox.textContent =
+                "Please complete all required vehicle fields.";
+
+            errorBox.style.display = "block";
+
+            return;
+
+        }
+
+
+        if (vin.length !== 17) {
+
+            errorBox.textContent =
+                "Please enter a valid 17-character VIN.";
+
+            errorBox.style.display = "block";
+
+            return;
+
+        }
+
+
+        const duplicateVin = vehicles.some(function (vehicle) {
+
+            return vehicle.vin === vin;
+
+        });
+
+
+        if (duplicateVin) {
+
+            errorBox.textContent =
+                "This vehicle is already in your garage.";
+
+            errorBox.style.display = "block";
+
+            return;
+
+        }
+
+
+        const vehicle = {
+            model: model,
+            year: year,
+            color: color,
+            vin: vin,
+            nickname: nickname,
+            addedAt: new Date().toISOString()
+        };
+
+
+        vehicles.push(vehicle);
+
+        saveVehicles();
+        renderVehicles();
+
+        successBox.innerHTML = `
+            <strong>Vehicle Added</strong><br>
+            ${vehicle.nickname || vehicle.model}
+            has been added to your vehicle garage.
+        `;
+
+        successBox.style.display = "block";
+
+        form.reset();
+
+    });
+
+
+    renderVehicles();
+
+});
+</script>
+
+</body>
+</html>

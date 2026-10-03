@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lease a Tesla | TESLA</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lease-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 6% 80px;
+        }
+
+        .lease-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .lease-hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .lease-hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .lease-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .lease-card {
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 18px;
+            background: #fff;
+        }
+
+        .lease-card h2 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .lease-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .lease-card a,
+        .lease-button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .calculator {
+            background: #f5f5f5;
+            border-radius: 22px;
+            padding: 40px;
+            margin-bottom: 45px;
+        }
+
+        .calculator h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .calculator-intro {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field label {
+            font-weight: 600;
+        }
+
+        .form-field input,
+        .form-field select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .calculator-result {
+            margin-top: 25px;
+            padding: 25px;
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #ddd;
+        }
+
+        .calculator-result strong {
+            font-size: 28px;
+        }
+
+        .calculator-result p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .lease-process {
+            margin-bottom: 45px;
+        }
+
+        .lease-process h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            padding: 24px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .process-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #111;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .process-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .lease-notice {
+            background: #f1f1f1;
+            border-radius: 14px;
+            padding: 22px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .lease-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .lease-page {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .calculator {
+                padding: 25px;
+            }
+        }
+
+        body.dark-mode .lease-card,
+        body.dark-mode .process-card,
+        body.dark-mode .calculator-result {
+            background: #151515;
+            border-color: #333;
+        }
+
+        body.dark-mode .calculator,
+        body.dark-mode .lease-notice {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .lease-hero p,
+        body.dark-mode .lease-card p,
+        body.dark-mode .calculator-intro,
+        body.dark-mode .process-card p {
+            color: #aaa;
+        }
+
+        body.dark-mode .form-field input,
+        body.dark-mode .form-field select {
+            background: #202020;
+            color: #fff;
+            border-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="TESLA Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" aria-label="Account">
+                ◯
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- SIDE MENU -->
+    <aside class="side-menu" id="sideMenu">
+
+        <button class="menu-close" id="menuClose" aria-label="Close menu">
+            ×
+        </button>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Car Models
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Batteries
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="batteries.html">Car Battery</a>
+                    <a href="batteries.html">Powerwall 2</a>
+                    <a href="batteries.html">Powerwall 3</a>
+                    <a href="batteries.html">Powerwall 3 Expansion</a>
+                    <a href="batteries.html">Megapack 2</a>
+                    <a href="batteries.html">Megapack 3</a>
+                </div>
+
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="investment.html">Tesla Investment</a>
+            <a href="ride-hailing.html">Ride-Hailing</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <section class="lease-page">
+
+            <div class="lease-hero">
+                <h1>Lease a Tesla</h1>
+
+                <p>
+                    Explore Tesla leasing options, estimate your monthly
+                    payment and begin configuring the vehicle that fits your needs.
+                </p>
+            </div>
+
+
+            <section class="lease-grid">
+
+                <article class="lease-card">
+                    <h2>Choose Your Model</h2>
+
+                    <p>
+                        Explore available Tesla vehicles and review model
+                        information before beginning your lease configuration.
+                    </p>
+
+                    <a href="car-models.html">
+                        View Models
+                    </a>
+                </article>
+
+
+                <article class="lease-card">
+                    <h2>Lease Estimate</h2>
+
+                    <p>
+                        Enter a vehicle price and lease term to see a
+                        simplified demonstration of estimated payments.
+                    </p>
+
+                    <a href="#leaseCalculator">
+                        Calculate
+                    </a>
+                </article>
+
+
+                <article class="lease-card">
+                    <h2>Already Have an Account?</h2>
+
+                    <p>
+                        Sign in to continue your account-based vehicle
+                        and leasing experience.
+                    </p>
+
+                    <a href="login.html">
+                        Sign In
+                    </a>
+                </article>
+
+            </section>
+
+
+            <!-- LEASE CALCULATOR -->
+            <section class="calculator" id="leaseCalculator">
+
+                <h2>Lease Payment Calculator</h2>
+
+                <p class="calculator-intro">
+                    This calculator provides a simplified frontend estimate.
+                    Actual lease pricing, taxes, fees, mileage allowances and
+                    other terms would be determined by the applicable agreement.
+                </p>
+
+
+                <form class="calculator-form" id="leaseForm">
+
+                    <div class="form-field">
+                        <label for="leaseVehiclePrice">
+                            Vehicle Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="leaseVehiclePrice"
+                            min="1"
+                            step="100"
+                            placeholder="Example: 45000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-field">
+                        <label for="leaseTerm">
+                            Lease Term
+                        </label>
+
+                        <select id="leaseTerm" required>
+                            <option value="6">6 months</option>
+                            <option value="12">12 months</option>
+                            <option value="18">18 months</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-field">
+                        <label for="leaseMileage">
+                            Annual Mileage
+                        </label>
+
+                        <select id="leaseMileage">
+                            <option value="10000">10,000 miles</option>
+                            <option value="12000">12,000 miles</option>
+                            <option value="15000">15,000 miles</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-field">
+                        <label for="leaseUpfront">
+                            Upfront Payment
+                        </label>
+
+                        <input
+                            type="text"
+                            id="leaseUpfront"
+                            value="50% of vehicle price"
+                            readonly
+                        >
+                    </div>
+
+                    <div>
+                        <button
+                            type="submit"
+                            class="lease-button"
+                        >
+                            Calculate Estimate
+                        </button>
+                    </div>
+
+                </form>
+
+
+                <div class="calculator-result" id="leaseResult">
+                    <strong>$0.00</strong>
+
+                    <p>
+                        Estimated monthly payment will appear here.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- PROCESS -->
+            <section class="lease-process">
+
+                <h2>How Leasing Works</h2>
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+
+                        <div class="process-number">
+                            1
+                        </div>
+
+                        <h3>Choose</h3>
+
+                        <p>
+                            Select a Tesla model and configure your preferred
+                            vehicle.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <div class="process-number">
+                            2
+                        </div>
+
+                        <h3>Review</h3>
+
+                        <p>
+                            Review the estimated lease payment and applicable
+                            vehicle information.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <div class="process-number">
+                            3
+                        </div>
+
+                        <h3>Apply</h3>
+
+                        <p>
+                            Complete the required account and leasing information.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <div class="process-number">
+                            4
+                        </div>
+
+                        <h3>Delivery</h3>
+
+                        <p>
+                            Final delivery details would be provided after
+                            approval and completion of the applicable agreement.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <div class="lease-notice">
+                <strong>Demo website notice:</strong>
+                Lease pricing, approvals, credit decisions, contracts,
+                payment processing, taxes, fees and vehicle availability are
+                not connected to a live financial or vehicle-ordering system.
+                The calculator is for frontend demonstration purposes only.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="news.html">News</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="https://wa.me/18005550199">WhatsApp</a>
+                <a href="https://t.me/">Telegram</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="https://x.com/">X</a>
+                <a href="tel:+18005550199">Call</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            ©️ 2026 TESLA, Inc. All rights reserved.
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+
+    <!-- COOKIE NOTICE -->
+    <div class="cookie-overlay" id="cookieOverlay">
+
+        <div class="cookie-box">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies to improve website functionality, remember
+                preferences and understand how visitors use this demo website.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button id="acceptCookies" class="primary-button">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" class="secondary-button">
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        const leaseForm = document.getElementById("leaseForm");
+        const leaseVehiclePrice = document.getElementById("leaseVehiclePrice");
+        const leaseTerm = document.getElementById("leaseTerm");
+        const leaseResult = document.getElementById("leaseResult");
+
+        leaseForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const price = Number(leaseVehiclePrice.value);
+            const months = Number(leaseTerm.value);
+
+            if (!price || price <= 0) {
+                leaseResult.innerHTML = `
+                    <strong>Please enter a vehicle price.</strong>
+                    <p>Enter a valid vehicle price to calculate the estimate.</p>
+                `;
+                return;
+            }
+
+            const upfront = price * 0.50;
+            const remaining = price - upfront;
+            const monthly = remaining / months;
+
+            leaseResult.innerHTML = `
+                <strong>
+                    $${monthly.toLocaleString("en-US", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    })}
+                </strong>
+
+                <p>
+                    Estimated monthly payment for a ${months}-month
+                    demonstration lease.
+                    Estimated upfront amount:
+                    $${upfront.toLocaleString("en-US", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    })}.
+                </p>
+            `;
+        });
+    </script>
+
+</body>
+</html>

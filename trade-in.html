@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trade-In | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .trade-in-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 24px 80px;
+    }
+
+    .trade-hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .trade-hero h1 {
+      font-size: clamp(40px, 7vw, 70px);
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .trade-hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .trade-card {
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .trade-card h2 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+
+    .trade-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .trade-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .trade-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .trade-field label {
+      font-weight: 600;
+    }
+
+    .trade-field input,
+    .trade-field select,
+    .trade-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .trade-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .trade-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .trade-button {
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trade-button.secondary {
+      background: transparent;
+      color: #111;
+    }
+
+    .trade-error,
+    .trade-success {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 12px;
+      line-height: 1.6;
+    }
+
+    .trade-error {
+      background: #ffebee;
+      color: #b71c1c;
+    }
+
+    .trade-success {
+      background: #e8f5e9;
+      color: #1b5e20;
+    }
+
+    .trade-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .trade-info {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 22px;
+    }
+
+    .trade-info h3 {
+      margin-top: 0;
+    }
+
+    .trade-info p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .trade-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 750px) {
+      .trade-grid,
+      .trade-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trade-field.full {
+        grid-column: auto;
+      }
+
+      .trade-card {
+        padding: 22px;
+      }
+
+      .trade-actions {
+        flex-direction: column;
+      }
+
+      .trade-button {
+        width: 100%;
+      }
+    }
+
+    body.dark-mode .trade-card {
+      background: #1d1d1d;
+    }
+
+    body.dark-mode .trade-info,
+    body.dark-mode .trade-field input,
+    body.dark-mode .trade-field select,
+    body.dark-mode .trade-field textarea {
+      background: #111;
+      border-color: #444;
+      color: #fff;
+    }
+
+    body.dark-mode .trade-hero p,
+    body.dark-mode .trade-info p,
+    body.dark-mode .trade-note {
+      color: #aaa;
+    }
+
+    body.dark-mode .trade-button.secondary {
+      color: #fff;
+      border-color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+      <button id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button id="accountButton" aria-label="Account">
+        ◯
+      </button>
+
+    </div>
+
+    <div class="account-menu" id="accountMenu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="payment-history.html">Payment History</a>
+      <a href="service-history.html">Service History</a>
+      <a href="account-security.html">Account Security</a>
+      <a href="support.html">Support</a>
+    </div>
+
+  </header>
+
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+      ×
+    </button>
+
+    <nav>
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button">
+          Car Models <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="car-models.html">All Models</a>
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+
+        <button class="navigation-group-button">
+          Batteries <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html">Car Battery</a>
+          <a href="batteries.html">Powerwall 2</a>
+          <a href="batteries.html">Powerwall 3</a>
+          <a href="batteries.html">Powerwall 3 Expansion</a>
+          <a href="batteries.html">Megapack 2</a>
+          <a href="batteries.html">Megapack 3</a>
+        </div>
+
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+  </aside>
+
+  <main class="trade-in-page">
+
+    <section class="trade-hero">
+      <h1>Trade-In</h1>
+
+      <p>
+        Provide information about your current vehicle to begin a trade-in
+        request toward a Tesla vehicle.
+      </p>
+    </section>
+
+    <section class="trade-card">
+
+      <h2>Current Vehicle</h2>
+
+      <form id="tradeInForm">
+
+        <div class="trade-grid">
+
+          <div class="trade-field">
+            <label for="tradeMake">Vehicle Make</label>
+
+            <input
+              type="text"
+              id="tradeMake"
+              placeholder="Example: Tesla"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeModel">Vehicle Model</label>
+
+            <input
+              type="text"
+              id="tradeModel"
+              placeholder="Example: Model 3"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeYear">Vehicle Year</label>
+
+            <select id="tradeYear" required>
+              <option value="">Select year</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+              <option>2014</option>
+              <option>2013</option>
+              <option>2012</option>
+            </select>
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeMileage">Current Mileage</label>
+
+            <input
+              type="number"
+              id="tradeMileage"
+              min="0"
+              placeholder="0"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeCondition">Vehicle Condition</label>
+
+            <select id="tradeCondition" required>
+              <option value="">Select condition</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="Needs Repair">Needs Repair</option>
+            </select>
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeOwnership">Ownership Status</label>
+
+            <select id="tradeOwnership" required>
+              <option value="">Select status</option>
+              <option value="Owned">Owned Outright</option>
+              <option value="Financed">Currently Financed</option>
+              <option value="Leased">Currently Leased</option>
+            </select>
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeColor">Exterior Color</label>
+
+            <input
+              type="text"
+              id="tradeColor"
+              placeholder="Example: Black"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeVin">VIN</label>
+
+            <input
+              type="text"
+              id="tradeVin"
+              maxlength="17"
+              placeholder="17-character VIN"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeTeslaModel">
+              Preferred Tesla Model
+            </label>
+
+            <select id="tradeTeslaModel" required>
+              <option value="">Select Tesla model</option>
+              <option value="Model 3">Model 3</option>
+              <option value="Model Y">Model Y</option>
+              <option value="Model S">Model S</option>
+              <option value="Model X">Model X</option>
+              <option value="Cybertruck">Cybertruck</option>
+            </select>
+          </div>
+
+          <div class="trade-field">
+            <label for="tradeEmail">Email</label>
+
+            <input
+              type="email"
+              id="tradeEmail"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="trade-field">
+            <label for="tradePhone">Phone</label>
+
+            <input
+              type="tel"
+              id="tradePhone"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+          <div class="trade-field full">
+            <label for="tradeNotes">
+              Additional Vehicle Information
+            </label>
+
+            <textarea
+              id="tradeNotes"
+              placeholder="Tell us about upgrades, damage, accessories, service history or other relevant details."
+            ></textarea>
+          </div>
+
+        </div>
+
+        <div class="trade-actions">
+
+          <button
+            type="submit"
+            class="trade-button"
+            id="tradeSubmitButton"
+          >
+            Submit Trade-In Request
+          </button>
+
+          <a
+            href="car-models.html"
+            class="trade-button secondary"
+          >
+            Explore Tesla Vehicles
+          </a>
+
+          <a
+            href="support.html"
+            class="trade-button secondary"
+          >
+            Support
+          </a>
+
+        </div>
+
+        <div class="trade-error" id="tradeError"></div>
+        <div class="trade-success" id="tradeSuccess"></div>
+
+      </form>
+
+      <p class="trade-note">
+        A trade-in request does not guarantee a valuation or acceptance.
+        Final valuation may depend on vehicle inspection, documentation,
+        condition, mileage, market information and other applicable factors.
+      </p>
+
+    </section>
+
+    <section class="trade-card">
+
+      <h2>How Trade-In Works</h2>
+
+      <div class="trade-info-grid">
+
+        <div class="trade-info">
+          <h3>1. Vehicle Details</h3>
+
+          <p>
+            Provide accurate information about your current vehicle,
+            including mileage, condition and VIN.
+          </p>
+        </div>
+
+        <div class="trade-info">
+          <h3>2. Review</h3>
+
+          <p>
+            Your submitted information can be reviewed as part of the
+            applicable trade-in evaluation process.
+          </p>
+        </div>
+
+        <div class="trade-info">
+          <h3>3. Next Steps</h3>
+
+          <p>
+            If eligible, you can continue with the applicable vehicle
+            purchase and trade-in process.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="trade-card">
+
+      <h2>Related Resources</h2>
+
+      <div class="trade-actions">
+
+        <a
+          href="order.html"
+          class="trade-button"
+        >
+          Order a Tesla
+        </a>
+
+        <a
+          href="payment-methods.html"
+          class="trade-button secondary"
+        >
+          Payment Options
+        </a>
+
+        <a
+          href="my-orders.html"
+          class="trade-button secondary"
+        >
+          My Orders
+        </a>
+
+        <a
+          href="contact.html"
+          class="trade-button secondary"
+        >
+          Contact
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support</a>
+        <a href="support-request.html">Support Request</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h3>Ownership</h3>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="service.html">Service</a>
+        <a href="delivery.html">Delivery</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        <a href="lease-agreement.html">Lease Agreement</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      ©️ 2026 TESLA, Inc. All rights reserved.
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+  <div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to improve your experience.
+      </p>
+
+      <div class="cookie-actions">
+        <button id="acceptCookies">Accept</button>
+        <a href="cookie-settings.html">Cookie Settings</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    id="refreshButton"
+    class="refresh-button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const form = document.getElementById("tradeInForm");
+      const errorBox = document.getElementById("tradeError");
+      const successBox = document.getElementById("tradeSuccess");
+      const submitButton =
+        document.getElementById("tradeSubmitButton");
+
+      const profile =
+        JSON.parse(
+          sessionStorage.getItem("teslaAccountProfile") || "null"
+        );
+
+      if (profile) {
+        document.getElementById("tradeEmail").value =
+          profile.email || "";
+
+        document.getElementById("tradePhone").value =
+          profile.phone || "";
+      }
+
+      form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        errorBox.style.display = "none";
+        successBox.style.display = "none";
+
+        const make =
+          document.getElementById("tradeMake").value.trim();
+
+        const model =
+          document.getElementById("tradeModel").value.trim();
+
+        const year =
+          document.getElementById("tradeYear").value;
+
+        const mileage =
+          document.getElementById("tradeMileage").value;
+
+        const condition =
+          document.getElementById("tradeCondition").value;
+
+        const ownership =
+          document.getElementById("tradeOwnership").value;
+
+        const color =
+          document.getElementById("tradeColor").value.trim();
+
+        const vin =
+          document.getElementById("tradeVin")
+            .value
+            .trim()
+            .toUpperCase();
+
+        const teslaModel =
+          document.getElementById("tradeTeslaModel").value;
+
+        const email =
+          document.getElementById("tradeEmail").value.trim();
+
+        const phone =
+          document.getElementById("tradePhone").value.trim();
+
+        const notes =
+          document.getElementById("tradeNotes").value.trim();
+
+        if (
+          !make ||
+          !model ||
+          !year ||
+          !mileage ||
+          !condition ||
+          !ownership ||
+          !color ||
+          !vin ||
+          !teslaModel ||
+          !email ||
+          !phone
+        ) {
+          errorBox.textContent =
+            "Please complete all required fields.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        if (
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        ) {
+          errorBox.textContent =
+            "Please enter a valid email address.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        if (
+          !/^[A-HJ-NPR-Z0-9]{17}$/i.test(vin)
+        ) {
+          errorBox.textContent =
+            "Please enter a valid 17-character VIN.";
+
+          errorBox.style.display = "block";
+          return;
+        }
+
+        const reference =
+          "TESLA-TRADE-" +
+          Date.now().toString().slice(-8);
+
+        const tradeData = {
+          reference,
+          make,
+          model,
+          year,
+          mileage,
+          condition,
+          ownership,
+          color,
+          vin,
+          teslaModel,
+          email,
+          phone,
+          notes,
+          submittedAt: new Date().toISOString()
+        };
+
+        sessionStorage.setItem(
+          "teslaTradeInRequest",
+          JSON.stringify(tradeData)
+        );
+
+        successBox.innerHTML =
+          "<strong>Trade-in request received.</strong><br><br>" +
+          "Your trade-in information has been successfully submitted.<br>" +
+          "Reference: <strong>" +
+          reference +
+          "</strong><br><br>" +
+          "Please keep this reference for your records.";
+
+        successBox.style.display = "block";
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Request Submitted";
+
+        form.querySelectorAll(
+          "input, select, textarea, button"
+        ).forEach(function (field) {
+          field.disabled = true;
+        });
+
+        successBox.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>

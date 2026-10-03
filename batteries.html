@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Energy & Batteries | TESLA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="batteries.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a
+      href="index.html"
+      class="site-logo"
+      aria-label="TESLA Home"
+    >
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle theme"
+      >
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+        aria-expanded="false"
+      >
+        ◯
+      </button>
+
+    </div>
+
+
+    <!-- ACCOUNT MENU -->
+
+    <div class="account-menu" id="accountMenu">
+
+      <a
+        href="#"
+        class="account-menu-link"
+      >
+        Sign In
+      </a>
+
+      <a
+        href="#"
+        class="account-menu-link"
+      >
+        Create Account
+      </a>
+
+      <a
+        href="#"
+        class="account-menu-link"
+      >
+        Dashboard
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       SIDE MENU
+       ===================================================== -->
+
+  <aside
+    class="side-menu"
+    id="sideMenu"
+  >
+
+    <div class="side-menu-header">
+
+      <span>Menu</span>
+
+      <button
+        class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <nav class="side-navigation">
+
+      <!-- CAR MODELS -->
+
+      <div class="navigation-group">
+
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Car Models</span>
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a
+            href="model-3.html"
+            class="navigation-link"
+          >
+            Model 3
+          </a>
+
+          <a
+            href="car-models.html"
+            class="navigation-link"
+          >
+            Model Y
+          </a>
+
+          <a
+            href="car-models.html"
+            class="navigation-link"
+          >
+            Model S
+          </a>
+
+          <a
+            href="car-models.html"
+            class="navigation-link"
+          >
+            Model X
+          </a>
+
+          <a
+            href="car-models.html"
+            class="navigation-link"
+          >
+            Cybertruck
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEST DRIVE -->
+
+      <a
+        href="test-drive.html"
+        class="navigation-link navigation-main-link"
+      >
+        Request a Test Drive
+      </a>
+
+
+      <!-- BATTERIES -->
+
+      <div class="navigation-group open">
+
+        <button
+          class="navigation-dropdown"
+          type="button"
+          aria-expanded="true"
+        >
+          <span>Batteries</span>
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+
+        <div class="navigation-submenu">
+
+          <a
+            href="#vehicle-battery"
+            class="navigation-link"
+          >
+            Car Battery
+          </a>
+
+          <a
+            href="#powerwall"
+            class="navigation-link"
+          >
+            Powerwall 2
+          </a>
+
+          <a
+            href="#powerwall"
+            class="navigation-link"
+          >
+            Powerwall 3
+          </a>
+
+          <a
+            href="#powerwall"
+            class="navigation-link"
+          >
+            Powerwall 3 Expansion
+          </a>
+
+          <a
+            href="#megapack"
+            class="navigation-link"
+          >
+            Megapack 2
+          </a>
+
+          <a
+            href="#megapack"
+            class="navigation-link"
+          >
+            Megapack 3
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- OTHER NAVIGATION -->
+
+      <a
+        href="#"
+        class="navigation-link navigation-main-link"
+      >
+        Solar Panels
+      </a>
+
+      <a
+        href="#"
+        class="navigation-link navigation-main-link"
+      >
+        How to Charge
+      </a>
+
+      <a
+        href="#"
+        class="navigation-link navigation-main-link"
+      >
+        Future Cars
+      </a>
+
+      <a
+        href="#"
+        class="navigation-link navigation-main-link"
+      >
+        Awards
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main class="page-content batteries-page">
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="batteries-hero">
+
+      <div class="batteries-hero-image">
+        IMAGE PLACEHOLDER
+      </div>
+
+      <div class="batteries-hero-content">
+
+        <span class="page-eyebrow">
+          ENERGY STORAGE
+        </span>
+
+        <h1>
+          Batteries
+        </h1>
+
+        <p>
+          Energy storage designed to power vehicles, homes,
+          businesses and larger energy systems.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#battery-products"
+            class="battery-button primary"
+          >
+            Explore Batteries
+          </a>
+
+          <a
+            href="#calculator"
+            class="battery-button secondary"
+          >
+            Charging Calculator
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         INTRODUCTION
+         =================================================== -->
+
+    <section class="battery-introduction">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          ENERGY FOR EVERY SCALE
+        </span>
+
+        <h2>
+          Built for the way you use energy.
+        </h2>
+
+        <p>
+          Explore battery systems ranging from electric vehicle
+          energy storage to residential and utility-scale systems.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         BATTERY PRODUCTS
+         =================================================== -->
+
+    <section
+      class="battery-products"
+      id="battery-products"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          PRODUCTS
+        </span>
+
+        <h2>
+          Battery systems
+        </h2>
+
+      </div>
+
+
+      <div class="battery-product-grid">
+
+
+        <!-- CAR BATTERY -->
+
+        <article
+          class="battery-product-card"
+          id="vehicle-battery"
+        >
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              VEHICLES
+            </span>
+
+            <h3>
+              Tesla Car Battery
+            </h3>
+
+            <p>
+              High-capacity battery technology designed for
+              long-range electric vehicle performance.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Electric Vehicles</strong>
+              </div>
+
+              <div>
+                <span>Energy Type</span>
+                <strong>Rechargeable</strong>
+              </div>
+
+              <div>
+                <span>System</span>
+                <strong>High Voltage</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="car-models.html"
+              class="text-link"
+            >
+              Explore Vehicles →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- POWERWALL 2 -->
+
+        <article class="battery-product-card">
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              HOME ENERGY
+            </span>
+
+            <h3>
+              Powerwall 2
+            </h3>
+
+            <p>
+              A home battery system designed to store energy
+              and provide backup power.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Residential</strong>
+              </div>
+
+              <div>
+                <span>Backup</span>
+                <strong>Home Energy</strong>
+              </div>
+
+              <div>
+                <span>Installation</span>
+                <strong>Wall Mounted</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="#powerwall"
+              class="text-link"
+            >
+              View Powerwall →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- POWERWALL 3 -->
+
+        <article
+          class="battery-product-card"
+          id="powerwall"
+        >
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              HOME ENERGY
+            </span>
+
+            <h3>
+              Powerwall 3
+            </h3>
+
+            <p>
+              An integrated home energy system designed to
+              store solar energy and provide backup power.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Residential</strong>
+              </div>
+
+              <div>
+                <span>Energy Storage</span>
+                <strong>Home Battery</strong>
+              </div>
+
+              <div>
+                <span>System</span>
+                <strong>Integrated</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="#calculator"
+              class="text-link"
+            >
+              Calculate Energy →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- POWERWALL EXPANSION -->
+
+        <article class="battery-product-card">
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              HOME ENERGY
+            </span>
+
+            <h3>
+              Powerwall 3 Expansion
+            </h3>
+
+            <p>
+              Additional storage capacity designed to expand
+              an existing compatible home energy system.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Residential</strong>
+              </div>
+
+              <div>
+                <span>Purpose</span>
+                <strong>Capacity Expansion</strong>
+              </div>
+
+              <div>
+                <span>System</span>
+                <strong>Powerwall</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="#compare"
+              class="text-link"
+            >
+              Compare Systems →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MEGAPACK 2 -->
+
+        <article
+          class="battery-product-card"
+          id="megapack"
+        >
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              UTILITY ENERGY
+            </span>
+
+            <h3>
+              Megapack 2
+            </h3>
+
+            <p>
+              Utility-scale battery storage designed for
+              large energy projects and grid applications.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Utility</strong>
+              </div>
+
+              <div>
+                <span>Scale</span>
+                <strong>Large Energy Systems</strong>
+              </div>
+
+              <div>
+                <span>Purpose</span>
+                <strong>Grid Storage</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Request Information →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MEGAPACK 3 -->
+
+        <article class="battery-product-card">
+
+          <div class="battery-product-image">
+            IMAGE PLACEHOLDER
+          </div>
+
+          <div class="battery-product-content">
+
+            <span class="product-category">
+              UTILITY ENERGY
+            </span>
+
+            <h3>
+              Megapack 3
+            </h3>
+
+            <p>
+              A next-generation utility energy storage concept
+              for large-scale energy infrastructure.
+            </p>
+
+            <div class="battery-spec-list">
+
+              <div>
+                <span>Application</span>
+                <strong>Utility</strong>
+              </div>
+
+              <div>
+                <span>Scale</span>
+                <strong>Grid Infrastructure</strong>
+              </div>
+
+              <div>
+                <span>System</span>
+                <strong>Large-Scale Storage</strong>
+              </div>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Request Information →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         COMPARISON
+         =================================================== -->
+
+    <section
+      class="battery-comparison"
+      id="compare"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          COMPARE
+        </span>
+
+        <h2>
+          Find the right system
+        </h2>
+
+        <p>
+          Compare battery categories by intended application,
+          installation type and primary use.
+        </p>
+
+      </div>
+
+
+      <div class="comparison-table-wrapper">
+
+        <table class="battery-comparison-table">
+
+          <thead>
+
+            <tr>
+              <th>System</th>
+              <th>Category</th>
+              <th>Primary Use</th>
+              <th>Installation</th>
+              <th>Energy Scale</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Car Battery</td>
+              <td>Vehicle</td>
+              <td>Electric Vehicle</td>
+              <td>Vehicle Integrated</td>
+              <td>Vehicle</td>
+            </tr>
+
+            <tr>
+              <td>Powerwall 2</td>
+              <td>Residential</td>
+              <td>Home Backup</td>
+              <td>Wall Mounted</td>
+              <td>Home</td>
+            </tr>
+
+            <tr>
+              <td>Powerwall 3</td>
+              <td>Residential</td>
+              <td>Solar + Backup</td>
+              <td>Home Energy System</td>
+              <td>Home</td>
+            </tr>
+
+            <tr>
+              <td>Powerwall 3 Expansion</td>
+              <td>Residential</td>
+              <td>Additional Storage</td>
+              <td>Compatible System</td>
+              <td>Home</td>
+            </tr>
+
+            <tr>
+              <td>Megapack 2</td>
+              <td>Utility</td>
+              <td>Grid Storage</td>
+              <td>Ground Installation</td>
+              <td>Utility</td>
+            </tr>
+
+            <tr>
+              <td>Megapack 3</td>
+              <td>Utility</td>
+              <td>Grid Infrastructure</td>
+              <td>Ground Installation</td>
+              <td>Utility</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CHARGING CALCULATOR
+         =================================================== -->
+
+    <section
+      class="battery-calculator"
+      id="calculator"
+    >
+
+      <div class="calculator-container">
+
+        <div class="calculator-introduction">
+
+          <span class="section-eyebrow">
+            ENERGY TOOL
+          </span>
+
+          <h2>
+            Charging calculator
+          </h2>
+
+          <p>
+            Estimate charging time and energy cost based on
+            your battery capacity, current charge and charging
+            power.
+          </p>
+
+        </div>
+
+
+        <div class="calculator-card">
+
+          <div class="calculator-fields">
+
+
+            <div class="calculator-field">
+
+              <label for="batteryCapacity">
+                Battery Capacity (kWh)
+              </label>
+
+              <input
+                type="number"
+                id="batteryCapacity"
+                min="1"
+                step="0.1"
+                placeholder="75"
+              >
+
+            </div>
+
+
+            <div class="calculator-field">
+
+              <label for="currentCharge">
+                Current Charge (%)
+              </label>
+
+              <input
+                type="number"
+                id="currentCharge"
+                min="0"
+                max="100"
+                step="1"
+                placeholder="20"
+              >
+
+            </div>
+
+
+            <div class="calculator-field">
+
+              <label for="targetCharge">
+                Target Charge (%)
+              </label>
+
+              <input
+                type="number"
+                id="targetCharge"
+                min="1"
+                max="100"
+                step="1"
+                placeholder="80"
+              >
+
+            </div>
+
+
+            <div class="calculator-field">
+
+              <label for="chargingPower">
+                Charging Power (kW)
+              </label>
+
+              <input
+                type="number"
+                id="chargingPower"
+                min="0.1"
+                step="0.1"
+                placeholder="11"
+              >
+
+            </div>
+
+
+            <div class="calculator-field">
+
+              <label for="electricityRate">
+                Electricity Rate ($ / kWh)
+              </label>
+
+              <input
+                type="number"
+                id="electricityRate"
+                min="0"
+                step="0.01"
+                placeholder="0.15"
+              >
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="battery-button primary calculator-button"
+            id="calculateCharging"
+          >
+            Calculate
+          </button>
+
+
+          <div
+            class="calculator-results"
+            id="calculatorResults"
+          >
+
+            <div class="calculator-result">
+
+              <span>
+                Energy Needed
+              </span>
+
+              <strong id="energyNeeded">
+                —
+              </strong>
+
+            </div>
+
+
+            <div class="calculator-result">
+
+              <span>
+                Estimated Charging Time
+              </span>
+
+              <strong id="chargingTime">
+                —
+              </strong>
+
+            </div>
+
+
+            <div class="calculator-result">
+
+              <span>
+                Estimated Cost
+              </span>
+
+              <strong id="chargingCost">
+                —
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         PURCHASE / LEASE
+         =================================================== -->
+
+    <section class="battery-options">
+
+      <div class="section-heading">
+
+        <span class="section-eyebrow">
+          FLEXIBLE OPTIONS
+        </span>
+
+        <h2>
+          Purchase or lease
+        </h2>
+
+        <p>
+          Choose the option that fits your energy project.
+        </p>
+
+      </div>
+
+
+      <div class="battery-option-grid">
+
+
+        <article class="battery-option-card">
+
+          <div class="battery-option-icon">
+            $
+          </div>
+
+          <h3>
+            Purchase
+          </h3>
+
+          <p>
+            Purchase a compatible energy system and configure
+            your installation requirements.
+          </p>
+
+          <button
+            type="button"
+            class="battery-button primary"
+            data-energy-option="purchase"
+          >
+            Request Purchase Information
+          </button>
+
+        </article>
+
+
+        <article class="battery-option-card">
+
+          <div class="battery-option-icon">
+            %
+          </div>
+
+          <h3>
+            Lease
+          </h3>
+
+          <p>
+            Explore a frontend lease estimate using your
+            selected system price and lease preferences.
+          </p>
+
+          <button
+            type="button"
+            class="battery-button secondary"
+            data-energy-option="lease"
+          >
+            Calculate Lease
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         LEASE CALCULATOR
+         =================================================== -->
+
+    <section
+      class="battery-lease-section"
+      id="leaseCalculator"
+    >
+
+      <div class="lease-container">
+
+        <div class="section-heading">
+
+          <span class="section-eyebrow">
+            LEASE ESTIMATE
+          </span>
+
+          <h2>
+            Estimate your upfront payment
+          </h2>
+
+          <p>
+            Enter a system price to estimate an upfront payment
+            of 50% and the remaining balance across your selected
+            term.
+          </p>
+
+        </div>
+
+
+        <div class="lease-card">
+
+          <div class="lease-fields">
+
+            <div class="calculator-field">
+
+              <label for="energySystemPrice">
+                Energy System Price ($)
+              </label>
+
+              <input
+                type="number"
+                id="energySystemPrice"
+                min="1"
+                step="0.01"
+                placeholder="25000"
+              >
+
+            </div>
+
+
+            <div class="calculator-field">
+
+              <label for="energyLeaseTerm">
+                Lease Term
+              </label>
+
+              <select id="energyLeaseTerm">
+
+                <option value="6">
+                  6 Months
+                </option>
+
+                <option value="12">
+                  12 Months
+                </option>
+
+                <option value="18">
+                  18 Months
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="battery-button primary"
+            id="calculateEnergyLease"
+          >
+            Calculate Lease
+          </button>
+
+
+          <div
+            class="lease-results"
+            id="energyLeaseResults"
+          >
+
+            <div>
+              <span>
+                Upfront Payment
+              </span>
+
+              <strong id="energyInitialPayment">
+                —
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Remaining Balance
+              </span>
+
+              <strong id="energyRemainingBalance">
+                —
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Estimated Monthly Payment
+              </span>
+
+              <strong id="energyMonthlyPayment">
+                —
+              </strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CONTACT
+         =================================================== -->
+
+    <section
+      class="battery-contact"
+      id="contact"
+    >
+
+      <div class="battery-contact-content">
+
+        <span class="section-eyebrow">
+          ENERGY SUPPORT
+        </span>
+
+        <h2>
+          Start your energy project
+        </h2>
+
+        <p>
+          Request information about battery storage,
+          installation options and energy solutions.
+        </p>
+
+        <div class="contact-actions">
+
+          <a
+            href="mailto:energy@example.com"
+            class="battery-button primary"
+          >
+            Email Energy Team
+          </a>
+
+          <a
+            href="tel:+10000000000"
+            class="battery-button secondary"
+          >
+            Call Energy Team
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <h3>Company</h3>
+
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Support</h3>
+
+        <a href="#">WhatsApp</a>
+        <a href="#">Telegram</a>
+        <a href="#">Email</a>
+        <a href="#">X</a>
+        <a href="#">Call</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Resources</h3>
+
+        <a href="#">Warranty</a>
+        <a href="#">Insurance</a>
+        <a href="#">Stores</a>
+        <a href="#">Store Vehicles</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Legal</h3>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Vehicle Agreement</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        ©️ 2026 TESLA, Inc. All rights reserved.
+      </span>
+
+      <span>
+        United States
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       UTILITY BUTTONS
+       ===================================================== -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page"
+  >
+    ↻
+  </button>
+
+
+  <!-- =====================================================
+       COOKIE NOTICE
+       ===================================================== -->
+
+  <div
+    class="cookie-overlay"
+    id="cookieOverlay"
+    aria-hidden="true"
+  >
+
+    <div class="cookie-card">
+
+      <h2>
+        Your Privacy
+      </h2>
+
+      <p>
+        We use cookies and similar technologies to improve
+        your browsing experience, remember your preferences
+        and understand how our website is used.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          id="cookieSettings"
+          class="cookie-secondary"
+        >
+          Cookie Settings
+        </button>
+
+        <button
+          type="button"
+          id="acceptCookies"
+          class="cookie-primary"
+        >
+          Accept
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SCRIPTS
+       ===================================================== -->
+
+  <script src="script.js"></script>
+  <script src="batteries.js"></script>
+
+</body>
+</html>

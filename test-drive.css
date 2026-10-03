@@ -1,0 +1,885 @@
+/* =========================================================
+   TEST DRIVE PAGE
+   ========================================================= */
+
+.test-drive-page {
+  min-height: calc(100vh - 64px);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.test-drive-hero {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 24px 80px;
+  background:
+    linear-gradient(
+      180deg,
+      #f7f7f7 0%,
+      #eeeeee 100%
+    );
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.test-drive-hero-content {
+  width: min(850px, 100%);
+}
+
+.test-drive-eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.test-drive-hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 700;
+}
+
+.test-drive-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.test-drive-progress {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 45px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-step {
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.progress-step.active {
+  color: #111;
+}
+
+.progress-step.completed {
+  color: #111;
+}
+
+.progress-number {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.progress-step.active .progress-number,
+.progress-step.completed .progress-number {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+.progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progress-line {
+  width: 80px;
+  height: 1px;
+  margin: 0 10px 27px;
+  background: #d5d5d5;
+}
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.test-drive-form-section {
+  padding: 20px 20px 100px;
+}
+
+.test-drive-form-container {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.test-drive-step {
+  display: none;
+  animation: testDriveFade 0.25s ease;
+}
+
+.test-drive-step.active {
+  display: block;
+}
+
+@keyframes testDriveFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   FORM HEADING
+   ========================================================= */
+
+.form-heading {
+  margin-bottom: 40px;
+}
+
+.form-step-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #666;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.form-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.form-heading p {
+  max-width: 650px;
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  margin-bottom: 9px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #cfcfcf;
+  border-radius: 7px;
+  outline: none;
+  background: #fff;
+  color: #111;
+  font-family: inherit;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.08);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #999;
+}
+
+.field-error {
+  min-height: 17px;
+  margin-top: 6px;
+  color: #c62828;
+  font-size: 12px;
+}
+
+/* =========================================================
+   VEHICLE SELECTION
+   ========================================================= */
+
+.vehicle-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.vehicle-choice {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.vehicle-choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vehicle-choice-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d5d5d5;
+  border-radius: 12px;
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vehicle-choice:hover .vehicle-choice-card {
+  transform: translateY(-2px);
+  border-color: #999;
+}
+
+.vehicle-choice input:checked + .vehicle-choice-card {
+  border: 2px solid #111;
+  box-shadow: 0 0 0 1px #111;
+}
+
+.vehicle-choice-image {
+  min-height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #ededed;
+  color: #999;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.vehicle-choice-content {
+  min-height: 75px;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vehicle-choice-content strong {
+  font-size: 16px;
+}
+
+.vehicle-choice-content small {
+  color: #777;
+  font-size: 13px;
+}
+
+.vehicle-details-grid {
+  margin-top: 10px;
+}
+
+/* =========================================================
+   FILE UPLOAD
+   ========================================================= */
+
+.file-upload {
+  position: relative;
+}
+
+.file-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file-upload label {
+  min-height: 105px;
+  box-sizing: border-box;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  background: #fafafa;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.file-upload label:hover {
+  background: #f2f2f2;
+  border-color: #111;
+}
+
+.file-upload-title {
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.file-upload-subtitle {
+  color: #777;
+  font-size: 12px;
+}
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.form-consent {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  background: #fafafa;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  flex: 0 0 auto;
+  accent-color: #111;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.step-actions {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form-button {
+  min-width: 170px;
+  min-height: 50px;
+  padding: 14px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.form-button:hover {
+  transform: translateY(-1px);
+}
+
+.form-button.primary {
+  background: #111;
+  border: 1px solid #111;
+  color: #fff;
+}
+
+.form-button.primary:hover {
+  background: #333;
+}
+
+.form-button.secondary {
+  background: #fff;
+  border: 1px solid #111;
+  color: #111;
+}
+
+.form-button.secondary:hover {
+  background: #f2f2f2;
+}
+
+/* =========================================================
+   CONFIRMATION
+   ========================================================= */
+
+.confirmation-step {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 0 60px;
+  text-align: center;
+}
+
+.confirmation-success-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #111;
+  border-radius: 50%;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.confirmation-step h2 {
+  margin: 0 0 15px;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.confirmation-step > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.test-drive-confirmation-card {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #fff;
+  text-align: left;
+}
+
+.confirmation-detail {
+  padding: 22px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.confirmation-detail:nth-child(odd) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.confirmation-detail:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.confirmation-detail span {
+  display: block;
+  margin-bottom: 7px;
+  color: #777;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.confirmation-detail strong {
+  color: #111;
+  font-size: 16px;
+}
+
+.confirmation-note {
+  margin-top: 25px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  background: #fafafa;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.confirmation-note strong {
+  color: #111;
+  white-space: nowrap;
+}
+
+.confirmation-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .test-drive-hero {
+  background: #171717;
+  border-color: #333;
+}
+
+body.dark-mode .test-drive-hero p,
+body.dark-mode .form-heading p {
+  color: #aaa;
+}
+
+body.dark-mode .progress-step {
+  color: #666;
+}
+
+body.dark-mode .progress-step.active,
+body.dark-mode .progress-step.completed {
+  color: #fff;
+}
+
+body.dark-mode .progress-number {
+  background: #171717;
+  border-color: #444;
+}
+
+body.dark-mode .progress-step.active .progress-number,
+body.dark-mode .progress-step.completed .progress-number {
+  background: #fff;
+  border-color: #fff;
+  color: #111;
+}
+
+body.dark-mode .progress-line {
+  background: #333;
+}
+
+body.dark-mode .form-step-label {
+  color: #aaa;
+}
+
+body.dark-mode .form-field label {
+  color: #eee;
+}
+
+body.dark-mode .form-field input,
+body.dark-mode .form-field select,
+body.dark-mode .form-field textarea {
+  background: #171717;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .form-field input:focus,
+body.dark-mode .form-field select:focus,
+body.dark-mode .form-field textarea:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .form-field input::placeholder,
+body.dark-mode .form-field textarea::placeholder {
+  color: #777;
+}
+
+body.dark-mode .vehicle-choice-card {
+  background: #171717;
+  border-color: #444;
+}
+
+body.dark-mode .vehicle-choice:hover .vehicle-choice-card {
+  border-color: #777;
+}
+
+body.dark-mode .vehicle-choice input:checked + .vehicle-choice-card {
+  border-color: #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+body.dark-mode .vehicle-choice-image {
+  background: #222;
+  color: #777;
+}
+
+body.dark-mode .vehicle-choice-content small {
+  color: #aaa;
+}
+
+body.dark-mode .file-upload label {
+  background: #1c1c1c;
+  border-color: #555;
+}
+
+body.dark-mode .file-upload label:hover {
+  background: #222;
+  border-color: #fff;
+}
+
+body.dark-mode .file-upload-title {
+  color: #fff;
+}
+
+body.dark-mode .file-upload-subtitle {
+  color: #aaa;
+}
+
+body.dark-mode .form-consent {
+  background: #1c1c1c;
+  border-color: #333;
+}
+
+body.dark-mode .checkbox-label {
+  color: #aaa;
+}
+
+body.dark-mode .checkbox-label input {
+  accent-color: #fff;
+}
+
+body.dark-mode .form-button.primary {
+  background: #fff;
+  border-color: #fff;
+  color: #111;
+}
+
+body.dark-mode .form-button.primary:hover {
+  background: #ddd;
+}
+
+body.dark-mode .form-button.secondary {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+body.dark-mode .form-button.secondary:hover {
+  background: #222;
+}
+
+body.dark-mode .confirmation-success-icon {
+  border-color: #fff;
+}
+
+body.dark-mode .test-drive-confirmation-card {
+  background: #171717;
+  border-color: #333;
+}
+
+body.dark-mode .confirmation-detail {
+  border-color: #333;
+}
+
+body.dark-mode .confirmation-detail span {
+  color: #aaa;
+}
+
+body.dark-mode .confirmation-detail strong {
+  color: #fff;
+}
+
+body.dark-mode .confirmation-note {
+  background: #1c1c1c;
+  border-color: #333;
+  color: #aaa;
+}
+
+body.dark-mode .confirmation-note strong {
+  color: #fff;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .vehicle-selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .progress-line {
+    width: 45px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .test-drive-hero {
+    min-height: 360px;
+    padding: 90px 18px 60px;
+  }
+
+  .test-drive-hero h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .test-drive-hero p {
+    font-size: 15px;
+  }
+
+  .test-drive-progress {
+    width: calc(100% - 24px);
+    padding: 30px 0;
+  }
+
+  .progress-step {
+    min-width: auto;
+  }
+
+  .progress-number {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .progress-label {
+    display: none;
+  }
+
+  .progress-line {
+    flex: 1;
+    width: auto;
+    margin: 0 7px;
+  }
+
+  .test-drive-form-section {
+    padding: 10px 12px 70px;
+  }
+
+  .form-heading {
+    margin-bottom: 30px;
+  }
+
+  .form-heading h2 {
+    font-size: 31px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .form-field.full-width {
+    grid-column: auto;
+  }
+
+  .vehicle-selection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-choice-image {
+    min-height: 130px;
+  }
+
+  .step-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-button {
+    width: 100%;
+  }
+
+  .confirmation-step {
+    padding-top: 15px;
+  }
+
+  .confirmation-success-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+  }
+
+  .confirmation-step h2 {
+    font-size: 31px;
+  }
+
+  .test-drive-confirmation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-detail:nth-child(odd) {
+    border-right: none;
+  }
+
+  .confirmation-detail:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .confirmation-detail:last-child {
+    border-bottom: none;
+  }
+
+  .confirmation-note {
+    flex-direction: column;
+  }
+
+  .confirmation-note strong {
+    white-space: normal;
+  }
+}

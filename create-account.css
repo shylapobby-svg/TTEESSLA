@@ -1,0 +1,426 @@
+.create-account-page {
+    background: #ffffff;
+    color: #171717;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.create-account-main {
+    padding-top: 90px;
+}
+
+.create-account-section {
+    padding: 90px 20px 70px;
+}
+
+.create-account-container {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.create-account-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.create-account-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.create-account-heading h1 {
+    margin: 0 0 20px;
+    font-size: clamp(46px, 7vw, 70px);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.create-account-heading p:last-child {
+    max-width: 540px;
+    margin: 0 auto;
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.create-account-form {
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-field {
+    margin-bottom: 22px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.optional {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 15px;
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #171717;
+    font-size: 15px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-field input:focus {
+    border-color: #171717;
+    box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08);
+}
+
+.form-field input.input-error {
+    border-color: #c62828;
+}
+
+.form-field input.input-success {
+    border-color: #2e7d32;
+}
+
+.field-error {
+    display: block;
+    min-height: 17px;
+    margin-top: 6px;
+    color: #c62828;
+    font-size: 12px;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 75px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #171717;
+}
+
+.password-strength {
+    display: flex;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 10px;
+    background: #dddddd;
+    transition: background 0.2s ease;
+}
+
+.password-strength.weak .strength-bar:nth-child(1) {
+    background: #c62828;
+}
+
+.password-strength.medium .strength-bar:nth-child(1),
+.password-strength.medium .strength-bar:nth-child(2) {
+    background: #e0a100;
+}
+
+.password-strength.strong .strength-bar:nth-child(1),
+.password-strength.strong .strength-bar:nth-child(2),
+.password-strength.strong .strength-bar:nth-child(3) {
+    background: #2e7d32;
+}
+
+.password-strength.very-strong .strength-bar {
+    background: #176b36;
+}
+
+.password-requirements {
+    display: block;
+    margin-top: 8px;
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms-field {
+    margin: 8px 0 24px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.checkbox-label input {
+    width: 17px;
+    height: 17px;
+    margin: 1px 0 0;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.checkbox-label a {
+    color: #171717;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.create-account-button {
+    width: 100%;
+    min-height: 54px;
+    border: 1px solid #171717;
+    border-radius: 8px;
+    background: #171717;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.create-account-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.create-account-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+
+/* =========================
+   LOGIN LINK
+========================= */
+
+.existing-account {
+    margin: 22px 0 0;
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+}
+
+.existing-account a {
+    color: #171717;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.account-form-status {
+    display: none;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.account-form-status.success {
+    display: block;
+    background: #e9f5ec;
+    color: #216b35;
+    border: 1px solid #b8ddc1;
+}
+
+.account-form-status.error {
+    display: block;
+    background: #fff0f0;
+    color: #a32020;
+    border: 1px solid #efb5b5;
+}
+
+
+/* =========================
+   DEMO NOTICE
+========================= */
+
+.create-account-demo {
+    padding: 30px 20px 70px;
+}
+
+.demo-notice {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 22px 24px;
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    background: #f7f7f7;
+}
+
+.demo-notice strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.demo-notice p {
+    margin: 0;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .create-account-page {
+    background: #111111;
+    color: #ffffff;
+}
+
+body.dark-mode .create-account-heading p:last-child,
+body.dark-mode .existing-account {
+    color: #b5b5b5;
+}
+
+body.dark-mode .form-field input {
+    background: #1f1f1f;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+body.dark-mode .form-field input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .password-toggle {
+    color: #aaaaaa;
+}
+
+body.dark-mode .password-toggle:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .password-requirements {
+    color: #999999;
+}
+
+body.dark-mode .checkbox-label a,
+body.dark-mode .existing-account a {
+    color: #ffffff;
+}
+
+body.dark-mode .demo-notice {
+    background: #1c1c1c;
+    border-color: #333333;
+}
+
+body.dark-mode .demo-notice p {
+    color: #aaaaaa;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .create-account-main {
+        padding-top: 70px;
+    }
+
+    .create-account-section {
+        padding-top: 65px;
+    }
+
+    .create-account-heading h1 {
+        font-size: 48px;
+    }
+
+    .create-account-heading p:last-child {
+        font-size: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-field input {
+        min-height: 54px;
+    }
+
+    .create-account-demo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}

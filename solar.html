@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Tesla Solar - residential, commercial and EV charging energy solutions."
+    >
+    <title>Solar | TESLA</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="solar.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SITE HEADER
+         ===================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="sideMenu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a
+            href="index.html"
+            class="site-logo"
+            aria-label="TESLA Home"
+        >
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button
+                class="account-button"
+                id="accountButton"
+                type="button"
+                aria-label="Open account menu"
+                aria-expanded="false"
+                aria-controls="accountMenu"
+            >
+                <span class="account-icon">◯</span>
+            </button>
+
+        </div>
+
+        <!-- ACCOUNT MENU -->
+
+        <div
+            class="account-menu"
+            id="accountMenu"
+            aria-hidden="true"
+        >
+            <a href="login.html">Sign In</a>
+            <a href="create-account.html">Create Account</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         SIDE NAVIGATION
+         ===================================================== -->
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <button
+                class="menu-close"
+                id="menuClose"
+                type="button"
+                aria-label="Close navigation"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <nav class="side-navigation">
+
+            <!-- CAR MODELS -->
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-dropdown"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Car Models</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+
+                    <a
+                        class="navigation-link"
+                        href="model-3.html"
+                    >
+                        Model 3
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="model-y.html"
+                    >
+                        Model Y
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="model-s.html"
+                    >
+                        Model S
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="model-x.html"
+                    >
+                        Model X
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="cybertruck.html"
+                    >
+                        Cybertruck
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEST DRIVE -->
+
+            <a
+                class="navigation-link navigation-main-link"
+                href="test-drive.html"
+            >
+                Request a Test Drive
+            </a>
+
+
+            <!-- BATTERIES -->
+
+            <div class="navigation-group">
+
+                <button
+                    class="navigation-dropdown"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span>Batteries</span>
+                    <span class="navigation-chevron">⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+
+                    <a
+                        class="navigation-link"
+                        href="batteries.html"
+                    >
+                        Battery Systems
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="batteries.html#comparison"
+                    >
+                        Compare Batteries
+                    </a>
+
+                    <a
+                        class="navigation-link"
+                        href="batteries.html#calculator"
+                    >
+                        Charging Calculator
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOLAR -->
+
+            <a
+                class="navigation-link navigation-main-link active"
+                href="solar.html"
+            >
+                Solar Panels
+            </a>
+
+
+            <!-- CHARGING -->
+
+            <a
+                class="navigation-link navigation-main-link"
+                href="charging.html"
+            >
+                How to Charge
+            </a>
+
+
+            <!-- FUTURE CARS -->
+
+            <a
+                class="navigation-link navigation-main-link"
+                href="future-cars.html"
+            >
+                Future Cars
+            </a>
+
+
+            <!-- AWARDS -->
+
+            <a
+                class="navigation-link navigation-main-link"
+                href="awards.html"
+            >
+                Awards
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="page-content solar-page">
+
+
+        <!-- =================================================
+             SOLAR HERO
+             ================================================= -->
+
+        <section class="solar-hero">
+
+            <div class="solar-hero-container">
+
+                <div class="solar-hero-content">
+
+                    <p class="solar-eyebrow">
+                        Energy for your home
+                    </p>
+
+                    <h1>
+                        Solar
+                    </h1>
+
+                    <p>
+                        Generate clean energy, store it for later,
+                        and power your home and electric vehicles
+                        with an integrated energy system.
+                    </p>
+
+                    <div class="solar-hero-actions">
+
+                        <a
+                            href="#request-installation"
+                            class="solar-primary-button"
+                        >
+                            Request Solar Installation
+                        </a>
+
+                        <a
+                            href="#systems"
+                            class="solar-secondary-button"
+                        >
+                            Explore Solar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="solar-hero-image">
+
+                    <div class="solar-image-placeholder">
+                        Solar Hero Image
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             REQUEST INSTALLATION
+             ================================================= -->
+
+        <section
+            class="solar-request-section"
+            id="request-installation"
+        >
+
+            <div class="solar-request-container">
+
+                <div class="solar-section-heading">
+
+                    <p class="solar-eyebrow">
+                        Start your solar project
+                    </p>
+
+                    <h2>
+                        Request Solar Installation
+                    </h2>
+
+                    <p>
+                        Tell us about your property and energy
+                        needs. A solar specialist can use this
+                        information to help determine a suitable
+                        system configuration.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="solar-request-form"
+                    id="solarRequestForm"
+                >
+
+                    <div class="solar-form-group">
+
+                        <label for="solarFirstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarFirstName"
+                            name="firstName"
+                            placeholder="First name"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarLastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarLastName"
+                            name="lastName"
+                            placeholder="Last name"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="solarEmail"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="solarPhone"
+                            name="phone"
+                            placeholder="Phone number"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group solar-full-width">
+
+                        <label for="solarAddress">
+                            Property Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarAddress"
+                            name="address"
+                            placeholder="Street address"
+                            autocomplete="street-address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarCity">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarCity"
+                            name="city"
+                            placeholder="City"
+                            autocomplete="address-level2"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarState">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarState"
+                            name="state"
+                            placeholder="State"
+                            autocomplete="address-level1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarZip">
+                            ZIP Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="solarZip"
+                            name="zip"
+                            placeholder="ZIP code"
+                            autocomplete="postal-code"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="propertyType">
+                            Property Type
+                        </label>
+
+                        <select
+                            id="propertyType"
+                            name="propertyType"
+                            required
+                        >
+                            <option value="">
+                                Select property type
+                            </option>
+
+                            <option value="residential">
+                                Residential
+                            </option>
+
+                            <option value="commercial">
+                                Commercial
+                            </option>
+
+                            <option value="industrial">
+                                Industrial
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="solar-form-group">
+
+                        <label for="solarSystemSize">
+                            Estimated System Size
+                        </label>
+
+                        <select
+                            id="solarSystemSize"
+                            name="systemSize"
+                        >
+                            <option value="">
+                                Select an estimate
+                            </option>
+
+                            <option value="small">
+                                Small — up to 5 kW
+                            </option>
+
+                            <option value="medium">
+                                Medium — 5–10 kW
+                            </option>
+
+                            <option value="large">
+                                Large — 10–20 kW
+                            </option>
+
+                            <option value="custom">
+                                Custom / Not Sure
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="solar-form-group solar-full-width">
+
+                        <label for="solarMessage">
+                            Additional Information
+                        </label>
+
+                        <textarea
+                            id="solarMessage"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about your energy needs..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="solar-checkbox-group solar-full-width">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="solarTerms"
+                                name="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to be contacted about
+                                solar products and services and
+                                confirm that the information
+                                provided is accurate.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="solar-submit-button solar-full-width"
+                    >
+                        Submit Solar Request
+                    </button>
+
+                </form>
+
+
+                <div
+                    class="solar-form-message"
+                    id="solarFormMessage"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOLAR CATEGORIES
+             ================================================= -->
+
+        <section
+            class="solar-categories-section"
+            id="systems"
+        >
+
+            <div class="solar-categories-container">
+
+                <div class="solar-section-heading">
+
+                    <p class="solar-eyebrow">
+                        Energy solutions
+                    </p>
+
+                    <h2>
+                        Solar for Every Property
+                    </h2>
+
+                    <p>
+                        Explore solar and energy solutions for
+                        homes, businesses, and electric vehicle
+                        charging.
+                    </p>
+
+                </div>
+
+
+                <div class="solar-category-grid">
+
+
+                    <!-- RESIDENTIAL -->
+
+                    <article class="solar-category-card">
+
+                        <div class="solar-category-image">
+
+                            <div class="solar-image-placeholder">
+                                Residential Solar Image
+                            </div>
+
+                        </div>
+
+                        <div class="solar-category-content">
+
+                            <p class="solar-card-label">
+                                Residential
+                            </p>
+
+                            <h3>
+                                Solar for Your Home
+                            </h3>
+
+                            <p>
+                                Produce renewable electricity
+                                for your home and pair your solar
+                                system with battery storage for
+                                greater energy flexibility.
+                            </p>
+
+                            <a
+                                href="#system-options"
+                                class="solar-card-link"
+                                data-category="residential"
+                            >
+                                Explore Residential
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- COMMERCIAL -->
+
+                    <article class="solar-category-card">
+
+                        <div class="solar-category-image">
+
+                            <div class="solar-image-placeholder">
+                                Commercial Solar Image
+                            </div>
+
+                        </div>
+
+                        <div class="solar-category-content">
+
+                            <p class="solar-card-label">
+                                Commercial & Industrial
+                            </p>
+
+                            <h3>
+                                Energy for Business
+                            </h3>
+
+                            <p>
+                                Solar generation and storage can
+                                help commercial properties manage
+                                their energy infrastructure.
+                            </p>
+
+                            <a
+                                href="#system-options"
+                                class="solar-card-link"
+                                data-category="commercial"
+                            >
+                                Explore Commercial
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- EV CHARGING -->
+
+                    <article class="solar-category-card">
+
+                        <div class="solar-category-image">
+
+                            <div class="solar-image-placeholder">
+                                EV Charging Image
+                            </div>
+
+                        </div>
+
+                        <div class="solar-category-content">
+
+                            <p class="solar-card-label">
+                                Electric Vehicles
+                            </p>
+
+                            <h3>
+                                Solar + EV Charging
+                            </h3>
+
+                            <p>
+                                Combine solar generation with
+                                home or business charging to
+                                create a more integrated energy
+                                experience.
+                            </p>
+
+                            <a
+                                href="#system-options"
+                                class="solar-card-link"
+                                data-category="charging"
+                            >
+                                Explore EV Charging
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SYSTEM OPTIONS
+             ================================================= -->
+
+        <section
+            class="solar-systems-section"
+            id="system-options"
+        >
+
+            <div class="solar-systems-container">
+
+                <div class="solar-section-heading">
+
+                    <p class="solar-eyebrow">
+                        System planning
+                    </p>
+
+                    <h2>
+                        Solar System Options
+                    </h2>
+
+                    <p>
+                        Use the table below as a planning guide.
+                        Actual system configuration depends on
+                        property characteristics, energy usage,
+                        local requirements, and site assessment.
+                    </p>
+
+                </div>
+
+
+                <div class="solar-table-wrapper">
+
+                    <table class="solar-system-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>
+                                    System
+                                </th>
+
+                                <th>
+                                    Approx. Size
+                                </th>
+
+                                <th>
+                                    Typical Use
+                                </th>
+
+                                <th>
+                                    Energy Storage
+                                </th>
+
+                                <th>
+                                    EV Charging
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Small
+                                </td>
+
+                                <td>
+                                    Up to 5 kW
+                                </td>
+
+                                <td>
+                                    Smaller homes
+                                </td>
+
+                                <td>
+                                    Optional
+                                </td>
+
+                                <td>
+                                    Compatible
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    Medium
+                                </td>
+
+                                <td>
+                                    5–10 kW
+                                </td>
+
+                                <td>
+                                    Average homes
+                                </td>
+
+                                <td>
+                                    Optional
+                                </td>
+
+                                <td>
+                                    Compatible
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    Large
+                                </td>
+
+                                <td>
+                                    10–20 kW
+                                </td>
+
+                                <td>
+                                    Large homes
+                                </td>
+
+                                <td>
+                                    Recommended
+                                </td>
+
+                                <td>
+                                    Compatible
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    Commercial
+                                </td>
+
+                                <td>
+                                    20 kW+
+                                </td>
+
+                                <td>
+                                    Business & industrial
+                                </td>
+
+                                <td>
+                                    Scalable
+                                </td>
+
+                                <td>
+                                    Available
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BUY / LEASE
+             ================================================= -->
+
+        <section class="solar-options-section">
+
+            <div class="solar-options-container">
+
+                <div class="solar-section-heading">
+
+                    <p class="solar-eyebrow">
+                        Flexible options
+                    </p>
+
+                    <h2>
+                        Buy or Lease
+                    </h2>
+
+                    <p>
+                        Choose the approach that fits your energy
+                        project and financial preferences.
+                    </p>
+
+                </div>
+
+
+                <div class="solar-options-grid">
+
+
+                    <article class="solar-option-card">
+
+                        <div class="solar-option-icon">
+                            $
+                        </div>
+
+                        <h3>
+                            Purchase
+                        </h3>
+
+                        <p>
+                            Purchase your solar system and take
+                            ownership of the equipment installed
+                            at your property.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                System ownership
+                            </li>
+
+                            <li>
+                                Long-term energy investment
+                            </li>
+
+                            <li>
+                                Compatible with battery storage
+                            </li>
+
+                            <li>
+                                EV charging integration
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="#request-installation"
+                            class="solar-option-button"
+                        >
+                            Request Purchase Information
+                        </a>
+
+                    </article>
+
+
+                    <article class="solar-option-card">
+
+                        <div class="solar-option-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Lease
+                        </h3>
+
+                        <p>
+                            Explore a lease-based option for a
+                            solar energy system subject to
+                            eligibility and applicable terms.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Lower upfront approach
+                            </li>
+
+                            <li>
+                                Structured payment terms
+                            </li>
+
+                            <li>
+                                System maintenance considerations
+                            </li>
+
+                            <li>
+                                Available options vary by market
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="#request-installation"
+                            class="solar-option-button"
+                        >
+                            Request Lease Information
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ENERGY WORKFLOW
+             ================================================= -->
+
+        <section class="solar-workflow-section">
+
+            <div class="solar-workflow-container">
+
+                <div class="solar-section-heading">
+
+                    <p class="solar-eyebrow">
+                        From sunlight to energy
+                    </p>
+
+                    <h2>
+                        How Solar Works
+                    </h2>
+
+                </div>
+
+
+                <div class="solar-workflow-grid">
+
+
+                    <div class="solar-workflow-step">
+
+                        <span class="solar-step-number">
+                            01
+                        </span>
+
+                        <div class="solar-workflow-image">
+                            <div class="solar-image-placeholder">
+                                Solar Panels
+                            </div>
+                        </div>
+
+                        <h3>
+                            Generate
+                        </h3>
+
+                        <p>
+                            Solar panels convert sunlight into
+                            electricity for your property.
+                        </p>
+
+                    </div>
+
+
+                    <div class="solar-workflow-step">
+
+                        <span class="solar-step-number">
+                            02
+                        </span>
+
+                        <div class="solar-workflow-image">
+                            <div class="solar-image-placeholder">
+                                Energy Storage
+                            </div>
+                        </div>
+
+                        <h3>
+                            Store
+                        </h3>
+
+                        <p>
+                            Compatible battery storage can retain
+                            energy for use when needed.
+                        </p>
+
+                    </div>
+
+
+                    <div class="solar-workflow-step">
+
+                        <span class="solar-step-number">
+                            03
+                        </span>
+
+                        <div class="solar-workflow-image">
+                            <div class="solar-image-placeholder">
+                                Home Energy
+                            </div>
+                        </div>
+
+                        <h3>
+                            Power
+                        </h3>
+
+                        <p>
+                            Use your generated energy for your
+                            home, business, and electric vehicle.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+             ================================================= -->
+
+        <section class="solar-contact-section">
+
+            <div class="solar-contact-container">
+
+                <p class="solar-eyebrow">
+                    Solar support
+                </p>
+
+                <h2>
+                    Have Questions?
+                </h2>
+
+                <p>
+                    Contact the solar team for information about
+                    installation, system planning, energy
+                    storage, and EV charging.
+                </p>
+
+                <div class="solar-contact-links">
+
+                    <a href="mailto:solar@example.com">
+                        Email Solar Support
+                    </a>
+
+                    <a href="tel:+18005550199">
+                        Call Solar Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FRONTEND NOTICE
+             ================================================= -->
+
+        <section class="solar-demo-notice">
+
+            <p>
+                Frontend demonstration only. Solar requests,
+                pricing, installation availability, account
+                verification, and payments are not connected
+                to a live backend yet.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-column">
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="careers.html">
+                    Careers
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+                <a href="https://wa.me/18005550199">
+                    WhatsApp
+                </a>
+
+                <a href="https://t.me/">
+                    Telegram
+                </a>
+
+                <a href="mailto:support@example.com">
+                    Email
+                </a>
+
+                <a href="https://x.com/">
+                    X
+                </a>
+
+                <a href="tel:+18005550199">
+                    Call
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Services
+                </h3>
+
+                <a href="warranty.html">
+                    Warranty
+                </a>
+
+                <a href="insurance.html">
+                    Insurance
+                </a>
+
+                <a href="stores.html">
+                    Stores
+                </a>
+
+                <a href="store-vehicles.html">
+                    Store Vehicles
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms-of-use.html">
+                    Terms of Use
+                </a>
+
+                <a href="cookie-settings.html">
+                    Cookie Settings
+                </a>
+
+                <a href="vehicle-agreement.html">
+                    Vehicle Agreement
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                ©️ 2026 TESLA, Inc. All rights reserved.
+            </span>
+
+            <span>
+                United States
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         COOKIE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="cookie-overlay"
+        id="cookieOverlay"
+        aria-hidden="true"
+    >
+
+        <div class="cookie-box">
+
+            <h2>
+                Your Privacy
+            </h2>
+
+            <p>
+                We use cookies and similar technologies to
+                improve your experience, understand website
+                usage, and support essential functionality.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button
+                    type="button"
+                    id="acceptCookies"
+                >
+                    Accept
+                </button>
+
+                <button
+                    type="button"
+                    id="cookieSettings"
+                >
+                    Cookie Settings
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         UTILITY BUTTONS
+         ===================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
+
+    <script src="script.js"></script>
+    <script src="solar.js"></script>
+
+</body>
+</html>

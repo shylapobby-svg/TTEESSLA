@@ -1,0 +1,698 @@
+/* =========================================================
+   STORE VEHICLES PAGE
+   ========================================================= */
+
+.store-vehicles-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.store-vehicles-hero {
+  min-height: 76vh;
+  padding: 110px 6vw 80px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+  background: var(--page-bg, #ffffff);
+}
+
+.store-vehicles-hero-image {
+  width: 100%;
+  min-height: 460px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9e9e9;
+  color: #777;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+}
+
+.store-vehicles-hero-content {
+  max-width: 560px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.store-vehicles-hero-content h1 {
+  margin: 0 0 22px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.store-vehicles-hero-content p:not(.eyebrow) {
+  margin: 0 0 32px;
+  max-width: 510px;
+  color: #5f6368;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-button,
+.secondary-button {
+  min-height: 46px;
+  padding: 13px 24px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.primary-button {
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+}
+
+.secondary-button {
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  color: #111;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.card-link:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   INVENTORY CONTROLS
+   ========================================================= */
+
+.inventory-controls {
+  padding: 110px 6vw 45px;
+  background: #f7f7f7;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 42px;
+}
+
+.section-heading h2 {
+  margin: 0 0 16px;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.section-heading p:not(.eyebrow) {
+  margin: 0;
+  color: #656565;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.inventory-filter-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr auto;
+  gap: 16px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-field label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.08);
+}
+
+.inventory-filter-card .secondary-button {
+  align-self: end;
+  white-space: nowrap;
+}
+
+.inventory-status {
+  margin-top: 18px;
+  color: #666;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   VEHICLE INVENTORY
+   ========================================================= */
+
+.vehicle-inventory-section {
+  padding: 55px 6vw 110px;
+  background: #f7f7f7;
+}
+
+.vehicle-inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.inventory-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.inventory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e7e7;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.inventory-card-content {
+  padding: 25px;
+}
+
+.inventory-location {
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.inventory-card h3 {
+  margin: 0 0 12px;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.inventory-description {
+  min-height: 68px;
+  margin: 0 0 20px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.inventory-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.inventory-meta span {
+  padding: 6px 9px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  color: #555;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-link::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover::after {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   NO RESULTS
+   ========================================================= */
+
+.no-inventory-results {
+  max-width: 600px;
+  margin: 45px auto 0;
+  padding: 55px 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.no-results-icon {
+  margin-bottom: 16px;
+  font-size: 36px;
+}
+
+.no-inventory-results h3 {
+  margin: 0 0 10px;
+  font-size: 25px;
+}
+
+.no-inventory-results p {
+  margin: 0 0 25px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PURCHASE PROCESS
+   ========================================================= */
+
+.store-process-section {
+  padding: 115px 6vw;
+  background: #fff;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.process-card {
+  padding: 30px;
+  border-top: 1px solid #222;
+  background: #fafafa;
+}
+
+.process-number {
+  display: block;
+  margin-bottom: 42px;
+  color: #777;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.process-card h3 {
+  margin: 0 0 12px;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.process-card p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SUPPORT
+   ========================================================= */
+
+.store-support-section {
+  padding: 120px 6vw;
+  background: #ededed;
+}
+
+.store-support-content {
+  max-width: 750px;
+}
+
+.store-support-content h2 {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.store-support-content > p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: #5f5f5f;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   IMAGE PLACEHOLDER
+   ========================================================= */
+
+.image-placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 42%;
+  height: 1px;
+  background: #c8c8c8;
+  top: 50%;
+  left: 29%;
+}
+
+.image-placeholder::after {
+  content: "";
+  position: absolute;
+  height: 42%;
+  width: 1px;
+  background: #c8c8c8;
+  left: 50%;
+  top: 29%;
+}
+
+.image-placeholder span {
+  position: relative;
+  z-index: 2;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .store-vehicles-hero,
+body.dark-mode .store-process-section {
+  background: #111;
+  color: #fff;
+}
+
+body.dark-mode .store-vehicles-hero-content p:not(.eyebrow),
+body.dark-mode .section-heading p:not(.eyebrow),
+body.dark-mode .store-support-content > p:not(.eyebrow) {
+  color: #aaa;
+}
+
+body.dark-mode .inventory-controls,
+body.dark-mode .vehicle-inventory-section {
+  background: #171717;
+}
+
+body.dark-mode .inventory-filter-card,
+body.dark-mode .inventory-card,
+body.dark-mode .no-inventory-results {
+  background: #202020;
+  border-color: #333;
+}
+
+body.dark-mode .filter-field input,
+body.dark-mode .filter-field select {
+  background: #171717;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .filter-field input:focus,
+body.dark-mode .filter-field select:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .inventory-description,
+body.dark-mode .inventory-status,
+body.dark-mode .no-inventory-results p,
+body.dark-mode .process-card p {
+  color: #aaa;
+}
+
+body.dark-mode .inventory-meta span {
+  border-color: #444;
+  color: #ccc;
+}
+
+body.dark-mode .card-link {
+  color: #fff;
+}
+
+body.dark-mode .process-card {
+  background: #181818;
+  border-color: #777;
+}
+
+body.dark-mode .store-support-section {
+  background: #202020;
+  color: #fff;
+}
+
+body.dark-mode .primary-button {
+  background: #fff;
+  border-color: #fff;
+  color: #111;
+}
+
+body.dark-mode .secondary-button {
+  background: transparent;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .image-placeholder {
+  background: #292929;
+  color: #aaa;
+}
+
+body.dark-mode .image-placeholder::before,
+body.dark-mode .image-placeholder::after {
+  background: #444;
+}
+
+body.dark-mode .image-placeholder span {
+  background: rgba(20, 20, 20, 0.88);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .store-vehicles-hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .store-vehicles-hero-content {
+    max-width: 760px;
+  }
+
+  .inventory-filter-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inventory-filter-card .secondary-button {
+    align-self: stretch;
+  }
+
+  .vehicle-inventory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .store-vehicles-hero {
+    min-height: auto;
+    padding: 95px 20px 65px;
+    gap: 35px;
+  }
+
+  .store-vehicles-hero-image {
+    min-height: 280px;
+  }
+
+  .store-vehicles-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .store-vehicles-hero-content p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
+  .inventory-controls {
+    padding: 75px 20px 35px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+  }
+
+  .inventory-filter-card {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .inventory-filter-card .secondary-button {
+    width: 100%;
+  }
+
+  .vehicle-inventory-section {
+    padding: 35px 20px 75px;
+  }
+
+  .vehicle-inventory-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .inventory-description {
+    min-height: auto;
+  }
+
+  .store-process-section {
+    padding: 75px 20px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    padding: 25px;
+  }
+
+  .process-number {
+    margin-bottom: 30px;
+  }
+
+  .store-support-section {
+    padding: 80px 20px;
+  }
+
+  .store-support-content h2 {
+    font-size: 43px;
+  }
+
+  .support-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .support-actions .primary-button,
+  .support-actions .secondary-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .inventory-card,
+  .primary-button,
+  .secondary-button,
+  .card-link::after {
+    transition: none;
+  }
+
+}

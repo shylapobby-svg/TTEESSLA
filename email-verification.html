@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Email Verification | Tesla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .verification-page {
+      min-height: 100vh;
+      padding: 120px 20px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: var(--page-bg, #fff);
+    }
+
+    .verification-container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .verification-card {
+      padding: 42px 34px;
+      border-radius: 18px;
+      background: var(--card-bg, #f5f5f5);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+      text-align: center;
+    }
+
+    .verification-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      color: #fff;
+      font-size: 28px;
+    }
+
+    .verification-card h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.15;
+    }
+
+    .verification-intro {
+      margin: 0 auto 28px;
+      max-width: 430px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .verification-email {
+      margin: 0 auto 24px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #fff;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .verification-code {
+      display: grid;
+      gap: 8px;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .verification-code label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .verification-code input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      color: #111;
+      font-size: 22px;
+      letter-spacing: 7px;
+      text-align: center;
+      outline: none;
+    }
+
+    .verification-code input:focus {
+      border-color: #555;
+      box-shadow: 0 0 0 3px rgba(0,0,0,.08);
+    }
+
+    .verification-button {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 15px;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .verification-button:hover {
+      opacity: .88;
+    }
+
+    .verification-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .verification-message.success {
+      display: block;
+      background: #eaf7ee;
+      color: #175b2b;
+      border: 1px solid #b9dfc4;
+    }
+
+    .verification-message.error {
+      display: block;
+      background: #fff0f0;
+      color: #8a1f1f;
+      border: 1px solid #edbcbc;
+    }
+
+    .verification-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .verification-actions button,
+    .verification-actions a {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .verification-actions a:hover,
+    .verification-actions button:hover {
+      text-decoration: underline;
+    }
+
+    .verification-note {
+      margin-top: 28px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(0,0,0,.04);
+      color: #666;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 600px) {
+      .verification-page {
+        padding: 100px 15px 60px;
+      }
+
+      .verification-card {
+        padding: 32px 22px;
+      }
+
+      .verification-card h1 {
+        font-size: 28px;
+      }
+    }
+
+    body.dark-mode .verification-page {
+      background: #111;
+    }
+
+    body.dark-mode .verification-card {
+      background: #1d1d1d;
+      color: #fff;
+    }
+
+    body.dark-mode .verification-intro,
+    body.dark-mode .verification-note {
+      color: #aaa;
+    }
+
+    body.dark-mode .verification-email,
+    body.dark-mode .verification-code input {
+      background: #111;
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode .verification-note {
+      background: rgba(255,255,255,.05);
+    }
+
+    body.dark-mode .verification-icon {
+      background: #fff;
+      color: #111;
+    }
+
+    body.dark-mode .verification-button {
+      background: #fff;
+      color: #111;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="sideMenu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-logo" aria-label="Tesla Home">
+      TESLA
+    </a>
+
+    <div class="header-controls">
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
+      </button>
+
+      <button
+        class="account-button"
+        id="accountButton"
+        type="button"
+        aria-label="Account"
+        aria-expanded="false">
+        ◯
+      </button>
+
+      <div class="account-menu" id="accountMenu">
+        <a href="login.html">Sign In</a>
+        <a href="create-account.html">Create Account</a>
+        <a href="account.html">Account</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      type="button"
+      aria-label="Close menu">
+      ×
+    </button>
+
+    <nav class="side-navigation">
+
+      <div class="navigation-group">
+        <button class="navigation-group-button" type="button">
+          Car Models
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="model-3.html">Model 3</a>
+          <a href="model-y.html">Model Y</a>
+          <a href="model-s.html">Model S</a>
+          <a href="model-x.html">Model X</a>
+          <a href="cybertruck.html">Cybertruck</a>
+        </div>
+      </div>
+
+      <a href="test-drive.html">Request Test Drive</a>
+
+      <div class="navigation-group">
+        <button class="navigation-group-button" type="button">
+          Batteries
+          <span>⌄</span>
+        </button>
+
+        <div class="navigation-dropdown">
+          <a href="batteries.html#car-battery">Car Battery</a>
+          <a href="batteries.html#powerwall-2">Powerwall 2</a>
+          <a href="batteries.html#powerwall-3">Powerwall 3</a>
+          <a href="batteries.html#powerwall-expansion">Powerwall 3 Expansion</a>
+          <a href="batteries.html#megapack-2">Megapack 2</a>
+          <a href="batteries.html#megapack-3">Megapack 3</a>
+        </div>
+      </div>
+
+      <a href="solar.html">Solar Panels</a>
+      <a href="charging.html">How to Charge</a>
+      <a href="future-cars.html">Future Cars</a>
+      <a href="awards.html">Awards</a>
+
+      <div class="navigation-divider"></div>
+
+      <a href="purchase-tesla.html">Purchased a Tesla</a>
+      <a href="lease-tesla.html">Lease a Tesla</a>
+      <a href="support.html">Support</a>
+      <a href="account.html">Account</a>
+
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="verification-page">
+
+    <div class="verification-container">
+
+      <section class="verification-card">
+
+        <div class="verification-icon" aria-hidden="true">
+          ✓
+        </div>
+
+        <h1>Verify your email</h1>
+
+        <p class="verification-intro">
+          Enter the verification code sent to the email address
+          associated with your Tesla account.
+        </p>
+
+        <div class="verification-email" id="verificationEmail">
+          your email address
+        </div>
+
+        <form id="verificationForm" novalidate>
+
+          <div class="verification-code">
+
+            <label for="verificationCode">
+              Verification code
+            </label>
+
+            <input
+              type="text"
+              id="verificationCode"
+              name="verificationCode"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              maxlength="6"
+              placeholder="000000"
+              required>
+
+          </div>
+
+          <button
+            class="verification-button"
+            id="verifyButton"
+            type="submit">
+            Verify Email
+          </button>
+
+        </form>
+
+        <div
+          class="verification-message"
+          id="verificationMessage"
+          role="status"
+          aria-live="polite">
+        </div>
+
+        <div class="verification-actions">
+
+          <button
+            type="button"
+            id="resendButton">
+            Resend Code
+          </button>
+
+          <a href="login.html">
+            Back to Sign In
+          </a>
+
+        </div>
+
+        <div class="verification-note">
+          This frontend uses a demonstration verification flow.
+          A production website should generate verification codes
+          securely on the server and send them through a protected
+          email service.
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- COOKIE OVERLAY -->
+  <div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-banner">
+
+      <h2>Cookies</h2>
+
+      <p>
+        We use cookies and similar technologies to provide essential
+        website functionality and remember your preferences.
+      </p>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          id="acceptCookies">
+          Accept
+        </button>
+
+        <a href="cookie-settings.html">
+          Cookie Settings
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="support.html">Support Center</a>
+        <a href="contact.html">Contact</a>
+        <a href="service.html">Service</a>
+        <a href="charging-locations.html">Charging Locations</a>
+      </div>
+
+      <div>
+        <h3>Ownership</h3>
+        <a href="warranty.html">Warranty</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="stores.html">Stores</a>
+        <a href="store-vehicles.html">Store Vehicles</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-settings.html">Cookie Settings</a>
+        <a href="vehicle-agreement.html">Vehicle Agreement</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>©️ 2026 TESLA, Inc. All rights reserved.</span>
+      <span>United States</span>
+    </div>
+
+  </footer>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <button
+    class="refresh-button"
+    id="refreshButton"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+  </button>
+
+  <script src="script.js"></script>
+
+  <script>
+    const verificationEmail =
+      document.getElementById("verificationEmail");
+
+    const verificationForm =
+      document.getElementById("verificationForm");
+
+    const verificationCode =
+      document.getElementById("verificationCode");
+
+    const verificationMessage =
+      document.getElementById("verificationMessage");
+
+    const resendButton =
+      document.getElementById("resendButton");
+
+    const verifyButton =
+      document.getElementById("verifyButton");
+
+    const profile =
+      JSON.parse(
+        sessionStorage.getItem("teslaAccountProfile")
+      ) || null;
+
+    const recoveryRequest =
+      JSON.parse(
+        sessionStorage.getItem("teslaAccountRecoveryRequest")
+      ) || null;
+
+    const email =
+      profile?.email ||
+      recoveryRequest?.email ||
+      "";
+
+    verificationEmail.textContent =
+      email || "your registered email address";
+
+    verificationCode.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "").slice(0, 6);
+    });
+
+    verificationForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      verificationMessage.className =
+        "verification-message";
+
+      const code = verificationCode.value.trim();
+
+      if (code.length !== 6) {
+        verificationMessage.textContent =
+          "Please enter the 6-digit verification code.";
+
+        verificationMessage.classList.add("error");
+        verificationCode.focus();
+        return;
+      }
+
+      /*
+        Frontend demonstration:
+        Any 6-digit code is accepted.
+
+        A production implementation must verify the code
+        against a secure server-side verification service.
+      */
+
+      sessionStorage.setItem(
+        "teslaEmailVerified",
+        JSON.stringify({
+          email: email,
+          verified: true,
+          verifiedAt: new Date().toISOString()
+        })
+      );
+
+      verificationMessage.textContent =
+        "Your email has been verified successfully.";
+
+      verificationMessage.classList.add("success");
+
+      verifyButton.disabled = true;
+      verifyButton.style.opacity = "0.6";
+
+      verificationCode.disabled = true;
+    });
+
+    resendButton.addEventListener("click", function () {
+
+      verificationMessage.className =
+        "verification-message";
+
+      verificationMessage.textContent =
+        "A new verification code has been requested.";
+
+      verificationMessage.classList.add("success");
+
+      sessionStorage.setItem(
+        "teslaVerificationResend",
+        new Date().toISOString()
+      );
+    });
+  </script>
+
+</body>
+</html>

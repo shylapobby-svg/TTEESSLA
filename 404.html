@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Not Found | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 6% 80px;
+            text-align: center;
+        }
+
+        .error-content {
+            max-width: 700px;
+        }
+
+        .error-code {
+            font-size: clamp(90px, 18vw, 190px);
+            line-height: 0.9;
+            font-weight: 700;
+            letter-spacing: -8px;
+            margin-bottom: 25px;
+        }
+
+        .error-content h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 18px;
+        }
+
+        .error-content p {
+            color: #666;
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0 auto 30px;
+            max-width: 560px;
+        }
+
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .error-button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 999px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .error-button.secondary {
+            background: #e8e8e8;
+            color: #111;
+        }
+
+        body.dark-mode .error-content p {
+            color: #aaa;
+        }
+
+        body.dark-mode .error-button.secondary {
+            background: #292929;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            type="button"
+            aria-label="Account">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="document.html">Documents</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button
+        class="menu-close"
+        id="menuClose"
+        aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+
+            </div>
+
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+
+            <button
+                class="navigation-group-button"
+                type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+
+            </div>
+
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="charging-history.html">Charging History</a>
+        <a href="document.html">Documents</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="error-page">
+
+    <section class="error-content">
+
+        <div class="error-code">404</div>
+
+        <h1>Page not found</h1>
+
+        <p>
+            The page you're looking for may have been moved,
+            removed, or the address may be incorrect.
+        </p>
+
+        <div class="error-actions">
+
+            <a
+                href="index.html"
+                class="error-button">
+                Return Home
+            </a>
+
+            <a
+                href="car-models.html"
+                class="error-button secondary">
+                Explore Vehicles
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button
+                id="acceptCookies"
+                type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

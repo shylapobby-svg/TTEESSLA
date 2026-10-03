@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support | TESLA</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .support-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 6% 80px;
+        }
+
+        .support-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .support-hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .support-hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 55px;
+        }
+
+        .support-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .support-card h2 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .support-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .support-card a {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .support-section {
+            margin-bottom: 55px;
+        }
+
+        .support-section h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq-list details {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .faq-list summary {
+            cursor: pointer;
+            padding: 20px;
+            font-weight: 600;
+            list-style: none;
+        }
+
+        .faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-list details p {
+            padding: 0 20px 20px;
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-box {
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 12px;
+            font-size: 32px;
+        }
+
+        .contact-box p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .support-notice {
+            margin-top: 35px;
+            padding: 22px;
+            border-radius: 14px;
+            background: #f1f1f1;
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-page {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-box {
+                padding: 28px 20px;
+            }
+        }
+
+        body.dark-mode .support-card,
+        body.dark-mode .faq-list details {
+            background: #151515;
+            border-color: #333;
+        }
+
+        body.dark-mode .contact-box,
+        body.dark-mode .support-notice {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .support-hero p,
+        body.dark-mode .support-card p,
+        body.dark-mode .faq-list details p,
+        body.dark-mode .contact-box p {
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="site-logo" aria-label="TESLA Home">
+            TESLA
+        </a>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <button class="account-button" id="accountButton" aria-label="Account">
+                ◯
+            </button>
+
+            <div class="account-menu" id="accountMenu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Sign In</a>
+                <a href="create-account.html">Create Account</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- SIDE MENU -->
+    <aside class="side-menu" id="sideMenu">
+
+        <button class="menu-close" id="menuClose" aria-label="Close menu">
+            ×
+        </button>
+
+        <nav class="side-navigation">
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Car Models
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="model-3.html">Model 3</a>
+                    <a href="model-y.html">Model Y</a>
+                    <a href="model-s.html">Model S</a>
+                    <a href="model-x.html">Model X</a>
+                    <a href="cybertruck.html">Cybertruck</a>
+                </div>
+
+            </div>
+
+            <a href="test-drive.html">Request Test Drive</a>
+
+            <div class="navigation-group">
+
+                <button class="navigation-group-title" type="button">
+                    Batteries
+                    <span>⌄</span>
+                </button>
+
+                <div class="navigation-submenu">
+                    <a href="batteries.html">Car Battery</a>
+                    <a href="batteries.html">Powerwall 2</a>
+                    <a href="batteries.html">Powerwall 3</a>
+                    <a href="batteries.html">Powerwall 3 Expansion</a>
+                    <a href="batteries.html">Megapack 2</a>
+                    <a href="batteries.html">Megapack 3</a>
+                </div>
+
+            </div>
+
+            <a href="solar.html">Solar Panels</a>
+            <a href="charging.html">How to Charge</a>
+            <a href="future-cars.html">Future Cars</a>
+            <a href="awards.html">Awards</a>
+
+            <div class="navigation-divider"></div>
+
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="investment.html">Tesla Investment</a>
+            <a href="support.html">Support</a>
+            <a href="account.html">Account</a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <section class="support-page">
+
+            <div class="support-hero">
+
+                <h1>Support</h1>
+
+                <p>
+                    Find information about your vehicle, charging,
+                    ownership, account and available support services.
+                </p>
+
+            </div>
+
+
+            <!-- SUPPORT CARDS -->
+            <section class="support-grid">
+
+                <article class="support-card">
+
+                    <h2>Vehicle Support</h2>
+
+                    <p>
+                        Explore vehicle information, ownership resources,
+                        warranty information and service options.
+                    </p>
+
+                    <a href="purchase-tesla.html">
+                        Vehicle Support
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h2>Charging</h2>
+
+                    <p>
+                        Learn about charging your vehicle at home,
+                        on the road and through charging solutions.
+                    </p>
+
+                    <a href="charging.html">
+                        Charging Support
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h2>Account</h2>
+
+                    <p>
+                        Manage your account, profile information and
+                        available account services.
+                    </p>
+
+                    <a href="account.html">
+                        Account Support
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h2>Warranty</h2>
+
+                    <p>
+                        Review warranty information and general
+                        warranty support resources.
+                    </p>
+
+                    <a href="warranty.html">
+                        View Warranty
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h2>Insurance</h2>
+
+                    <p>
+                        Review insurance information and available
+                        ownership resources.
+                    </p>
+
+                    <a href="insurance.html">
+                        Insurance
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h2>Stores</h2>
+
+                    <p>
+                        Find store locations and explore available
+                        vehicle inventory information.
+                    </p>
+
+                    <a href="stores.html">
+                        Find a Store
+                    </a>
+
+                </article>
+
+            </section>
+
+
+            <!-- FAQ -->
+            <section class="support-section">
+
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-list">
+
+                    <details>
+                        <summary>
+                            How do I order a Tesla?
+                        </summary>
+
+                        <p>
+                            Visit the Car Models section, select a vehicle
+                            and continue through the order configuration.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            How can I request a test drive?
+                        </summary>
+
+                        <p>
+                            Use the Request Test Drive page to select a
+                            vehicle and submit your requested appointment
+                            information.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Where can I learn about charging?
+                        </summary>
+
+                        <p>
+                            Visit the How to Charge page for charging
+                            information and the charging calculator.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Where can I review warranty information?
+                        </summary>
+
+                        <p>
+                            Visit the Warranty page for the available
+                            warranty information and support resources.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            How do I manage my account?
+                        </summary>
+
+                        <p>
+                            Sign in through the Account section to access
+                            your dashboard and profile resources.
+                        </p>
+                    </details>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+            <section class="contact-box">
+
+                <h2>Need More Help?</h2>
+
+                <p>
+                    Contact the support team through one of the available
+                    communication channels.
+                </p>
+
+                <div class="contact-links">
+
+                    <a href="mailto:support@example.com">
+                        Email Support
+                    </a>
+
+                    <a href="tel:+18005550199">
+                        Call Support
+                    </a>
+
+                    <a href="https://wa.me/18005550199">
+                        WhatsApp
+                    </a>
+
+                    <a href="https://x.com/">
+                        X
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <div class="support-notice">
+
+                <strong>Demo website notice:</strong>
+                Support contact information, account services, vehicle
+                records and communication channels shown here are frontend
+                placeholders. Replace the demo contact details with your
+                actual business support information before publishing.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-column">
+
+                <h3>Company</h3>
+
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="news.html">News</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Support</h3>
+
+                <a href="support.html">Support Center</a>
+                <a href="https://wa.me/18005550199">WhatsApp</a>
+                <a href="https://t.me/">Telegram</a>
+                <a href="mailto:support@example.com">Email</a>
+                <a href="https://x.com/">X</a>
+                <a href="tel:+18005550199">Call</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Services</h3>
+
+                <a href="warranty.html">Warranty</a>
+                <a href="insurance.html">Insurance</a>
+                <a href="stores.html">Stores</a>
+                <a href="store-vehicles.html">Store Vehicles</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Legal</h3>
+
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="cookie-settings.html">Cookie Settings</a>
+                <a href="vehicle-agreement.html">Vehicle Agreement</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            ©️ 2026 TESLA, Inc. All rights reserved.
+            <span>United States</span>
+        </div>
+
+    </footer>
+
+
+    <!-- COOKIE NOTICE -->
+    <div class="cookie-overlay" id="cookieOverlay">
+
+        <div class="cookie-box">
+
+            <h2>Cookies</h2>
+
+            <p>
+                We use cookies to improve website functionality, remember
+                preferences and understand how visitors use this demo website.
+            </p>
+
+            <div class="cookie-actions">
+
+                <button id="acceptCookies" class="primary-button">
+                    Accept
+                </button>
+
+                <a href="cookie-settings.html" class="secondary-button">
+                    Cookie Settings
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        aria-label="Refresh page"
+    >
+        ↻
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

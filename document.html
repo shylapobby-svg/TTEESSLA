@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documents | Tesla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .documents-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 110px 6% 80px;
+        }
+
+        .documents-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .documents-hero h1 {
+            font-size: clamp(38px, 5vw, 64px);
+            margin-bottom: 14px;
+        }
+
+        .documents-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .documents-section {
+            margin-bottom: 45px;
+        }
+
+        .documents-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .document-card {
+            background: #f5f5f5;
+            border-radius: 18px;
+            padding: 26px;
+        }
+
+        .document-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #111;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .document-card h3 {
+            margin-bottom: 9px;
+        }
+
+        .document-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 48px;
+        }
+
+        .document-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 17px;
+            border-radius: 999px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #111;
+        }
+
+        .document-button.secondary {
+            background: transparent;
+            color: #111;
+        }
+
+        .document-notice {
+            padding: 24px;
+            background: #ededed;
+            border-radius: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .document-list {
+            background: #f5f5f5;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .document-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 25px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .document-row:last-child {
+            border-bottom: 0;
+        }
+
+        .document-row strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .document-row span {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .document-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        body.dark-mode .documents-hero p,
+        body.dark-mode .document-card p,
+        body.dark-mode .document-notice,
+        body.dark-mode .document-row span {
+            color: #aaa;
+        }
+
+        body.dark-mode .document-card,
+        body.dark-mode .document-list {
+            background: #1d1d1d;
+        }
+
+        body.dark-mode .document-row {
+            border-color: #444;
+        }
+
+        body.dark-mode .document-notice {
+            background: #252525;
+        }
+
+        body.dark-mode .document-button.secondary {
+            color: #fff;
+            border-color: #666;
+        }
+
+        @media (max-width: 700px) {
+            .document-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .document-actions {
+                width: 100%;
+            }
+
+            .document-button {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="site-logo">TESLA</a>
+
+    <div class="header-controls">
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <button
+            class="account-button"
+            id="accountButton"
+            type="button"
+            aria-label="Account">
+            ◯
+        </button>
+
+        <div class="account-menu" id="accountMenu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="vehicle-garage.html">Vehicle Garage</a>
+            <a href="document.html">Documents</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="payment-history.html">Payment History</a>
+            <a href="service-history.html">Service History</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="account-security.html">Account Security</a>
+            <a href="support.html">Support</a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<aside class="side-menu" id="sideMenu">
+
+    <button class="menu-close" id="menuClose" aria-label="Close menu">
+        ×
+    </button>
+
+    <nav class="side-navigation">
+
+        <a href="index.html">Home</a>
+
+        <div class="navigation-group">
+
+            <button class="navigation-group-button" type="button">
+                Car Models
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="model-3.html">Model 3</a>
+                <a href="model-y.html">Model Y</a>
+                <a href="model-s.html">Model S</a>
+                <a href="model-x.html">Model X</a>
+                <a href="cybertruck.html">Cybertruck</a>
+            </div>
+
+        </div>
+
+        <a href="test-drive.html">Request Test Drive</a>
+
+        <div class="navigation-group">
+
+            <button class="navigation-group-button" type="button">
+                Batteries
+                <span>⌄</span>
+            </button>
+
+            <div class="navigation-dropdown">
+                <a href="batteries.html">Car Battery</a>
+                <a href="batteries.html">Powerwall 2</a>
+                <a href="batteries.html">Powerwall 3</a>
+                <a href="batteries.html">Powerwall 3 Expansion</a>
+                <a href="batteries.html">Megapack 2</a>
+                <a href="batteries.html">Megapack 3</a>
+            </div>
+
+        </div>
+
+        <a href="solar.html">Solar Panels</a>
+        <a href="charging.html">How to Charge</a>
+        <a href="future-cars.html">Future Cars</a>
+        <a href="awards.html">Awards</a>
+
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="purchase-tesla.html">Purchased a Tesla</a>
+        <a href="lease-tesla.html">Lease a Tesla</a>
+        <a href="charging-history.html">Charging History</a>
+        <a href="document.html">Documents</a>
+        <a href="support.html">Support</a>
+
+    </nav>
+
+</aside>
+
+
+<main class="documents-page">
+
+    <section class="documents-hero">
+
+        <h1>Documents</h1>
+
+        <p>
+            Keep your vehicle, order, payment, ownership, and legal
+            documents organized in one place.
+        </p>
+
+    </section>
+
+
+    <section class="documents-section">
+
+        <h2>Vehicle & Ownership</h2>
+
+        <div class="documents-grid">
+
+            <article class="document-card">
+
+                <div class="document-icon">▣</div>
+
+                <h3>Vehicle Agreement</h3>
+
+                <p>
+                    Review your vehicle agreement and related ownership terms.
+                </p>
+
+                <a
+                    href="vehicle-agreement.html"
+                    class="document-button">
+                    View Document
+                </a>
+
+            </article>
+
+
+            <article class="document-card">
+
+                <div class="document-icon">✓</div>
+
+                <h3>Warranty</h3>
+
+                <p>
+                    Review warranty information associated with your Tesla.
+                </p>
+
+                <a
+                    href="warranty.html"
+                    class="document-button">
+                    View Warranty
+                </a>
+
+            </article>
+
+
+            <article class="document-card">
+
+                <div class="document-icon">▤</div>
+
+                <h3>Insurance</h3>
+
+                <p>
+                    Access insurance information and available resources.
+                </p>
+
+                <a
+                    href="insurance.html"
+                    class="document-button">
+                    View Insurance
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="documents-section">
+
+        <h2>Orders & Payments</h2>
+
+        <div class="documents-list">
+
+            <div class="document-list">
+
+                <div class="document-row">
+
+                    <div>
+                        <strong>Order Information</strong>
+                        <span>Vehicle order and configuration information</span>
+                    </div>
+
+                    <div class="document-actions">
+
+                        <a
+                            href="my-orders.html"
+                            class="document-button">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div>
+                        <strong>Payment History</strong>
+                        <span>Payment and transaction records</span>
+                    </div>
+
+                    <div class="document-actions">
+
+                        <a
+                            href="payment-history.html"
+                            class="document-button">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div>
+                        <strong>Lease Documents</strong>
+                        <span>Lease application and vehicle lease information</span>
+                    </div>
+
+                    <div class="document-actions">
+
+                        <a
+                            href="lease-application.html"
+                            class="document-button">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div>
+                        <strong>Delivery Information</strong>
+                        <span>Vehicle delivery details and confirmation</span>
+                    </div>
+
+                    <div class="document-actions">
+
+                        <a
+                            href="delivery.html"
+                            class="document-button">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="documents-section">
+
+        <h2>Legal & Privacy</h2>
+
+        <div class="documents-grid">
+
+            <article class="document-card">
+
+                <div class="document-icon">P</div>
+
+                <h3>Privacy Policy</h3>
+
+                <p>
+                    Review information about privacy and data practices.
+                </p>
+
+                <a
+                    href="privacy-policy.html"
+                    class="document-button">
+                    View
+                </a>
+
+            </article>
+
+
+            <article class="document-card">
+
+                <div class="document-icon">T</div>
+
+                <h3>Terms of Use</h3>
+
+                <p>
+                    Review website terms and conditions.
+                </p>
+
+                <a
+                    href="terms-of-use.html"
+                    class="document-button">
+                    View
+                </a>
+
+            </article>
+
+
+            <article class="document-card">
+
+                <div class="document-icon">C</div>
+
+                <h3>Cookie Settings</h3>
+
+                <p>
+                    Manage your website cookie preferences.
+                </p>
+
+                <a
+                    href="cookie-settings.html"
+                    class="document-button">
+                    Manage
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <div class="document-notice">
+
+        <strong>Document storage</strong><br>
+
+        This frontend version provides access to your website's
+        document pages and account resources. Secure document storage,
+        downloadable signed agreements, identity verification,
+        electronic signatures, and account-synchronized records
+        should be connected through the backend before production use.
+
+    </div>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="support.html">Support Center</a>
+            <a href="support-request.html">Contact Support</a>
+            <a href="charging.html">Charging</a>
+            <a href="service.html">Service</a>
+        </div>
+
+        <div>
+            <h3>Ownership</h3>
+            <a href="purchase-tesla.html">Purchased a Tesla</a>
+            <a href="lease-tesla.html">Lease a Tesla</a>
+            <a href="warranty.html">Warranty</a>
+            <a href="insurance.html">Insurance</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-settings.html">Cookie Settings</a>
+            <a href="vehicle-agreement.html">Vehicle Agreement</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            ©️ 2026 TESLA, Inc. All rights reserved.
+        </span>
+
+        <span>
+            United States
+        </span>
+
+    </div>
+
+</footer>
+
+
+<div class="cookie-overlay" id="cookieOverlay">
+
+    <div class="cookie-box">
+
+        <h2>Cookies</h2>
+
+        <p>
+            We use cookies and similar technologies to improve your
+            experience and remember your preferences.
+        </p>
+
+        <div class="cookie-actions">
+
+            <button id="acceptCookies" type="button">
+                Accept
+            </button>
+
+            <a href="cookie-settings.html">
+                Cookie Settings
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<button
+    id="refreshButton"
+    class="refresh-button"
+    type="button"
+    aria-label="Refresh page">
+    ↻
+</button>
+
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const orderData =
+        JSON.parse(sessionStorage.getItem("teslaOrderData") || "null");
+
+    const deliveryData =
+        JSON.parse(sessionStorage.getItem("teslaDeliveryRequest") || "null");
+
+    const leaseData =
+        JSON.parse(sessionStorage.getItem("teslaLeaseApplication") || "null");
+
+
+    /*
+     * This page currently links to the existing document pages.
+     * If account/order data exists, the page can show a small
+     * account-specific document status.
+     */
+
+    if (orderData || deliveryData || leaseData) {
+
+        const notice = document.querySelector(".document-notice");
+
+        if (notice) {
+
+            notice.innerHTML = `
+                <strong>Account documents available</strong><br>
+                Your current account activity has been detected.
+                Relevant order, delivery, or lease information can
+                be connected to secure document storage when the
+                backend is implemented.
+            `;
+
+        }
+
+    }
+
+});
+</script>
+
+</body>
+</html>
